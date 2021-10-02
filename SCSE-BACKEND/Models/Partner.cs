@@ -12,12 +12,15 @@ namespace SCSE_BACKEND.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Partner
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Image { get; set; }
+        public string Field { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string Link { get; set; }
     }
 }

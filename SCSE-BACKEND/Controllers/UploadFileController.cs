@@ -44,14 +44,14 @@ namespace SCSE_BACKEND.Controllers
         [Route("api/XemDanhSachTaiLieu")]
         public object xemDSODF()
         {
-            var obj = db.DocumentGallery.ToList();
+            var obj = db.DocumentGalleries.ToList();
             return obj;
         }
         [HttpGet]
         [Route("api/GetByIDTaiLieu")]
         public object getbyIDTaiLieu(int id)
         {
-            var obj = db.DocumentGallery.Where(x =>x.ID==id).ToList().FirstOrDefault();
+            var obj = db.DocumentGalleries.Where(x =>x.ID==id).ToList().FirstOrDefault();
             return obj;
         }
         [HttpGet]
@@ -65,12 +65,12 @@ namespace SCSE_BACKEND.Controllers
                 DocumentGallery doc = new DocumentGallery();
                 foreach (FileInfo fInfo in dirInfo.GetFiles())
                 {
-                var s =db.DocumentGallery.Where(x => x.Iframe == a + fInfo.Name + b).FirstOrDefault();
+                var s = db.DocumentGalleries.Where(x => x.Iframe == a + fInfo.Name + b).FirstOrDefault();
                 if(s is null)
                 {
                     doc.Iframe = a + fInfo.Name + b;
                     doc.NamePDF = fInfo.Name;
-                    db.DocumentGallery.Add(doc);
+                    db.DocumentGalleries.Add(doc);
                     db.SaveChanges();
                 }
                 

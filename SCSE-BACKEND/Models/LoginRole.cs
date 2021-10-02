@@ -15,11 +15,12 @@ namespace SCSE_BACKEND.Models
     public partial class LoginRole
     {
         public int IDUser { get; set; }
-        public string Fullname { get; set; }
+        public string FullName { get; set; }
         public string RoleName { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public Nullable<System.DateTime> CreatedByDate { get; set; }
+        public Nullable<bool> IsLocked { get; set; }
     }
 }

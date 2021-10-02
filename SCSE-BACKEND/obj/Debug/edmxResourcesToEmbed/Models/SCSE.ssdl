@@ -15,6 +15,7 @@
     <Property Name="FullName" Type="nvarchar" MaxLength="50" />
     <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedByDate" Type="date" />
   </EntityType>
   <EntityType Name="BankInformation">
     <Key>
@@ -57,17 +58,6 @@
     <Property Name="Phone" Type="varchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Details" Type="nvarchar(max)" />
-    <Property Name="CreatedByDate" Type="date" />
-    <Property Name="UpdatedByDate" Type="date" />
-  </EntityType>
-  <EntityType Name="Document">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar(max)" />
-    <Property Name="Slug" Type="nvarchar(max)" />
-    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CreatedByDate" Type="date" />
     <Property Name="UpdatedByDate" Type="date" />
   </EntityType>
@@ -163,16 +153,6 @@ warning 6002: The table/view 'SCSE_DB.dbo.OrganizationConfiguration' does not ha
     <Property Name="IDRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RoleName" Type="nvarchar(max)" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Volunteer">
     <Key>
       <PropertyRef Name="ID" />
@@ -195,12 +175,13 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
       <PropertyRef Name="IDUser" />
     </Key>
     <Property Name="IDUser" Type="int" Nullable="false" />
-    <Property Name="Fullname" Type="nvarchar" MaxLength="50" />
-    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleName" Type="nvarchar(max)" />
     <Property Name="Username" Type="nvarchar" MaxLength="50" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedByDate" Type="date" />
+    <Property Name="IsLocked" Type="bit" />
   </EntityType>
   <Association Name="FK_Account_Role">
     <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
@@ -232,7 +213,6 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
     <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DocumentGallery" EntityType="Self.DocumentGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ImgPortfolio" EntityType="Self.ImgPortfolio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
@@ -240,7 +220,6 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
     <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhotoGallery" EntityType="Self.PhotoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrganizationConfiguration" EntityType="Self.OrganizationConfiguration" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -261,12 +240,13 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
     <EntitySet Name="LoginRole" EntityType="Self.LoginRole" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [LoginRole].[IDUser] AS [IDUser], 
-    [LoginRole].[Fullname] AS [Fullname], 
+    [LoginRole].[FullName] AS [FullName], 
     [LoginRole].[RoleName] AS [RoleName], 
     [LoginRole].[Username] AS [Username], 
     [LoginRole].[Password] AS [Password], 
     [LoginRole].[Email] AS [Email], 
-    [LoginRole].[CreatedByDate] AS [CreatedByDate]
+    [LoginRole].[CreatedByDate] AS [CreatedByDate], 
+    [LoginRole].[IsLocked] AS [IsLocked]
     FROM [dbo].[LoginRole] AS [LoginRole]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Account_Role" Association="Self.FK_Account_Role">

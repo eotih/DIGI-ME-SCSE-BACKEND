@@ -11,7 +11,7 @@ namespace SCSE_BACKEND.Models
     public class TokenManager
     {
         private static string Secret = "ERMN05OPLoDvbTTa/QkqLNMI7cPLguaRyHzyg7n5qNBVjQmtBhz4SzYh4NBVCXi3KJHlSXKP+oi2+bXr6CUYTR==";
-        public static string GenerateToken(string Username, string Rolename, string Fullname, string Password, string Email)
+        public static string GenerateToken(string Username, string Rolename, string Fullname, string Password, string Email, string IsLocked)
         {
             byte[] key = Convert.FromBase64String(Secret);
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(key);
@@ -22,8 +22,8 @@ namespace SCSE_BACKEND.Models
                       new Claim(ClaimTypes.NameIdentifier, Rolename),
                       new Claim(ClaimTypes.NameIdentifier, Username),
                       new Claim(ClaimTypes.NameIdentifier, Password),
-                      new Claim(ClaimTypes.NameIdentifier, Email)
-
+                      new Claim(ClaimTypes.NameIdentifier, Email),
+                      new Claim(ClaimTypes.NameIdentifier, IsLocked)    
                   }),
                 Expires = DateTime.UtcNow.AddMinutes(240),
                 SigningCredentials = new SigningCredentials(securityKey,

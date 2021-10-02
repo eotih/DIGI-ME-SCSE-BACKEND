@@ -207,9 +207,6 @@
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact1.cs" />
-    <Compile Include="Models\Document.cs">
-      <DependentUpon>SCSE.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Document1.cs" />
     <Compile Include="Models\DocumentGallery.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
@@ -230,10 +227,10 @@
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrganizationConfiguration1.cs" />
-    <Compile Include="Models\Partner1.cs" />
-    <Compile Include="Models\Partners.cs">
+    <Compile Include="Models\Partner.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Partner1.cs" />
     <Compile Include="Models\PhotoGallery.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
@@ -242,7 +239,7 @@
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Portfolio1.cs" />
-    <Compile Include="Models\Posts.cs">
+    <Compile Include="Models\Post.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Posts1.cs" />
@@ -267,9 +264,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SCSE.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TokenManager.cs" />
     <Compile Include="Models\UserRepository.cs" />

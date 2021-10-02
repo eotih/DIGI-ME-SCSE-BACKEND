@@ -25,6 +25,7 @@ namespace SCSE_BACKEND.Models
         public string FullName { get; set; }
         public string Image { get; set; }
         public string Sex { get; set; }
+        public Nullable<System.DateTime> UpdatedByDate { get; set; }
     
         public virtual Role Role { get; set; }
     }
