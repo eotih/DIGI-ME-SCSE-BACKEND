@@ -1,0 +1,538 @@
+﻿using SCSE_BACKEND.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Data.Entity;
+using System.Web.Http;
+//using System.Web.Mvc;
+
+namespace SCSE_BACKEND.Controllers
+{
+    [RoutePrefix("Api/Interface")]
+    public class InterfaceController : ApiController
+    {
+        //Nội Dung Trang Chủ 
+        SCSE_DBEntities db = new SCSE_DBEntities();
+        //Dữ liệu ban giám đốc 
+        [Route("EditPortfolios")]
+        [HttpPost]
+        public object editPortfolios(Portfolio1 po1)
+        {
+            Portfolio po = new Portfolio();
+            try
+            {
+                var obj = db.Portfolios.Where(x => x.ID == po1.ID).ToList().FirstOrDefault();
+                if (obj.ID > 0)
+                {
+                    po.FullName = po1.FullName;
+                    po.Position = po1.Position;
+                    po.Details = po1.Details;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+
+        [Route("GetbyIdPortfolios")]
+        [HttpGet]
+        public object getbyIdPortfolios(int id)
+        {
+            var obj = db.Portfolios.Where(x => x.ID == id).ToList().FirstOrDefault();
+            return obj;
+        }
+
+        [Route("EditImagePortfolios")]
+        [HttpPost]
+        public object editImagePortfolios(ImgPortfolio1 imgpo1)
+        {
+            try
+            {
+                if (imgpo1.ID == 0)
+                {
+                    ImgPortfolio imgpo = new ImgPortfolio();
+                    imgpo.IDImg = imgpo1.IDImg;
+                    imgpo.ImagePortfolio = imgpo1.ImagePortfolio;
+                    db.ImgPortfolios.Add(imgpo);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Successfully"
+                    };
+                }
+                else
+                {
+                    var obj = db.ImgPortfolios.Where(x => x.ID == imgpo1.ID).ToList().FirstOrDefault();
+                    if (obj.ID > 0)
+                    {
+                        obj.ImagePortfolio = imgpo1.ImagePortfolio;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfully"
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+
+        [Route("GetbyIdimgPortfolios")]
+        [HttpGet]
+        public object getImagePortfolios(int IDimg)
+        {
+            var obj = db.ImgPortfolios.Where(x => x.IDImg == IDimg).ToList();
+            return obj;
+        }
+
+        //Thông tin tổ chức 
+        [Route("EditInfoOrganization")]
+        [HttpPost]
+        public object editInfoOrganization(OrganizationConfiguration1 oc1)
+        {
+            OrganizationConfiguration oc = new OrganizationConfiguration();
+            try
+            {
+                var obj = db.OrganizationConfigurations.Where(x => x.ID == oc1.ID).ToList().FirstOrDefault();
+                if (obj.ID > 0)
+                {
+                    obj.Name = oc1.Name;
+                    obj.Field = oc1.Field;
+                    obj.Phone = oc1.Phone;
+                    obj.Email = oc1.Email;
+                    obj.Address = oc1.Address;
+                    obj.Logo = oc1.Logo;
+                    obj.Fanpage = oc1.Fanpage;
+                    obj.Youtube = oc1.Youtube;
+                    obj.UpdatedByUser = oc1.UpdatedByUser;
+                    obj.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+
+        // getbyID OrganizationConfigurations
+        [Route("GetbyIdInfoOrganization")]
+        [HttpGet]
+        public object getbyIdInfoOrganization(int ID)
+        {
+            var obj = db.OrganizationConfigurations.Where(x => x.ID == ID).ToList().FirstOrDefault();
+            return obj;
+        }
+
+        //  Thêm/Sửa Thông Tin Ngân Hàng 
+        [Route("AddOrEditBankInfo")]
+        [HttpPost]
+        public object addOreditBankin(BankInformation1 bank1)
+        {
+            if (bank1.ID == 0)
+            {
+                BankInformation bank = new BankInformation();
+                bank.IDBank = 1;
+                bank.BankName = bank1.BankName;
+                bank.ImageQR = bank1.ImageQR;
+                db.BankInformations.Add(bank);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data Successfully"
+                };
+            }
+            else
+            {
+                var obj = db.BankInformations.Where(x => x.ID == bank1.ID).ToList().FirstOrDefault();
+                if (obj.ID > 0)
+                {
+                    obj.ImageQR = bank1.ImageQR;
+                    obj.BankName = bank1.BankName;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+
+        }
+
+        // getbyID OrganizationConfigurations
+        [Route("GetbyIdBankInfo")]
+        [HttpGet]
+        public object getbyIdBankInfo(int idbank)
+        {
+            var obj = db.BankInformations.Where(x => x.IDBank == idbank).ToList();
+            return obj;
+        }
+
+        //Xóa thông tin ngân hàng 
+        [Route("DeleteBankInfo")]
+        [HttpDelete]
+        public object deleteBankInfo(int ID)
+        {
+            var obj = db.BankInformations.Where(x => x.ID == ID).ToList().FirstOrDefault();
+            db.BankInformations.Remove(obj);
+            db.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
+        }
+        //Thông Tin Đối Tác 
+        [Route("AddOrEditPartner")]
+        [HttpPost]
+        public object addoreditPartner(Partner1 pn1)
+        {
+            if (pn1.ID == 0)
+            {
+                Partner pn = new Partner
+                {
+                    Name = pn1.Name,
+                    Image = pn1.Image,
+                    Field = pn1.Field,
+                    Phone = pn1.Phone,
+                    Email = pn1.Email,
+                    Address = ReplaceSpecialChars(pn1.Address),
+                    Link = pn1.Link
+                };
+                db.Partners.Add(pn);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data Successfuly"
+                };
+            }
+            else
+            {
+                var obj = db.Partners.Where(x => x.ID == pn1.ID).ToList().FirstOrDefault();
+                if (obj.ID > 0)
+                {
+                    obj.Name = pn1.Name;
+                    obj.Image = pn1.Image;
+                    obj.Field = pn1.Field;
+                    obj.Phone = pn1.Phone;
+                    obj.Email = pn1.Email;
+                    obj.Address = pn1.Address;
+                    obj.Link = pn1.Link;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfuly"
+                    };
+                }
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+
+        [Route("GetByIdPartner")]
+        [HttpGet]
+        public object getbyidPartner(int ID)
+        {
+            var partner = db.Partners.Where(x => x.ID == ID).ToList().FirstOrDefault();
+            return partner;
+        }
+
+        [Route("ListPartner")]
+        [HttpGet]
+        public object listPartner()
+        {
+            var partner = db.Partners.ToList();
+            return partner;
+        }
+
+        [Route("DeletePartner")]
+        [HttpDelete]
+        public object deletePartner(int ID)
+        {
+            var partner = db.Partners.Where(x => x.ID == ID).ToList().FirstOrDefault();
+            db.Partners.Remove(partner);
+            db.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
+        }
+
+        //Thông tin liên hệ 
+        [Route("AddOrEditContact")]
+        [HttpPost]
+        public object addorupdateContact(Contact1 ct1)
+        {
+            if (ct1.ID == 0)
+            {
+                Contact ct = new Contact();
+                ct.FirstName = ct1.FirstName;
+                ct.LastName = ct1.LastName;
+                ct.Phone = ct1.Phone;
+                ct.Email = ct1.Email;
+                ct.Details = ct1.Details;
+                ct.CreatedByDate = DateTime.Now;
+                db.Contacts.Add(ct);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data Successfuly"
+                };
+            }
+            else
+            {
+                var contact = db.Contacts.Where(x => x.ID == ct1.ID).ToList().FirstOrDefault();
+                if (ct1.ID > 0)
+                {
+                    contact.FirstName = ct1.FirstName;
+                    contact.LastName = ct1.LastName;
+                    contact.Phone = ct1.Phone;
+                    contact.Email = ct1.Email;
+                    contact.Details = ct1.Details;
+                    contact.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfuly"
+                    };
+                }
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+        [Route("AddOrEditCategory")]
+        [HttpPost]
+        public object addorupdateCategory(Category1 category1)
+        {
+            if (category1.IDCat == 0)
+            {
+                Category category = new Category();
+                category.CategoryName = category1.CategoryName;
+                db.Categories.Add(category);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data Successfuly"
+                };
+            }
+            else
+            {
+                var obj = db.Categories.Where(x => x.IDCat == category1.IDCat).ToList().FirstOrDefault();
+                if (category1.IDCat > 0)
+                {
+                    obj.CategoryName = category1.CategoryName;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfuly"
+                    };
+                }
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+        [Route("ListCategory")]
+        [HttpGet]
+        public object listCategory()
+        {
+            var cate = db.Categories.ToList();
+            return cate;
+        }
+
+        [Route("GetByIdCategory")]
+        [HttpGet]
+        public object getbyidCategory(int ID)
+        {
+            var category = db.Categories.Where(x => x.IDCat == ID).ToList();
+            return category;
+        }
+        
+        //Thư Viện 
+        [Route("AddOrEditPhotoGallery")]
+        [HttpPost]
+        public object addoreditPhotoGallery(PhotoGallery1 photo1)
+        {
+            if (photo1.ID == 0)
+            {
+                PhotoGallery photo = new PhotoGallery
+                {
+                    IDCat = photo1.IDCat,
+                    Title = photo1.Title,
+                    Slug = ReplaceSpecialChars(photo1.Title),
+                    Image = photo1.Image,
+                    CreatedByDate = DateTime.Now
+                };
+                db.PhotoGalleries.Add(photo);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data successfuly"
+                };
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+        [Route("GetPostBySlug")]
+        [HttpGet]
+        public object GetPostBySlug(string slug)
+        {
+            var category = db.Posts.Where(x => x.Slug == slug).ToList();
+            return category;
+        }
+        [Route("ListPhoto")]
+        [HttpGet]
+        public object listPhoto()
+        {
+            var photo = db.PhotoGalleries.ToList();
+            return photo;
+        }
+
+        [Route("GetBySlugGallery")]
+        [HttpGet]
+        public object getbySlugGallery(string slug)
+        {
+            var category = db.PhotoGalleries.Where(x => x.Slug == slug).ToList();
+            return category;
+        }
+        [Route("AddOrEditDocument")]
+        [HttpPost]
+        public object addoreditDocument(Document1 doc1)
+        {
+            if (doc1.ID == 0)
+            {
+                Document doc = new Document
+                {
+                    ID = doc1.ID,
+                    Title = doc1.Title,
+                    Slug = ReplaceSpecialChars(doc1.Title),
+                    Details = doc1.Details,
+                    CreatedByDate = DateTime.Now
+                };
+                db.Documents.Add(doc);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data successfuly"
+                };
+            }
+            else
+            {
+                var obj = db.Documents.Where(x => x.ID == doc1.ID).ToList().FirstOrDefault();
+                if (doc1.ID > 0)
+                {
+                    obj.Title = doc1.Title;
+                    obj.Details = doc1.Details;
+                    obj.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfuly"
+                    };
+                }
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+
+        [Route("ListDocument")]
+        [HttpGet]
+        public object listDocument()
+        {
+            var doc = db.Documents.ToList();
+            return doc;
+        }
+
+        [Route("GetBySlugDocument")]
+        [HttpGet]
+        public object getbySlugDocument(string slug)
+        {
+            var category = db.Documents.Where(x => x.Slug == slug).ToList();
+            return category;
+        }
+        [Route("DeleteDocument")]
+        [HttpDelete]
+        public object deleteDocument(int id)
+        {
+            var category = db.Documents.Where(x => x.ID == id).ToList();
+            return category;
+        }
+        public static string ReplaceSpecialChars(string str)
+        {
+            string[] chars = new string[] { " ", ",", ".", "/", "!", "@", "#", "$", "%", "^", "&", "*", "'", "\"", ";", "_", "(", ")", ":", "|", "[", "]" };
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (str.Contains(chars[i]))
+                {
+                    str = str.Replace(chars[i], "-");
+                }
+            }
+            return str;
+        }
+    }
+}
