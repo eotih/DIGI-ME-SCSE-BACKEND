@@ -1,0 +1,129 @@
+﻿1. Thiết lập (các) cuộc họp đầu tiên với khách hàng
+2. Xác định và thu thập tài liệu tóm tắt từ khách hàng
+3. Xác định và gửi bảng câu hỏi dự án cho khách hàng và chờ phản hồi của khách hàng. Lặp lại những nghi ngờ bạn có cho đến khi mọi người đồng ý. Hoàn thiện bảng câu hỏi dự án từ khách hàng
+4. Nghiên cứu công ty của khách hàng để hiểu thương hiệu của họ, cách họ giao tiếp, nhân khẩu học, đối tượng mục tiêu
+5. Nghiên cứu ngành của khách hàng để tìm cách giao tiếp cụ thể với ngành, điểm mạnh và điểm yếu, xu hướng và các chi tiết cụ thể khác của ngành
+6. Nhận (các) báo giá cho nỗ lực phát triển dự án
+7. Nhận (các) báo giá cho thiết kế hoặc ước tính công việc thiết kế với các nhà thiết kế của riêng bạn
+8. Nhận (các) báo giá cho bản sao / nội dung hoặc ước tính công việc với người viết quảng cáo của bạn
+9. Nhận (các) báo giá cho sản xuất nhiếp ảnh / video hoặc ước tính nỗ lực liên quan
+10. Nhận (các) báo giá cho Hosting / Tên miền, đặc biệt nếu liên quan đến dịch vụ lưu trữ chuyên dụng như lưu trữ VPS, lưu trữ đám mây hoặc các yêu cầu về môi trường hoặc lưu trữ đặc biệt
+11. Chuẩn bị và gửi một đề xuất thiết kế web tuyệt vời cho khách hàng - sử dụng công cụ báo giá thiết kế web để gửi báo giá theo từng khoản mục
+12. Nhận được sự chấp thuận từ khách hàng về đề xuất và các tính năng sẽ được triển khai
+13. Tạo Biểu mẫu chấp nhận dự án và đề xuất tiến trình với các mốc quan trọng
+14. Gửi Biểu mẫu chấp nhận dự án, với các mốc thời gian cho khách hàng và chờ khách hàng ký
+16. Tạo sơ đồ trang của trang web với các phần, trang được đề xuất
+17. Nghiên cứu và mua mẫu được sử dụng làm cơ sở cho thiết kế
+18. Tạo khung dây của các trang cụ thể yêu cầu thiết kế tùy chỉnh
+19. Phân bổ thời gian và công sức cho nhà thiết kế để tạo khung dây dựa trên các ước tính được gửi cho khách hàng và các nhà thiết kế ngắn gọn về thiết kế khung dây.
+20. Phân bổ thời gian và công sức cho việc tạo / sao chép nội dung
+21. Nghiên cứu, mua và chỉnh sửa hình ảnh lưu trữ hoặc tìm hình ảnh miễn phí mà bạn có thể sử dụng
+22. Phân bổ thời gian và công sức cho việc chụp ảnh (dựa trên ước tính được gửi cho khách hàng)
+23. Phân bổ thời gian và công sức cho việc sản xuất video (dựa trên ước tính được gửi cho khách hàng)
+24. Xác định chính sách bảo mật và văn bản pháp lý khác cần thiết cho trang web
+25. Gửi (các) thiết kế cho khách hàng để phê duyệt và chờ phê duyệt
+26. Yêu cầu các nhà thiết kế thực hiện bất kỳ thay đổi thiết kế bắt buộc nào
+27. Gửi thiết kế cho các nhà phát triển web bao gồm mẫu, cùng với các thiết kế, để bắt đầu nghiên cứu và phát triển
+28. Gửi thông số kỹ thuật và cập nhật cho khách hàng và chờ đăng xuất
+29. Gửi các thiết kế đã hoàn thiện cho các nhà phát triển
+30. Phân bổ danh sách kiểm tra phát triển cho các nhà phát triển khác nhau
+31. Đồng ý với tất cả các nhà phát triển + khách hàng về một ngày cho Alpha
+32. Tiếp cận với những người sáng tạo nội dung và đảm bảo rằng họ đang ở mục tiêu
+33. Đảm bảo bạn đã mua dịch vụ lưu trữ hoặc tạo không gian lưu trữ cho trang web của mình
+34. Tạo (các) cơ sở dữ liệu mới và người dùng cơ sở dữ liệu nếu cần nếu bạn đang sử dụng CMS hoặc một trang web yêu cầu cơ sở dữ liệu
+35. Tải lên các tệp nguồn của trang web
+36. Cài đặt / cấu hình CMS để sử dụng cơ sở dữ liệu bạn đã tạo
+37. Nếu trang web của bạn đã được tạo và bạn cần di chuyển nó, hãy xuất cơ sở dữ liệu từ máy chủ thử nghiệm / dàn dựng và nhập nó vào máy chủ sản xuất
+38. Thay đổi máy chủ định danh của miền bạn sẽ sử dụng thành máy chủ định danh của máy chủ lưu trữ mà bạn sẽ là bạn
+39. Tạo sơ đồ và cấu trúc trang web mà bạn đã xác định với khách hàng thông qua CMS yêu thích của bạn hoặc khuôn khổ / công nghệ bạn đã chọn để phát triển trang web của mình
+40. Thu thập tất cả nội dung từ những người tạo nội dung khác nhau mà bạn đã thuê ngoài
+41. Đảm bảo chất lượng cho từng phần nội dung bạn đã thuê ngoài hoặc mua - và yêu cầu thay đổi khi cần thiết
+42. Điền vào nội dung trang web với các mục nội dung khác nhau mà bạn đã đồng ý với khách hàng
+43. Xác định trang Liên hệ với chúng tôi với các chi tiết khách hàng chính xác và bản đồ
+44. Điền các liên kết / biểu tượng với các liên kết đến các chi tiết liên quan đến mạng xã hội
+45. Tạo một liên kết đến trang web của bạn ở chân trang (nếu khách hàng đồng ý thực hiện việc này)
+46. ​​Gửi lặp lại hiện tại cho khách hàng và yêu cầu phản hồi
+47. Sửa chữa và thay đổi bất kỳ yêu cầu nào của khách hàng
+48. Gửi các bản cập nhật cho khách hàng và đợi khách hàng đăng xuất
+49. Xác thực HTML bằng Trình xác thực HTML W3C hoặc tiện ích mở rộng Trình duyệt ưa thích của bạn như Tiện ích mở rộng Chrome hợp lệ hoặc plugin Trình xác thực Html cho FireFox
+50. Xác thực CSS bằng Trình xác thực CSS này, Tính hợp lệ cho Chrome hoặc Trình xác thực Html
+51. Gợi ý CSS của bạn để làm cho nó tốt hơn
+52. Sử dụng JSLint và JSHint để cải thiện JavaScript của bạn
+53. Kiểm tra xem trang web của bạn đã sẵn sàng quốc tế hóa chưa tại đây
+54. Yêu cầu các nhà phát triển thay đổi dựa trên kết quả của các bài kiểm tra trên
+55. Đảm bảo rằng bản sao chép web đã được đọc lại và chạy qua trình kiểm tra chính tả và ngữ pháp để kiểm tra tính đúng đắn. Sử dụng các công cụ trực tuyến như Reverso hoặc Spellcheckplus.com
+56. Kiểm tra xem nội dung chung chung, chẳng hạn như lorem ipsum, đã được xóa và thay thế đúng cách chưa.
+57. Thấy rằng tất cả các hình ảnh đều ở đúng vị trí, được làm mờ, được định dạng, chiều rộng và chiều cao được chỉ định và hoạt động trên tất cả các thiết bị.
+58. Xác nhận rằng video và tệp âm thanh ở đúng vị trí, được định dạng và hoạt động trên tất cả các thiết bị.
+59. Kiểm tra tất cả nội dung được liên kết, chẳng hạn như nghiên cứu điển hình, sách điện tử và sách trắng, và xác minh rằng chúng được liên kết chính xác.
+60. Kiểm tra để xem tất cả các liên kết nội bộ trên các trang web đang hoạt động bình thường
+61. Đảm bảo rằng Liên hệ với chúng tôi và các biểu mẫu khác đang gửi dữ liệu đúng cách. Nếu biểu mẫu được gửi đến một địa chỉ email, hãy đảm bảo rằng email được nhận trên hộp thư được giám sát hoặc đảm bảo rằng nội dung được lưu trữ chính xác trong cơ sở dữ liệu của bạn.
+62. Xác minh thông báo Cảm ơn hoặc trang được hiển thị sau khi biểu mẫu được gửi
+63. Kiểm tra xem Tự động trả lời có hoạt động bình thường không và văn bản trong email đã được kiểm chứng
+64. Các liên kết bên ngoài trên các trang web đang hoạt động bình thường và mở trong tab mới (Sửa mọi liên kết bị hỏng bằng công cụ này)
+65. Đảm bảo rằng các biểu tượng chia sẻ trên mạng xã hội đang hoạt động bình thường - có hình ảnh tốt để chia sẻ và mô tả để chia sẻ phù hợp.
+66. Chỉnh sửa siêu dữ liệu của bạn nếu cần để đảm bảo tính năng chia sẻ trên mạng xã hội đang hoạt động tốt.
+67. Sử dụng Facebook linter để đảm bảo chia sẻ Facebook của bạn sẽ hoạt động tốt
+68. Triển khai Thẻ Twitter và xác nhận nó hoạt động tốt trên công cụ Xem trước
+69. Đảm bảo rằng logo của công ty được liên kết với trang chủ.
+70. Kiểm tra xem thời gian tải cho các trang của trang web có được tối ưu hóa hay không (xác nhận với nhiều nguồn), chẳng hạn như các công cụ GTMetrix và Pingdom. Nếu không - hãy thực hiện các bước sau để làm cho trang web WordPress của bạn tải nhanh hơn
+71. Thử một địa chỉ không tồn tại trên trang của bạn để kiểm tra các trang 404 và các trang chuyển hướng 404 có đúng không
+72. Tích hợp với các công cụ của bên thứ ba, chẳng hạn như CRM, phần mềm thương mại điện tử và / hoặc nền tảng tiếp thị của bạn nên được kiểm tra để đảm bảo chúng hoạt động trơn tru
+73. Chọn www so với no-www và đảm bảo rằng CHỈ một trong số chúng hoạt động để đảm bảo bạn không bị phạt vì nội dung trùng lặp. Sau khi chọn một, hãy đảm bảo rằng một chuyển hướng đến một.
+74. Kiểm tra trên nhiều trình duyệt bằng cách sử dụng ảnh chụp trình duyệt hoặc trình duyệt
+75. Đảm bảo rằng bạn đang sử dụng thẻ meta chế độ xem: <meta name = ”viewport” content = ”initial-scale = 1 ″>
+76. Kiểm tra xem Google có xem trang của bạn là Thân thiện với thiết bị di động hay không. Bạn đã khắc phục hầu hết các sự cố Google Mobile Insights tại đây
+77. Sử dụng các loại đầu vào chính xác cho các trường biểu mẫu nhập email, điện thoại và URL để đảm bảo các trường này được hiển thị chính xác trên điện thoại di động
+78. Kiểm tra giao diện của trang web trên các trình giả lập như ipad, screenfly, mobilephonesimulator.
+79. Kiểm tra trang web bằng các thiết bị thực mà bạn có thể truy cập hoặc sử dụng opendevicelab.com
+80. Gửi trang web đã hoàn thành cho khách hàng của bạn và nhận phản hồi
+81. Sửa chữa và thay đổi bất kỳ yêu cầu nào của khách hàng
+82. Gửi các bản cập nhật cho khách hàng và đợi khách hàng đăng xuất
+
+83. Đăng ký và xác minh trang web với Google WebMasters hay còn gọi là Google Search Console
+84. Tạo thuộc tính mới và triển khai mã Google Analytics.
+85. Đảm bảo bạn liên kết Quản trị viên web của Google và Google Analytics để có thể nhận được thông tin chi tiết tốt hơn từ bên trong Google Analytics
+86. Loại trừ các địa chỉ IP có liên quan (chẳng hạn như IP văn phòng) khỏi theo dõi phân tích để đảm bảo công ty của chính bạn và công ty của khách hàng không tăng số lần truy cập trang web của họ
+87. Thiết lập bất kỳ kênh, mục tiêu hoặc sự kiện theo dõi nào đã được tạo đúng cách trong phần mềm phân tích của bạn
+88. Triển khai phần mềm theo dõi khách truy cập như HotJar, CrazyEgg hoặc Optimizely
+89. Triển khai bất kỳ trình giám sát thời gian hoạt động nào của trang web chẳng hạn như Pingdom
+90. Thực hiện dịch vụ sao lưu trang web khi cần thiết và đảm bảo trang web được bảo mật hoàn toàn, để nó được bảo vệ tốt khỏi tin tặc và bạn không phải là nạn nhân của việc hack trang web WordPress.
+91. Ký gửi các sản phẩm được giao và lập hóa đơn cho khách hàng của bạn 🙂
+92. Kiểm tra để đảm bảo rằng tất cả các trang có tiêu đề trang duy nhất (với độ dài được khuyến nghị dưới 70 ký tự, bao gồm bất kỳ từ khóa nào).
+93. Kiểm tra xem tất cả các trang có mô tả meta duy nhất (với độ dài được khuyến nghị dưới 156 ký tự, bao gồm từ khóa) - mô tả meta phải thân thiện với con người - không được tối ưu hóa cho các công cụ tìm kiếm. Hãy nghĩ về nó theo cách này: “Nếu bạn muốn sử dụng 156 ký tự để mô tả chính xác nội dung bài viết đó, bạn sẽ nói gì?”
+94. Xác minh rằng các trang có bao gồm các từ khóa bạn đã chọn mà không có bất kỳ từ khóa nào bị nhồi nhét (không nhấn mạnh quá mức các từ khóa cụ thể)
+95. Hãy xem tất cả các trang đều có siêu dữ liệu được đặt đúng vị trí (đúng chính tả và ngữ pháp) cho bất kỳ nội dung nào bạn muốn được chia sẻ qua Mạng xã hội
+96. Đảm bảo rằng các thẻ Alt có liên quan đã được thêm vào mọi hình ảnh.
+97. Đảm bảo rằng một sơ đồ trang XML động (được cập nhật với mọi bài đăng của bạn) đã được tạo và xác minh rằng sơ đồ trang XML đã được gửi đến các công cụ tìm kiếm thông qua Google WebMasters.
+98. Đảm bảo rằng Google có thể đọc nó một cách chính xác.
+99. Gửi cho Bing và có thể cả Yandex WebMasters nữa.
+100. Thấy rằng tất cả các URL của trang đều phản ánh kiến ​​trúc thông tin trang web một cách nhất quán.
+101. Nếu bạn đã có một trang web khác cũ hơn, hãy đảm bảo rằng bạn có chuyển hướng 301 cho tất cả các URL cũ (chuyển hướng các trang cũ sang trang mới).
+102. Khi cần thiết, hãy đảm bảo rằng các thẻ rel = ”nofollow” được đặt trên các liên kết và trang hiện hành.
+103. Sử dụng trình tạo giản đồ để chèn Vi dữ liệu vào các trang của bạn (hoặc gắn thẻ nội dung của bạn trong Công cụ đánh dấu dữ liệu quản trị trang web của google)
+104. Kiểm tra ngữ nghĩa của trang web của bạn bằng cách sử dụng
+105. Cố gắng đạt được điểm Tốc độ trang trên 90+ - hướng dẫn Thông tin chi tiết về tốc độ trang này từ Kinsta chắc chắn sẽ hữu ích.
+106. Giảm thiểu javascript của bạn
+107. Giảm thiểu CSS của bạn
+108. Thêm tiêu đề Expires - Tận dụng bộ nhớ đệm của trình duyệt để đảm bảo rằng các tệp không thường xuyên thay đổi sẽ được tìm nạp từ bộ nhớ cache của trình duyệt thay vì tải xuống lại
+109. Đảm bảo điểm Yslow là 85+
+110. Tối ưu hóa kích thước hình ảnh bằng Y! Smush.It và thay thế các hình ảnh hiện có bằng các hình ảnh được tối ưu hóa
+111. Chỉ định kích thước hình ảnh cho mỗi hình ảnh
+112. Bật tính năng nén gzip trên máy chủ lưu trữ của bạn
+113. Đảm bảo không có yêu cầu xấu, chẳng hạn như hình ảnh hoặc tệp bị thiếu
+114. Kết hợp hình ảnh bằng CSS Sprites (sử dụng SpriteMe.org để giúp bạn tạo hình ảnh sprite)
+115. Giảm số lượng yêu cầu HTTP bằng cách kết hợp các tệp CSS và JS thành ít tệp nhất có thể
+116. Kiểm tra tính tương thích của HTML5 bằng cách sử dụng modernizr và Compat Inspector
+117. Tạo trình tạo Favicon cho mỗi nền tảng tại đây
+118. Kích hoạt URL thân thiện với người dùng và công cụ tìm kiếm
+119. Thiết lập bảng định kiểu in
+120. Kiểm tra Thông tin chi tiết về đối tượng của Facebook để xem mọi người đang tương tác với trang web của bạn trên Facebook như thế nào
+(Cập nhật: Facebook không còn chấp nhận các ứng dụng Facebook Domain Insights)
+121. Liên kết trang web của bạn với trang Google+ Thương hiệu của bạn qua các hướng dẫn được tìm thấy tại đây
+122. Thêm people.txt
+123. Tạo ảnh bìa mới cho các Phương tiện truyền thông xã hội khác mà bạn sử dụng như Facebook, Twitter, trang công ty LinkedIn, Pinterest, Instagram hoặc những người khác nếu cần
+124. Gửi trang web đã hoàn thành cho khách hàng của bạn và nhận phản hồi
+125. Sửa chữa và thay đổi bất kỳ yêu cầu nào của khách hàng
+126. Cấp cho khách hàng quyền truy cập vào tất cả các tài khoản được tạo thay mặt cho họ
+127. Gửi các bản cập nhật cho khách hàng và đợi khách hàng đăng xuất
+128. Đóng dự án
