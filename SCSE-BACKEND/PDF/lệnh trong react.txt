@@ -1,0 +1,4 @@
+npm install --save axios
+npm install --save reactstrap react react-dom
+npm install react-router-dom --save
+npm install @material-ui/core
