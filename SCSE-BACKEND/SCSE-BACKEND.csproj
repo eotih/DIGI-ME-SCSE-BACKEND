@@ -218,6 +218,9 @@
     </Compile>
     <Compile Include="Models\DocumentGallery1.cs" />
     <Compile Include="Models\EmailClass.cs" />
+    <Compile Include="Models\Field.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\FilePDF.cs" />
     <Compile Include="Models\ImgPortfolio.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
@@ -228,6 +231,14 @@
     <Compile Include="Models\LoginRole.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\NewsEN.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsEN1.cs" />
+    <Compile Include="Models\NewsVN.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsVN1.cs" />
     <Compile Include="Models\Notification.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
@@ -273,13 +284,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SCSE.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SlugNew.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\State.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\State1.cs" />
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>SCSE.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TokenManager.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\UserResponse.cs" />

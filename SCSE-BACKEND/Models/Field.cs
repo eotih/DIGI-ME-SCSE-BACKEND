@@ -12,15 +12,9 @@ namespace SCSE_BACKEND.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LoginRole
+    public partial class Field
     {
-        public int IDUser { get; set; }
-        public string FullName { get; set; }
-        public string RoleName { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public Nullable<System.DateTime> CreatedByDate { get; set; }
-        public int IDState { get; set; }
+        public int IdField { get; set; }
+        public string FieldName { get; set; }
     }
 }

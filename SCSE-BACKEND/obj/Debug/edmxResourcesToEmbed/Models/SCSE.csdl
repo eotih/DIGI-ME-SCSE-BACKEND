@@ -78,6 +78,13 @@
     <Property Name="NamePDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Iframe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
+  <EntityType Name="Field">
+    <Key>
+      <PropertyRef Name="IdField" />
+    </Key>
+    <Property Name="IdField" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FieldName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="ImgPortfolio">
     <Key>
       <PropertyRef Name="ID" />
@@ -85,6 +92,36 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDImg" Type="Int32" Nullable="false" />
     <Property Name="ImagePortfolio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsEN">
+    <Key>
+      <PropertyRef Name="IDNewsEN" />
+    </Key>
+    <Property Name="IDNewsEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdField" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SlugEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDState" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsVN">
+    <Key>
+      <PropertyRef Name="IDNews" />
+    </Key>
+    <Property Name="IDNews" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdField" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDState" Type="Int32" />
   </EntityType>
   <EntityType Name="Notification">
     <Key>
@@ -110,6 +147,18 @@
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PhotoGallery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCat" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Portfolio">
     <Key>
@@ -151,18 +200,6 @@
     <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IDState" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="PhotoGallery">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDCat" Type="Int32" Nullable="false" />
-    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
-    <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
-  </EntityType>
   <EntityType Name="Role">
     <Key>
       <PropertyRef Name="IDRole" />
@@ -176,16 +213,6 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="VideoGallery">
     <Key>
@@ -218,15 +245,27 @@
   <EntityType Name="LoginRole">
     <Key>
       <PropertyRef Name="IDUser" />
+      <PropertyRef Name="FullName" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="IDState" />
     </Key>
     <Property Name="IDUser" Type="Int32" Nullable="false" />
-    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
-    <Property Name="IDState" Type="Int32" />
+    <Property Name="IDState" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SlugNew">
+    <Key>
+      <PropertyRef Name="Slug" />
+    </Key>
+    <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityContainer Name="SCSE_DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounts" EntityType="Self.Account" />
@@ -236,18 +275,21 @@
     <EntitySet Name="Contacts" EntityType="Self.Contact" />
     <EntitySet Name="Documents" EntityType="Self.Document" />
     <EntitySet Name="DocumentGalleries" EntityType="Self.DocumentGallery" />
+    <EntitySet Name="Fields" EntityType="Self.Field" />
     <EntitySet Name="ImgPortfolios" EntityType="Self.ImgPortfolio" />
+    <EntitySet Name="NewsENs" EntityType="Self.NewsEN" />
+    <EntitySet Name="NewsVNs" EntityType="Self.NewsVN" />
     <EntitySet Name="Notifications" EntityType="Self.Notification" />
     <EntitySet Name="Partners" EntityType="Self.Partner" />
+    <EntitySet Name="PhotoGalleries" EntityType="Self.PhotoGallery" />
     <EntitySet Name="Portfolios" EntityType="Self.Portfolio" />
     <EntitySet Name="Posts" EntityType="Self.Post" />
     <EntitySet Name="PostsENs" EntityType="Self.PostsEN" />
-    <EntitySet Name="PhotoGalleries" EntityType="Self.PhotoGallery" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="States" EntityType="Self.State" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="VideoGalleries" EntityType="Self.VideoGallery" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
     <EntitySet Name="LoginRoles" EntityType="Self.LoginRole" />
+    <EntitySet Name="SlugNews" EntityType="Self.SlugNew" />
   </EntityContainer>
 </Schema>

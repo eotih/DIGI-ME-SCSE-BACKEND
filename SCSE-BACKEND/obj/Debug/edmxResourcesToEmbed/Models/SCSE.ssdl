@@ -78,6 +78,13 @@
     <Property Name="NamePDF" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Iframe" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="Field">
+    <Key>
+      <PropertyRef Name="IdField" />
+    </Key>
+    <Property Name="IdField" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FieldName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="ImgPortfolio">
     <Key>
       <PropertyRef Name="ID" />
@@ -85,6 +92,36 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDImg" Type="int" Nullable="false" />
     <Property Name="ImagePortfolio" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsEN">
+    <Key>
+      <PropertyRef Name="IDNewsEN" />
+    </Key>
+    <Property Name="IDNewsEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdField" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SlugEN" Type="nvarchar(max)" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsVN">
+    <Key>
+      <PropertyRef Name="IDNews" />
+    </Key>
+    <Property Name="IDNews" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdField" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDState" Type="int" />
   </EntityType>
   <EntityType Name="Notification">
     <Key>
@@ -110,6 +147,18 @@
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Link" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PhotoGallery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
   </EntityType>
   <EntityType Name="Portfolio">
     <Key>
@@ -151,18 +200,6 @@
     <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="PhotoGallery">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDCat" Type="int" Nullable="false" />
-    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Image" Type="nvarchar(max)" />
-    <Property Name="CreatedByDate" Type="date" />
-    <Property Name="UpdatedByDate" Type="date" />
-  </EntityType>
   <EntityType Name="Role">
     <Key>
       <PropertyRef Name="IDRole" />
@@ -176,16 +213,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StateName" Type="nvarchar" MaxLength="100" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="VideoGallery">
     <Key>
@@ -220,15 +247,29 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
   <EntityType Name="LoginRole">
     <Key>
       <PropertyRef Name="IDUser" />
+      <PropertyRef Name="FullName" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="IDState" />
     </Key>
     <Property Name="IDUser" Type="int" Nullable="false" />
-    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
-    <Property Name="RoleName" Type="nvarchar(max)" />
-    <Property Name="Username" Type="nvarchar" MaxLength="50" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CreatedByDate" Type="date" />
-    <Property Name="IDState" Type="int" />
+    <Property Name="IDState" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SlugNews">
+    <Key>
+      <PropertyRef Name="Slug" />
+    </Key>
+    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityContainer Name="SCSE_DBModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
@@ -238,16 +279,18 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DocumentGallery" EntityType="Self.DocumentGallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Field" EntityType="Self.Field" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ImgPortfolio" EntityType="Self.ImgPortfolio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsEN" EntityType="Self.NewsEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsVN" EntityType="Self.NewsVN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhotoGallery" EntityType="Self.PhotoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PostsEN" EntityType="Self.PostsEN" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PhotoGallery" EntityType="Self.PhotoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VideoGallery" EntityType="Self.VideoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoginRole" EntityType="Self.LoginRole" store:Type="Views" store:Schema="dbo">
@@ -261,6 +304,11 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
     [LoginRole].[CreatedByDate] AS [CreatedByDate], 
     [LoginRole].[IDState] AS [IDState]
     FROM [dbo].[LoginRole] AS [LoginRole]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SlugNews" EntityType="Self.SlugNews" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SlugNews].[Slug] AS [Slug]
+    FROM [dbo].[SlugNews] AS [SlugNews]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

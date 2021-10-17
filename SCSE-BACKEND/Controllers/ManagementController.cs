@@ -484,5 +484,316 @@ namespace SCSE_BACKEND.Controllers
             return obj;
         }
 
+        //TIN TỨC
+        [Route("AddOrEditNewsVN")]
+        [HttpPost]
+        public object AddOrEditNewsVN(NewsVN1 newsVN1)
+        {
+            if (newsVN1.IDNews == 0)
+            {
+                NewsVN newsVN = new NewsVN
+                {
+                    IdField = newsVN1.IdField,
+                    Title = newsVN1.Title,
+                    Slug = Utils.ReplaceSpecialChars(newsVN1.Title),
+                    Details = newsVN1.Details,
+                    Image = newsVN1.Image,
+                    IDState = 1,
+                    Author = newsVN1.Author,
+                    CreatedByDate = DateTime.Now
+                };
+                db.NewsVNs.Add(newsVN);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data Success"
+                };
+            }
+            else
+            {
+                var obj = db.NewsVNs.Where(x => x.IDNews == newsVN1.IDNews).ToList().FirstOrDefault();
+                if (obj.IDNews > 0)
+                {
+                    obj.IdField = newsVN1.IdField;
+                    obj.Title = newsVN1.Title;
+                    obj.Slug = Utils.ReplaceSpecialChars(newsVN1.Title);
+                    obj.Details = newsVN1.Details;
+                    obj.Image = newsVN1.Image;
+                    obj.IDState = newsVN1.IDState;
+                    obj.Author = newsVN1.Author;
+                    obj.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
+
+        [Route("EditStateNewsVN")]
+        [HttpPost]
+        public object EditStateNewsVN(NewsVN1 new1)
+        {
+            var obj = db.NewsVNs.Where(x => x.IDNews == new1.IDNews).FirstOrDefault();
+            if (obj.IDNews > 0)
+            {
+                obj.IDState = new1.IDState;
+                obj.UpdatedByDate = DateTime.Now;
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Updated",
+                    Message = "Updated Successfully"
+                };
+            }
+            return new Response
+            {
+                Status = "Fail",
+                Message = "Updated Fail"
+            };
+        }
+        // Xem danh sách tin tức
+        [Route("ShowAllNewsVN")]
+        [HttpGet]
+        public object ShowAllNewsVN()
+        {
+            var NEWS = (from newsvn in db.NewsVNs
+                        from field in db.Fields
+                        where field.IdField == newsvn.IdField
+
+                        select new
+                        {
+                            newsvn.IDNews,
+                            newsvn.IdField,
+                            newsvn.Title,
+                            newsvn.Slug,
+                            newsvn.Details,
+                            newsvn.Image,
+                            newsvn.CreatedByDate,
+                            newsvn.Author,
+                            newsvn.IDState,
+                            field.FieldName
+                        }).ToList();
+            return NEWS;
+        }
+        // Xóa tin tức
+        [Route("DeleteNewsVN")]
+        [HttpDelete]
+        public object DeleteNewsVN(int ID)
+        {
+            var obj = db.NewsVNs.Where(x => x.IDNews == ID).FirstOrDefault();
+            db.NewsVNs.Remove(obj);
+            db.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
+        }
+
+        [Route("GetByStateNewsVN")]
+        [HttpGet]
+        public object GetByStateNewsVN(int IdState)
+        {
+            var list = db.NewsVNs.Where(x => x.IDState == IdState).ToList();
+            return list;
+        }
+        // getbyID bài viết
+        [Route("GetBySlugNewsVN")]
+        [HttpGet]
+        public object GetBySlugNewsVN(string slug)
+        {
+            var obj = db.NewsVNs.Where(x => x.Slug == slug).FirstOrDefault();
+            return obj;
+        }
+        // getbyID the loai
+        [Route("GetByIdField")]
+        [HttpGet]
+        public object GetByIdField(int IdField)
+        {
+            var obj = db.NewsVNs.Where(x => x.IdField == IdField).ToList();
+            return obj;
+        }
+
+        [Route("AddNewsEN")]
+        [HttpPost]
+        public object AddNewsEN(NewsEN1 newsEN1)
+        {
+            try
+            {
+                NewsEN newsEN = new NewsEN
+                {
+                    IDNewsEN = newsEN1.IDNewsEN,
+                    IdField = newsEN1.IDField,
+                    Title = newsEN1.Title,
+                    SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title),
+                    Details = newsEN1.Details,
+                    Image = newsEN1.Image,
+                    IDState = 1,
+                    Author = newsEN1.Author,
+                    CreatedByDate = DateTime.Now,
+
+                };
+                db.NewsENs.Add(newsEN);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data Success"
+                };
+            }
+            catch
+            {
+                return new Response
+                {
+                    Status = "Fail",
+                    Message = "Data Fail"
+                };
+            }
+        }
+        [Route("EditNewsEN")]
+        [HttpPost]
+        public object EditNewsEN(NewsEN1 newsEN1)
+        {
+            var obj = db.NewsENs.Where(x => x.IDNewsEN == newsEN1.IDNewsEN).FirstOrDefault();
+            if (obj.IDNewsEN > 0)
+            {
+                obj.IdField = newsEN1.IDField;
+                obj.Title = newsEN1.Title;
+                obj.SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title);
+                obj.Details = newsEN1.Details;
+                obj.Image = newsEN1.Image;
+                obj.IDState = newsEN1.IDState;
+                obj.Author = newsEN1.Author;
+                obj.UpdatedByDate = DateTime.Now;
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Updated",
+                    Message = "Updated Successfully"
+                };
+            }
+            return new Response
+            {
+                Status = "Fail",
+                Message = "Updated Fail"
+            };
+        }
+        // Xem danh sách tin tức tiếng anh
+        [Route("ShowAllNewsEN")]
+        [HttpGet]
+        public object ShowAllNewsEN()
+        {
+            var a = (from newsEN in db.NewsENs
+                     from field in db.Fields
+                     where field.IdField == newsEN.IdField
+
+                     select new
+                     {
+                         newsEN.IDNewsEN,
+                         newsEN.IdField,
+                         newsEN.Title,
+                         newsEN.SlugEN,
+                         newsEN.Details,
+                         newsEN.Image,
+                         newsEN.CreatedByDate,
+                         newsEN.Author,
+                         newsEN.IDState,
+                         field.FieldName
+                     }).ToList();
+            return a;
+        }
+        [Route("EditStateNewsEN")]
+        [HttpPost]
+        public object EditStateNewsEN(NewsEN1 newsEN1)
+        {
+            var obj = db.NewsENs.Where(x => x.IDNewsEN == newsEN1.IDNewsEN).FirstOrDefault();
+            if (obj.IDNewsEN > 0)
+            {
+                obj.IDState = newsEN1.IDState;
+                obj.UpdatedByDate = DateTime.Now;
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Updated",
+                    Message = "Updated Successfully"
+                };
+            }
+            return new Response
+            {
+                Status = "Fail",
+                Message = "Updated Fail"
+            };
+        }
+        // Xóa tin tức
+        [Route("DeleteNewsEN")]
+        [HttpDelete]
+        public object DeleteNewsEN(int ID)
+        {
+            var obj = db.NewsENs.Where(x => x.IDNewsEN == ID).FirstOrDefault();
+            db.NewsENs.Remove(obj);
+            db.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
+        }
+
+        [Route("GetByStateNewsEN")]
+        [HttpGet]
+        public object GetByStateNewsEN(int IdStateEN)
+        {
+            var listEN = db.NewsENs.Where(x => x.IDState == IdStateEN).ToList();
+            return listEN;
+        }
+        // getbyID tin tức
+        [Route("GetBySlugNewsEN")]
+        [HttpGet]
+        public object GetBySlugNewsEN(string slugEN)
+        {
+            var obj = db.NewsENs.Where(x => x.SlugEN == slugEN).FirstOrDefault();
+            return obj;
+        }
+        // getbyID the loai
+        [Route("GetByIdFieldEN")]
+        [HttpGet]
+        public object GetByIdFieldEN(int IDField)
+        {
+            var obj = db.NewsENs.Where(x => x.IdField == IDField).ToList();
+            return obj;
+        }
+
+        [Route("GetMultiLanguesSlugNews")]
+        [HttpGet]
+        public object GetMultiLanguesSlugNEW()
+        {
+            var a = (from newsEN in db.NewsENs
+                     from newsVN in db.NewsVNs
+                     from field in db.Fields
+                     where newsVN.IDNews == newsEN.IDNewsEN
+                     select new
+                     {
+                         newsEN.SlugEN,
+                         newsVN.Slug
+                     }
+                     ).FirstOrDefault();
+            return a;
+        }
+        [Route("ListNewsNotVersionEN")]
+        [HttpGet]
+        public object ListNewsNotVersionEN()
+        {
+            var a = db.SlugNews.ToList();
+            return a;
+        }
     }
 }

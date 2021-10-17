@@ -12,15 +12,17 @@ namespace SCSE_BACKEND.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LoginRole
+    public partial class NewsVN
     {
-        public int IDUser { get; set; }
-        public string FullName { get; set; }
-        public string RoleName { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        public int IDNews { get; set; }
+        public int IdField { get; set; }
+        public string Title { get; set; }
+        public string Slug { get; set; }
+        public string Details { get; set; }
+        public string Image { get; set; }
         public Nullable<System.DateTime> CreatedByDate { get; set; }
-        public int IDState { get; set; }
+        public Nullable<System.DateTime> UpdatedByDate { get; set; }
+        public string Author { get; set; }
+        public Nullable<int> IDState { get; set; }
     }
 }
