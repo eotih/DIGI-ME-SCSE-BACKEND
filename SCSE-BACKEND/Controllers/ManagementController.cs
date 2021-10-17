@@ -322,20 +322,7 @@ namespace SCSE_BACKEND.Controllers
         [HttpGet]
         public object ShowAllPostENNeedPost()
         {
-            var a = (from PostsEN in db.PostsENs
-                     from Posts in db.Posts
-                     where Posts.IDPost != PostsEN.IDPostEN
-                     select new
-                     {
-                         Posts.IDPost,
-                         Posts.Title,
-                         Posts.Slug,
-                         Posts.IDCat,
-                         Posts.Details,
-                         Posts.Image,
-                         Posts.Author
-                     }
-                     ).ToList();
+            var a = db.PostsforENs.ToList();
             return a;
         }
         //---Đăng kí internship or Volunteers
@@ -632,7 +619,7 @@ namespace SCSE_BACKEND.Controllers
                 NewsEN newsEN = new NewsEN
                 {
                     IDNewsEN = newsEN1.IDNewsEN,
-                    IdField = newsEN1.IDField,
+                    IdField = newsEN1.IdField,
                     Title = newsEN1.Title,
                     SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title),
                     Details = newsEN1.Details,
@@ -666,7 +653,7 @@ namespace SCSE_BACKEND.Controllers
             var obj = db.NewsENs.Where(x => x.IDNewsEN == newsEN1.IDNewsEN).FirstOrDefault();
             if (obj.IDNewsEN > 0)
             {
-                obj.IdField = newsEN1.IDField;
+                obj.IdField = newsEN1.IdField;
                 obj.Title = newsEN1.Title;
                 obj.SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title);
                 obj.Details = newsEN1.Details;
@@ -792,8 +779,29 @@ namespace SCSE_BACKEND.Controllers
         [HttpGet]
         public object ListNewsNotVersionEN()
         {
-            var a = db.SlugNews.ToList();
+            var a = db.NewsVNforENs.ToList();
             return a;
+        }
+
+        [Route("ListImageTitle")]
+        [HttpGet]
+        public object ListImageTitle()
+        {
+            PhotoGallery[] photo = db.PhotoGalleries.ToArray();
+            List<object> listImageTitle = new List<object>();
+            for (int i = 1; i < photo.Count(); i++)
+            {
+                if (photo[i].Slug != photo[i - 1].Slug)
+                {
+                    listImageTitle.Add(photo[i - 1]);
+                }
+                else if (i == photo.Count() - 1)
+                {
+                    listImageTitle.Add(photo[i]);
+                }
+
+            }
+            return listImageTitle;
         }
     }
 }

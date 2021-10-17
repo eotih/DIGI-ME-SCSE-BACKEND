@@ -16,6 +16,6 @@ namespace SCSE_BACKEND.Models
         public Nullable<System.DateTime> CreatedByDate { get; set; }
         public Nullable<System.DateTime> UpdatedByDate { get; set; }
         public string Author { get; set; }
-        public Nullable<int> IDState { get; set; }
+        public int IDState { get; set; }
     }
 }

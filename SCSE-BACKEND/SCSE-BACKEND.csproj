@@ -239,6 +239,9 @@
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NewsVN1.cs" />
+    <Compile Include="Models\NewsVNforEN.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Notification.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
@@ -263,6 +266,9 @@
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PostsEN1.cs" />
+    <Compile Include="Models\PostsforEN.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\ResponseVM.cs" />
     <Compile Include="Models\Role.cs">
@@ -283,9 +289,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SCSE.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SlugNew.cs">
-      <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\State.cs">
       <DependentUpon>SCSE.tt</DependentUpon>

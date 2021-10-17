@@ -12,7 +12,7 @@ namespace SCSE_BACKEND.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NewsVN
+    public partial class NewsVNforEN
     {
         public int IDNews { get; set; }
         public int IdField { get; set; }
@@ -23,6 +23,6 @@ namespace SCSE_BACKEND.Models
         public Nullable<System.DateTime> CreatedByDate { get; set; }
         public Nullable<System.DateTime> UpdatedByDate { get; set; }
         public string Author { get; set; }
-        public int IDState { get; set; }
+        public Nullable<int> IDState { get; set; }
     }
 }

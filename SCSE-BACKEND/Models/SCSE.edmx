@@ -105,12 +105,12 @@
           <Property Name="IDNewsEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdField" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="SlugEN" Type="nvarchar(max)" />
+          <Property Name="SlugEN" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CreatedByDate" Type="date" />
           <Property Name="UpdatedByDate" Type="date" />
-          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IDState" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="NewsVN">
@@ -122,11 +122,11 @@
           <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CreatedByDate" Type="date" />
           <Property Name="UpdatedByDate" Type="date" />
-          <Property Name="Author" Type="nvarchar" MaxLength="50" />
-          <Property Name="IDState" Type="int" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDState" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Notification">
           <Key>
@@ -269,12 +269,49 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
           <Property Name="IDState" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="SlugNews">
+warning 6002: The table/view 'SCSE_DB.dbo.NewsVNforEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NewsVNforEN">
           <Key>
+            <PropertyRef Name="IDNews" />
+            <PropertyRef Name="IdField" />
+            <PropertyRef Name="Title" />
             <PropertyRef Name="Slug" />
+            <PropertyRef Name="Details" />
           </Key>
+          <Property Name="IDNews" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdField" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="CreatedByDate" Type="date" />
+          <Property Name="UpdatedByDate" Type="date" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDState" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PostsforEN">
+          <Key>
+            <PropertyRef Name="IDPost" />
+            <PropertyRef Name="IDCat" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Slug" />
+            <PropertyRef Name="Details" />
+            <PropertyRef Name="Image" />
+            <PropertyRef Name="Author" />
+            <PropertyRef Name="IDState" />
+          </Key>
+          <Property Name="IDPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCat" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedByDate" Type="date" />
+          <Property Name="UpdatedByDate" Type="date" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDState" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="SCSE_DBModelStoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
@@ -310,10 +347,33 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
     [LoginRole].[IDState] AS [IDState]
     FROM [dbo].[LoginRole] AS [LoginRole]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="SlugNews" EntityType="Self.SlugNews" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="NewsVNforEN" EntityType="Self.NewsVNforEN" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [SlugNews].[Slug] AS [Slug]
-    FROM [dbo].[SlugNews] AS [SlugNews]</DefiningQuery>
+    [NewsVNforEN].[IDNews] AS [IDNews], 
+    [NewsVNforEN].[IdField] AS [IdField], 
+    [NewsVNforEN].[Title] AS [Title], 
+    [NewsVNforEN].[Slug] AS [Slug], 
+    [NewsVNforEN].[Details] AS [Details], 
+    [NewsVNforEN].[Image] AS [Image], 
+    [NewsVNforEN].[CreatedByDate] AS [CreatedByDate], 
+    [NewsVNforEN].[UpdatedByDate] AS [UpdatedByDate], 
+    [NewsVNforEN].[Author] AS [Author], 
+    [NewsVNforEN].[IDState] AS [IDState]
+    FROM [dbo].[NewsVNforEN] AS [NewsVNforEN]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PostsforEN" EntityType="Self.PostsforEN" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PostsforEN].[IDPost] AS [IDPost], 
+    [PostsforEN].[IDCat] AS [IDCat], 
+    [PostsforEN].[Title] AS [Title], 
+    [PostsforEN].[Slug] AS [Slug], 
+    [PostsforEN].[Details] AS [Details], 
+    [PostsforEN].[Image] AS [Image], 
+    [PostsforEN].[CreatedByDate] AS [CreatedByDate], 
+    [PostsforEN].[UpdatedByDate] AS [UpdatedByDate], 
+    [PostsforEN].[Author] AS [Author], 
+    [PostsforEN].[IDState] AS [IDState]
+    FROM [dbo].[PostsforEN] AS [PostsforEN]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema>
@@ -421,12 +481,12 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
           <Property Name="IDNewsEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdField" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SlugEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SlugEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
           <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
-          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDState" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="NewsVN">
@@ -438,11 +498,11 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
           <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
-          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IDState" Type="Int32" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDState" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Notification">
           <Key>
@@ -582,11 +642,46 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
           <Property Name="IDState" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="SlugNew">
+        <EntityType Name="NewsVNforEN">
           <Key>
+            <PropertyRef Name="IDNews" />
+            <PropertyRef Name="IdField" />
+            <PropertyRef Name="Title" />
             <PropertyRef Name="Slug" />
+            <PropertyRef Name="Details" />
           </Key>
+          <Property Name="IDNews" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdField" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDState" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PostsforEN">
+          <Key>
+            <PropertyRef Name="IDPost" />
+            <PropertyRef Name="IDCat" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Slug" />
+            <PropertyRef Name="Details" />
+            <PropertyRef Name="Image" />
+            <PropertyRef Name="Author" />
+            <PropertyRef Name="IDState" />
+          </Key>
+          <Property Name="IDPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCat" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDState" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="SCSE_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
@@ -611,7 +706,8 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
           <EntitySet Name="VideoGalleries" EntityType="Self.VideoGallery" />
           <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
           <EntitySet Name="LoginRoles" EntityType="Self.LoginRole" />
-          <EntitySet Name="SlugNews" EntityType="Self.SlugNew" />
+          <EntitySet Name="NewsVNforENs" EntityType="Self.NewsVNforEN" />
+          <EntitySet Name="PostsforENs" EntityType="Self.PostsforEN" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -895,10 +991,35 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SlugNews">
-            <EntityTypeMapping TypeName="SCSE_DBModel.SlugNew">
-              <MappingFragment StoreEntitySet="SlugNews">
+          <EntitySetMapping Name="NewsVNforENs">
+            <EntityTypeMapping TypeName="SCSE_DBModel.NewsVNforEN">
+              <MappingFragment StoreEntitySet="NewsVNforEN">
+                <ScalarProperty Name="IDNews" ColumnName="IDNews" />
+                <ScalarProperty Name="IdField" ColumnName="IdField" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+                <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="IDState" ColumnName="IDState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostsforENs">
+            <EntityTypeMapping TypeName="SCSE_DBModel.PostsforEN">
+              <MappingFragment StoreEntitySet="PostsforEN">
+                <ScalarProperty Name="IDPost" ColumnName="IDPost" />
+                <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+                <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="IDState" ColumnName="IDState" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

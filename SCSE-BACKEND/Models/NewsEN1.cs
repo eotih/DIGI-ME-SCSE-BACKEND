@@ -8,7 +8,7 @@ namespace SCSE_BACKEND.Models
     public class NewsEN1
     {
         public int IDNewsEN { get; set; }
-        public int IDField { get; set; }
+        public int IdField { get; set; }
         public string Title { get; set; }
         public string SlugEN { get; set; }
         public string Details { get; set; }
