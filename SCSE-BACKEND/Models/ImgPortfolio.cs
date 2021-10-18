@@ -15,7 +15,7 @@ namespace SCSE_BACKEND.Models
     public partial class ImgPortfolio
     {
         public int ID { get; set; }
-        public int IDImg { get; set; }
+        public string FullName { get; set; }
         public string ImagePortfolio { get; set; }
     }
 }

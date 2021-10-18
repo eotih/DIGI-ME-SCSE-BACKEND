@@ -12,10 +12,10 @@ namespace SCSE_BACKEND.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BankInformation
+    public partial class ImageForPortfolio
     {
         public int ID { get; set; }
-        public string ImageQR { get; set; }
-        public string BankName { get; set; }
+        public string FullName { get; set; }
+        public string ImagePortfolio { get; set; }
     }
 }

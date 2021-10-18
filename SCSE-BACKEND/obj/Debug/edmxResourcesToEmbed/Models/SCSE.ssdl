@@ -19,10 +19,8 @@
   <EntityType Name="BankInformation">
     <Key>
       <PropertyRef Name="ID" />
-      <PropertyRef Name="IDBank" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDBank" Type="int" Nullable="false" />
     <Property Name="ImageQR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BankName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
@@ -90,7 +88,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDImg" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="ImagePortfolio" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="NewsEN">
@@ -100,12 +98,12 @@
     <Property Name="IDNewsEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdField" Type="int" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="SlugEN" Type="nvarchar(max)" />
+    <Property Name="SlugEN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CreatedByDate" Type="date" />
     <Property Name="UpdatedByDate" Type="date" />
-    <Property Name="Author" Type="nvarchar" MaxLength="50" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="NewsVN">
@@ -117,11 +115,11 @@
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CreatedByDate" Type="date" />
     <Property Name="UpdatedByDate" Type="date" />
-    <Property Name="Author" Type="nvarchar" MaxLength="50" />
-    <Property Name="IDState" Type="int" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Notification">
     <Key>
@@ -148,25 +146,12 @@
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Link" Type="nvarchar(max)" />
   </EntityType>
-  <EntityType Name="PhotoGallery">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDCat" Type="int" Nullable="false" />
-    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Image" Type="nvarchar(max)" />
-    <Property Name="CreatedByDate" Type="date" />
-    <Property Name="UpdatedByDate" Type="date" />
-  </EntityType>
   <EntityType Name="Portfolio">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="IDImg" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
@@ -199,6 +184,18 @@
     <Property Name="UpdatedByDate" Type="date" />
     <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IDState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhotoGallery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -243,6 +240,18 @@
     <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'SCSE_DB.dbo.ImageForPortfolio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ImageForPortfolio">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FullName" />
+      <PropertyRef Name="ImagePortfolio" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ImagePortfolio" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="LoginRole">
     <Key>
@@ -264,12 +273,52 @@ warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key
     <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="SlugNews">
+warning 6002: The table/view 'SCSE_DB.dbo.NewsVNforEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NewsVNforEN">
     <Key>
+      <PropertyRef Name="IDNews" />
+      <PropertyRef Name="IdField" />
+      <PropertyRef Name="Title" />
       <PropertyRef Name="Slug" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="Image" />
+      <PropertyRef Name="Author" />
+      <PropertyRef Name="IDState" />
     </Key>
+    <Property Name="IDNews" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdField" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDState" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PostsforEN">
+    <Key>
+      <PropertyRef Name="IDPost" />
+      <PropertyRef Name="IDCat" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Slug" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="Image" />
+      <PropertyRef Name="Author" />
+      <PropertyRef Name="IDState" />
+    </Key>
+    <Property Name="IDPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
   <EntityContainer Name="SCSE_DBModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
@@ -285,14 +334,21 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
     <EntitySet Name="NewsVN" EntityType="Self.NewsVN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PhotoGallery" EntityType="Self.PhotoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PostsEN" EntityType="Self.PostsEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhotoGallery" EntityType="Self.PhotoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VideoGallery" EntityType="Self.VideoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageForPortfolio" EntityType="Self.ImageForPortfolio" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ImageForPortfolio].[ID] AS [ID], 
+    [ImageForPortfolio].[FullName] AS [FullName], 
+    [ImageForPortfolio].[ImagePortfolio] AS [ImagePortfolio]
+    FROM [dbo].[ImageForPortfolio] AS [ImageForPortfolio]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="LoginRole" EntityType="Self.LoginRole" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [LoginRole].[IDUser] AS [IDUser], 
@@ -305,10 +361,33 @@ warning 6002: The table/view 'SCSE_DB.dbo.SlugNews' does not have a primary key 
     [LoginRole].[IDState] AS [IDState]
     FROM [dbo].[LoginRole] AS [LoginRole]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="SlugNews" EntityType="Self.SlugNews" store:Type="Views" store:Schema="dbo">
+    <EntitySet Name="NewsVNforEN" EntityType="Self.NewsVNforEN" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
-    [SlugNews].[Slug] AS [Slug]
-    FROM [dbo].[SlugNews] AS [SlugNews]</DefiningQuery>
+    [NewsVNforEN].[IDNews] AS [IDNews], 
+    [NewsVNforEN].[IdField] AS [IdField], 
+    [NewsVNforEN].[Title] AS [Title], 
+    [NewsVNforEN].[Slug] AS [Slug], 
+    [NewsVNforEN].[Details] AS [Details], 
+    [NewsVNforEN].[Image] AS [Image], 
+    [NewsVNforEN].[CreatedByDate] AS [CreatedByDate], 
+    [NewsVNforEN].[UpdatedByDate] AS [UpdatedByDate], 
+    [NewsVNforEN].[Author] AS [Author], 
+    [NewsVNforEN].[IDState] AS [IDState]
+    FROM [dbo].[NewsVNforEN] AS [NewsVNforEN]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PostsforEN" EntityType="Self.PostsforEN" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PostsforEN].[IDPost] AS [IDPost], 
+    [PostsforEN].[IDCat] AS [IDCat], 
+    [PostsforEN].[Title] AS [Title], 
+    [PostsforEN].[Slug] AS [Slug], 
+    [PostsforEN].[Details] AS [Details], 
+    [PostsforEN].[Image] AS [Image], 
+    [PostsforEN].[CreatedByDate] AS [CreatedByDate], 
+    [PostsforEN].[UpdatedByDate] AS [UpdatedByDate], 
+    [PostsforEN].[Author] AS [Author], 
+    [PostsforEN].[IDState] AS [IDState]
+    FROM [dbo].[PostsforEN] AS [PostsforEN]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

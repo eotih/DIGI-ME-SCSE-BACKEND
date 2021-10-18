@@ -207,7 +207,6 @@ namespace SCSE_BACKEND.Controllers
             var obj = db.Accounts.Where(x => x.IDState == IDState).ToList();
             return obj;
         }
-
         // getbyID tài khoản
         [Route("GetByIdAccount")]
         [HttpGet]

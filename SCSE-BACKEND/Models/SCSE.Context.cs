@@ -38,14 +38,15 @@ namespace SCSE_BACKEND.Models
         public virtual DbSet<NewsVN> NewsVNs { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<Partner> Partners { get; set; }
-        public virtual DbSet<PhotoGallery> PhotoGalleries { get; set; }
         public virtual DbSet<Portfolio> Portfolios { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<PostsEN> PostsENs { get; set; }
+        public virtual DbSet<PhotoGallery> PhotoGalleries { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<State> States { get; set; }
         public virtual DbSet<VideoGallery> VideoGalleries { get; set; }
         public virtual DbSet<Volunteer> Volunteers { get; set; }
+        public virtual DbSet<ImageForPortfolio> ImageForPortfolios { get; set; }
         public virtual DbSet<LoginRole> LoginRoles { get; set; }
         public virtual DbSet<NewsVNforEN> NewsVNforENs { get; set; }
         public virtual DbSet<PostsforEN> PostsforENs { get; set; }

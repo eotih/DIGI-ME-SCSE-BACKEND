@@ -22,7 +22,6 @@
       <EntityTypeMapping TypeName="SCSE_DBModel.BankInformation">
         <MappingFragment StoreEntitySet="BankInformation">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IDBank" ColumnName="IDBank" />
           <ScalarProperty Name="ImageQR" ColumnName="ImageQR" />
           <ScalarProperty Name="BankName" ColumnName="BankName" />
         </MappingFragment>
@@ -97,7 +96,7 @@
       <EntityTypeMapping TypeName="SCSE_DBModel.ImgPortfolio">
         <MappingFragment StoreEntitySet="ImgPortfolio">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IDImg" ColumnName="IDImg" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="ImagePortfolio" ColumnName="ImagePortfolio" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -161,25 +160,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PhotoGalleries">
-      <EntityTypeMapping TypeName="SCSE_DBModel.PhotoGallery">
-        <MappingFragment StoreEntitySet="PhotoGallery">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IDCat" ColumnName="IDCat" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Slug" ColumnName="Slug" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
-          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Portfolios">
       <EntityTypeMapping TypeName="SCSE_DBModel.Portfolio">
         <MappingFragment StoreEntitySet="Portfolio">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="IDImg" ColumnName="IDImg" />
           <ScalarProperty Name="Position" ColumnName="Position" />
           <ScalarProperty Name="Details" ColumnName="Details" />
         </MappingFragment>
@@ -214,6 +199,19 @@
           <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
           <ScalarProperty Name="Author" ColumnName="Author" />
           <ScalarProperty Name="IDState" ColumnName="IDState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhotoGalleries">
+      <EntityTypeMapping TypeName="SCSE_DBModel.PhotoGallery">
+        <MappingFragment StoreEntitySet="PhotoGallery">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -263,6 +261,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ImageForPortfolios">
+      <EntityTypeMapping TypeName="SCSE_DBModel.ImageForPortfolio">
+        <MappingFragment StoreEntitySet="ImageForPortfolio">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ImagePortfolio" ColumnName="ImagePortfolio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="LoginRoles">
       <EntityTypeMapping TypeName="SCSE_DBModel.LoginRole">
         <MappingFragment StoreEntitySet="LoginRole">
@@ -277,10 +284,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SlugNews">
-      <EntityTypeMapping TypeName="SCSE_DBModel.SlugNew">
-        <MappingFragment StoreEntitySet="SlugNews">
+    <EntitySetMapping Name="NewsVNforENs">
+      <EntityTypeMapping TypeName="SCSE_DBModel.NewsVNforEN">
+        <MappingFragment StoreEntitySet="NewsVNforEN">
+          <ScalarProperty Name="IDNews" ColumnName="IDNews" />
+          <ScalarProperty Name="IdField" ColumnName="IdField" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="IDState" ColumnName="IDState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostsforENs">
+      <EntityTypeMapping TypeName="SCSE_DBModel.PostsforEN">
+        <MappingFragment StoreEntitySet="PostsforEN">
+          <ScalarProperty Name="IDPost" ColumnName="IDPost" />
+          <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="IDState" ColumnName="IDState" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

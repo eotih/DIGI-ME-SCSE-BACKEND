@@ -301,22 +301,32 @@ namespace SCSE_BACKEND.Controllers
             var obj = db.PostsENs.Where(x => x.IDCat == idcat).ToList();
             return obj;
         }
-        
-        [Route("GetMultiLanguesSlug")]
-        [HttpGet]   
-        public object GetMultiLanguesSlug()
+        [Route("GetByIdPosts")]
+        [HttpGet]
+        public object GetByIdPosts(int ID)
         {
-            var a = (from PostsEN in db.PostsENs
-                     from Posts in db.Posts
-                     from cat in db.Categories
-                     where Posts.IDPost == PostsEN.IDPostEN
-                     select new
-                     {
-                         PostsEN.SlugEN,
-                         Posts.Slug
-                     }
-                     ).FirstOrDefault();
-            return a;
+            var obj = db.Posts.Where(x => x.IDCat == ID).ToList().FirstOrDefault();
+            return obj;
+        }
+        [Route("GetByIdPostsEN")]
+        [HttpGet]
+        public object GetByIdPostsEN(int ID)
+        {
+            var obj = db.PostsENs.Where(x => x.IDCat == ID).ToList().FirstOrDefault();
+            return obj;
+        }
+        [Route("GetMultiLanguagePost")]
+        [HttpGet]
+        public object GetMultiLanguagePost(string slug)
+        {
+            var obj = db.Posts.Where(x => x.Slug == slug).FirstOrDefault();
+            var result = (from post in db.Posts
+                          select new
+                          {
+                              TiengViet = db.Posts.Where(x => x.Slug == slug).FirstOrDefault(),
+                              English = db.PostsENs.Where(x => x.IDPostEN == obj.IDPost).FirstOrDefault()
+                          }).FirstOrDefault();
+            return result;
         }
         [Route("ShowAllPostENNeedPost")]
         [HttpGet]

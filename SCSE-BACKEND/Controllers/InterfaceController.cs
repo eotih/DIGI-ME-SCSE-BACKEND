@@ -102,7 +102,6 @@ namespace SCSE_BACKEND.Controllers
             {
                 Portfolio po = new Portfolio
                 {
-                    IDImg = po1.IDImg,
                     Details = po1.Details,
                     FullName = po1.FullName,
                     Position = po1.Position,
@@ -120,7 +119,6 @@ namespace SCSE_BACKEND.Controllers
                 var obj = db.Portfolios.Where(x => x.ID == po1.ID).ToList().FirstOrDefault();
                 if (obj.ID > 0)
                 {
-                    obj.IDImg = po1.IDImg;
                     obj.FullName = po1.FullName;
                     obj.Position = po1.Position;
                     obj.Details = po1.Details;
@@ -148,10 +146,9 @@ namespace SCSE_BACKEND.Controllers
                           {
                               po.ID,
                               po.FullName,
-                              po.IDImg,
                               po.Details,
                               po.Position,
-                              Hinhanh = db.ImgPortfolios.Where(x => x.IDImg == po.IDImg).ToList()
+                              Hinhanh = db.ImgPortfolios.Where(x => x.FullName == po.FullName).ToList()
                           }).ToList();
             return result;
         }
@@ -172,7 +169,7 @@ namespace SCSE_BACKEND.Controllers
                 if (imgpo1.ID == 0)
                 {
                     ImgPortfolio imgpo = new ImgPortfolio();
-                    imgpo.IDImg = imgpo1.IDImg;
+                    imgpo.FullName = imgpo1.FullName;
                     imgpo.ImagePortfolio = imgpo1.ImagePortfolio;
                     db.ImgPortfolios.Add(imgpo);
                     db.SaveChanges();
@@ -208,14 +205,29 @@ namespace SCSE_BACKEND.Controllers
             };
         }
 
-        [Route("GetByIdimgPortfolios")]
+        [Route("GetByFullNameImgPortfolios")]
         [HttpGet]
-        public object GetByIdimgPortfolios(int IDimg)
+        public object GetByFullNameImgPortfolios(string FullName)
         {
-            var obj = db.ImgPortfolios.Where(x => x.IDImg == IDimg).ToList();
+            var obj = db.ImgPortfolios.Where(x => x.FullName == FullName).ToList();
             return obj;
         }
-        
+
+
+        [Route("DeletePortfolio")]
+        [HttpDelete]
+        public object DeletePortfolio(int id)
+        {
+            var obj = db.Portfolios.Where(x => x.ID == id).FirstOrDefault();
+            db.Portfolios.Remove(obj);
+            db.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
+        }
+
 
         //  Thêm/Sửa Thông Tin Ngân Hàng 
         [Route("AddOrEditBankInfo")]
@@ -225,7 +237,6 @@ namespace SCSE_BACKEND.Controllers
             if (bank1.ID == 0)
             {
                 BankInformation bank = new BankInformation();
-                bank.IDBank = 1;
                 bank.BankName = bank1.BankName;
                 bank.ImageQR = bank1.ImageQR;
                 db.BankInformations.Add(bank);
@@ -262,12 +273,18 @@ namespace SCSE_BACKEND.Controllers
         // getbyID OrganizationConfigurations
         [Route("GetByIdBankInfo")]
         [HttpGet]
-        public object GetByIdBankInfo(int idbank)
+        public object GetByIdBankInfo(int ID)
         {
-            var obj = db.BankInformations.Where(x => x.IDBank == idbank).ToList();
+            var obj = db.BankInformations.Where(x => x.ID == ID).ToList().FirstOrDefault();
             return obj;
         }
-
+        [Route("ShowAllBankInfo")]
+        [HttpGet]
+        public object ShowAllBankInfo()
+        {
+            var bank = db.BankInformations.ToList();
+            return bank;
+        }
         //Xóa thông tin ngân hàng 
         [Route("DeleteBankInfo")]
         [HttpDelete]
@@ -488,7 +505,20 @@ namespace SCSE_BACKEND.Controllers
             var category = db.Categories.Where(x => x.IDCat == ID).ToList();
             return category;
         }
-        
+        [Route("ShowAllField")]
+        [HttpGet]
+        public object ShowAllField()
+        {
+            var filed = db.Fields.ToList();
+            return filed;
+        }
+        [Route("GetPostBySlug")]
+        [HttpGet]
+        public object GetPostBySlug(string slug)
+        {
+            var category = db.Posts.Where(x => x.Slug == slug).ToList();
+            return category;
+        }
         //Thư Viện 
         [Route("AddOrEditPhotoGallery")]
         [HttpPost]
@@ -536,13 +566,7 @@ namespace SCSE_BACKEND.Controllers
                 Message = "Data not insert"
             };
         }
-        [Route("GetPostBySlug")]
-        [HttpGet]
-        public object GetPostBySlug(string slug)
-        {
-            var category = db.Posts.Where(x => x.Slug == slug).ToList();
-            return category;
-        }
+        
         [Route("ListPhoto")]
         [HttpGet]
         public object ListPhoto()
@@ -550,12 +574,18 @@ namespace SCSE_BACKEND.Controllers
             var photo = db.PhotoGalleries.ToList();
             return photo;
         }
-
+        [Route("GetByIDPhotoGallery")]
+        [HttpGet]
+        public object GetByIDPhotoGallery(int ID)
+        {
+            var category = db.PhotoGalleries.Where(x => x.ID == ID).ToList().FirstOrDefault();
+            return category;
+        }
         [Route("GetBySlugPhotoGallery")]
         [HttpGet]
-        public object GetBySlugGallery(int ID)
+        public object GetBySlugGallery(string slug)
         {
-            var category = db.PhotoGalleries.Where(x => x.ID == ID).ToList();
+            var category = db.PhotoGalleries.Where(x => x.Slug == slug).ToList();
             return category;
         }
         [Route("AddOrEditDocument")]
