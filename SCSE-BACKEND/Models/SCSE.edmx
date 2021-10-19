@@ -163,11 +163,12 @@
         <EntityType Name="Posts">
           <Key>
             <PropertyRef Name="IDPost" />
+            <PropertyRef Name="Slug" />
           </Key>
           <Property Name="IDPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDCat" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="404" Nullable="false" />
+          <Property Name="Slug" Type="nvarchar" MaxLength="404" Nullable="false" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CreatedByDate" Type="date" />
@@ -181,8 +182,8 @@
           </Key>
           <Property Name="IDPostEN" Type="int" Nullable="false" />
           <Property Name="IDCat" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="SlugEN" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="404" Nullable="false" />
+          <Property Name="SlugEN" Type="nvarchar" MaxLength="404" Nullable="false" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CreatedByDate" Type="date" />
@@ -558,11 +559,12 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
         <EntityType Name="Post">
           <Key>
             <PropertyRef Name="IDPost" />
+            <PropertyRef Name="Slug" />
           </Key>
           <Property Name="IDPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDCat" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slug" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
@@ -576,8 +578,8 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="IDPostEN" Type="Int32" Nullable="false" />
           <Property Name="IDCat" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SlugEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SlugEN" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />

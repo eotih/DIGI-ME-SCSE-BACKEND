@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace SCSE_BACKEND.Controllers
 {
+
     [RoutePrefix("API/Management")]
     public class ManagementController : ApiController
     {
@@ -305,14 +306,14 @@ namespace SCSE_BACKEND.Controllers
         [HttpGet]
         public object GetByIdPosts(int ID)
         {
-            var obj = db.Posts.Where(x => x.IDCat == ID).ToList().FirstOrDefault();
+            var obj = db.Posts.Where(x => x.IDPost == ID).ToList().FirstOrDefault();
             return obj;
         }
         [Route("GetByIdPostsEN")]
         [HttpGet]
         public object GetByIdPostsEN(int ID)
         {
-            var obj = db.PostsENs.Where(x => x.IDCat == ID).ToList().FirstOrDefault();
+            var obj = db.PostsENs.Where(x => x.IDPostEN == ID).ToList().FirstOrDefault();
             return obj;
         }
         [Route("GetMultiLanguagePost")]
@@ -619,7 +620,20 @@ namespace SCSE_BACKEND.Controllers
             var obj = db.NewsVNs.Where(x => x.IdField == IdField).ToList();
             return obj;
         }
-
+        [Route("GetByIdNewsVN")]
+        [HttpGet]
+        public object GetByIdNewsVN(int ID)
+        {
+            var obj = db.NewsVNs.Where(x => x.IDNews == ID).ToList().FirstOrDefault();
+            return obj;
+        }
+        [Route("GetByIdNewsEN")]
+        [HttpGet]
+        public object GetByIdNewsEN(int ID)
+        {
+            var obj = db.NewsENs.Where(x => x.IDNewsEN == ID).ToList().FirstOrDefault();
+            return obj;
+        }
         [Route("AddNewsEN")]
         [HttpPost]
         public object AddNewsEN(NewsEN1 newsEN1)

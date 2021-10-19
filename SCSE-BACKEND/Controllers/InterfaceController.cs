@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace SCSE_BACKEND.Controllers
 {
+
     [RoutePrefix("API/Interface")]
     public class InterfaceController : ApiController
     {
@@ -204,7 +205,6 @@ namespace SCSE_BACKEND.Controllers
                 Message = "Data not insert"
             };
         }
-
         [Route("GetByFullNameImgPortfolios")]
         [HttpGet]
         public object GetByFullNameImgPortfolios(string FullName)
@@ -212,8 +212,13 @@ namespace SCSE_BACKEND.Controllers
             var obj = db.ImgPortfolios.Where(x => x.FullName == FullName).ToList();
             return obj;
         }
-
-
+        [Route("ImageForPortfolio")]
+        [HttpGet]
+        public object ImageForPortfolio()
+        {
+            var obj = db.ImageForPortfolios.ToList();
+            return obj;
+        }
         [Route("DeletePortfolio")]
         [HttpDelete]
         public object DeletePortfolio(int id)
@@ -313,7 +318,7 @@ namespace SCSE_BACKEND.Controllers
                     Field = pn1.Field,
                     Phone = pn1.Phone,
                     Email = pn1.Email,
-                    Address = Utils.ReplaceSpecialChars(pn1.Address),
+                    Address = pn1.Address,
                     Link = pn1.Link
                 };
                 db.Partners.Add(pn);
@@ -390,8 +395,6 @@ namespace SCSE_BACKEND.Controllers
             var result = db.Contacts.ToList();
             return result;
         }
-
-
         [Route("DeleteContact")]
         [HttpDelete]
         public object DeleteContact(int ID)

@@ -9,6 +9,7 @@ using SCSE_BACKEND.Models;
 
 namespace SCSE_BACKEND.Controllers
 {
+
     public class EmailController : ApiController
     {
         [HttpPost]

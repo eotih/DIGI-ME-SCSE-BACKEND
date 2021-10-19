@@ -83,7 +83,7 @@ namespace SCSE_BACKEND.Controllers
         }
         public object AddIframe()
         {
-            var a = "<iframe width='480px' height='480px' src='http://localhost:59360/PDF/";
+            var a = "<iframe width='480px' height='480px' src='https://api.scse-vietnam.org/PDF/";
             var b = "'></iframe>";
             string dirPath = System.Web.HttpContext.Current.Request.MapPath("~/PDF");
             DirectoryInfo dirInfo = new DirectoryInfo(dirPath);

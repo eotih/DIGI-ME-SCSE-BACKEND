@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace SCSE_BACKEND.Controllers
 {
+
     public class HomeController : Controller
     {
         
