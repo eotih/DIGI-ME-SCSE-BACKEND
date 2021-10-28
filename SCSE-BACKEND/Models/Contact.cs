@@ -20,7 +20,7 @@ namespace SCSE_BACKEND.Models
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Details { get; set; }
-        public Nullable<System.DateTime> CreatedByDate { get; set; }
+        public System.DateTime CreatedByDate { get; set; }
         public Nullable<System.DateTime> UpdatedByDate { get; set; }
         public string Subtitle { get; set; }
     }

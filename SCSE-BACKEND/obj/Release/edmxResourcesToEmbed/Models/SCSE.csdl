@@ -68,14 +68,6 @@
     <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
     <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
   </EntityType>
-  <EntityType Name="DocumentGallery">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NamePDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Iframe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="Field">
     <Key>
       <PropertyRef Name="IdField" />
@@ -320,7 +312,6 @@
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Contacts" EntityType="Self.Contact" />
     <EntitySet Name="Documents" EntityType="Self.Document" />
-    <EntitySet Name="DocumentGalleries" EntityType="Self.DocumentGallery" />
     <EntitySet Name="Fields" EntityType="Self.Field" />
     <EntitySet Name="ImgPortfolios" EntityType="Self.ImgPortfolio" />
     <EntitySet Name="NewsENs" EntityType="Self.NewsEN" />

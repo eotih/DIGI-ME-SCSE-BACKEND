@@ -9,7 +9,6 @@ using System.Web.Http;
 
 namespace SCSE_BACKEND.Controllers
 {
-
     [RoutePrefix("API/Interface")]
     public class InterfaceController : ApiController
     {
@@ -138,9 +137,9 @@ namespace SCSE_BACKEND.Controllers
             };
         
         }
-        [Route("ShowAllPorfolio")]
+        [Route("ShowAllPortfolio")]
         [HttpGet]
-        public object ShowAllPorfolio()
+        public object ShowAllPortfolio()
         {
             var result = (from po in db.Portfolios
                           select new
@@ -158,6 +157,13 @@ namespace SCSE_BACKEND.Controllers
         public object GetByIdPortfolios(int id)
         {
             var obj = db.Portfolios.Where(x => x.ID == id).ToList().FirstOrDefault();
+            return obj;
+        }
+        [Route("GetByNamePortfolios")]
+        [HttpGet]
+        public object GetByNamePortfolios(string name)
+        {
+            var obj = db.Portfolios.Where(x => x.FullName == name).ToList().FirstOrDefault();
             return obj;
         }
 
@@ -417,6 +423,7 @@ namespace SCSE_BACKEND.Controllers
             {
                 Contact ct = new Contact
                 {
+                    Address = ct1.Address,
                     FullName = ct1.FullName,
                     Subtitle = ct1.Subtitle,
                     Phone = ct1.Phone,
@@ -442,6 +449,7 @@ namespace SCSE_BACKEND.Controllers
                     contact.Phone = ct1.Phone;
                     contact.Email = ct1.Email;
                     contact.Details = ct1.Details;
+                    contact.Address = ct1.Address;
                     contact.UpdatedByDate = DateTime.Now;
                     db.SaveChanges();
                     return new Response
@@ -590,6 +598,19 @@ namespace SCSE_BACKEND.Controllers
         {
             var category = db.PhotoGalleries.Where(x => x.Slug == slug).ToList();
             return category;
+        }
+        [Route("DeletePhotosByTitle")]
+        [HttpDelete]
+        public object DeletePhotosByTitle(string title)
+        {
+            var result = db.PhotoGalleries.Where(x => x.Title == title).FirstOrDefault();
+            db.PhotoGalleries.Remove(result);
+            db.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
         }
         [Route("AddOrEditDocument")]
         [HttpPost]

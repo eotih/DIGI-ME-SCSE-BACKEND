@@ -75,15 +75,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DocumentGalleries">
-      <EntityTypeMapping TypeName="SCSE_DBModel.DocumentGallery">
-        <MappingFragment StoreEntitySet="DocumentGallery">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="NamePDF" ColumnName="NamePDF" />
-          <ScalarProperty Name="Iframe" ColumnName="Iframe" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Fields">
       <EntityTypeMapping TypeName="SCSE_DBModel.Field">
         <MappingFragment StoreEntitySet="Field">

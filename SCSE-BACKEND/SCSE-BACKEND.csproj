@@ -184,7 +184,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterfaceController.cs" />
     <Compile Include="Controllers\ManagementController.cs" />
-    <Compile Include="Controllers\UploadFileController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,10 +212,6 @@
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Document1.cs" />
-    <Compile Include="Models\DocumentGallery.cs">
-      <DependentUpon>SCSE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DocumentGallery1.cs" />
     <Compile Include="Models\EmailClass.cs" />
     <Compile Include="Models\Field.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
@@ -368,6 +363,12 @@
     <None Include="Properties\PublishProfiles\FolderProfile10.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile11.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile12.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile13.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile14.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile15.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile16.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile17.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile18.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
@@ -402,7 +403,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="PDF\" />
     <Folder Include="System\Web\HttpContext\Current\" />
     <Folder Include="Views\Interface\" />
     <Folder Include="Views\Management\" />

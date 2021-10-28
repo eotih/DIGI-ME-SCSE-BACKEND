@@ -68,14 +68,6 @@
     <Property Name="CreatedByDate" Type="date" />
     <Property Name="UpdatedByDate" Type="date" />
   </EntityType>
-  <EntityType Name="DocumentGallery">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NamePDF" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Iframe" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
   <EntityType Name="Field">
     <Key>
       <PropertyRef Name="IdField" />
@@ -328,7 +320,6 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DocumentGallery" EntityType="Self.DocumentGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Field" EntityType="Self.Field" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ImgPortfolio" EntityType="Self.ImgPortfolio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NewsEN" EntityType="Self.NewsEN" Schema="dbo" store:Type="Tables" />

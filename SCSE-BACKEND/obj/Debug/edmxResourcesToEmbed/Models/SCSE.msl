@@ -75,15 +75,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DocumentGalleries">
-      <EntityTypeMapping TypeName="SCSE_DBModel.DocumentGallery">
-        <MappingFragment StoreEntitySet="DocumentGallery">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="NamePDF" ColumnName="NamePDF" />
-          <ScalarProperty Name="Iframe" ColumnName="Iframe" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Fields">
       <EntityTypeMapping TypeName="SCSE_DBModel.Field">
         <MappingFragment StoreEntitySet="Field">
@@ -170,22 +161,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Posts">
-      <EntityTypeMapping TypeName="SCSE_DBModel.Post">
-        <MappingFragment StoreEntitySet="Posts">
-          <ScalarProperty Name="IDPost" ColumnName="IDPost" />
-          <ScalarProperty Name="IDCat" ColumnName="IDCat" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Slug" ColumnName="Slug" />
-          <ScalarProperty Name="Details" ColumnName="Details" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
-          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
-          <ScalarProperty Name="Author" ColumnName="Author" />
-          <ScalarProperty Name="IDState" ColumnName="IDState" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PostsENs">
       <EntityTypeMapping TypeName="SCSE_DBModel.PostsEN">
         <MappingFragment StoreEntitySet="PostsEN">
@@ -257,6 +232,22 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Project" ColumnName="Project" />
           <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="IDState" ColumnName="IDState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="SCSE_DBModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="IDPost" ColumnName="IDPost" />
+          <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
           <ScalarProperty Name="IDState" ColumnName="IDState" />
         </MappingFragment>
       </EntityTypeMapping>

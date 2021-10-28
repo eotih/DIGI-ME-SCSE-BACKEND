@@ -20,7 +20,7 @@ namespace SCSE_BACKEND.Models
         public string SlugEN { get; set; }
         public string Details { get; set; }
         public string Image { get; set; }
-        public Nullable<System.DateTime> CreatedByDate { get; set; }
+        public System.DateTime CreatedByDate { get; set; }
         public Nullable<System.DateTime> UpdatedByDate { get; set; }
         public string Author { get; set; }
         public int IDState { get; set; }

@@ -7,10 +7,8 @@ using System.Web.Mvc;
 
 namespace SCSE_BACKEND.Controllers
 {
-
     public class HomeController : Controller
     {
-        
         private static string username = "SCSEAPI";
         private static string password = "SCSEPASSWORD";
 

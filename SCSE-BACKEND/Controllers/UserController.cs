@@ -34,10 +34,6 @@ namespace SCSE_BACKEND.Controllers
             }
             return new Response { Status = "Sai", Message = "Sai" };
         }
-
-        
-
-
         [Route("AddOrEditAccount")]
         [HttpPost]
         public object AddOrEdiAccount(Account1 acc1)

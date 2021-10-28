@@ -119,7 +119,7 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeletePost(int ID)
         {
-            var obj = db.Posts.Where(x => x.IDPost == ID).FirstOrDefault();
+            var obj = db.Posts.Where(x => x.IDPost == ID).ToList().FirstOrDefault();
             db.Posts.Remove(obj);
             db.SaveChanges();
             return new Response
@@ -604,7 +604,7 @@ namespace SCSE_BACKEND.Controllers
             var list = db.NewsVNs.Where(x => x.IDState == IdState).ToList();
             return list;
         }
-        // getbyID bài viết
+        // getbyID bài viết 
         [Route("GetBySlugNewsVN")]
         [HttpGet]
         public object GetBySlugNewsVN(string slug)
