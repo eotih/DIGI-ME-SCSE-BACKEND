@@ -1,0 +1,679 @@
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll.config
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe.config
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.rsp
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe.config
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.rsp
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.AppContext.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Console.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Compression.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Claims.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.ValueTuple.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe.config
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.rsp
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Cors.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\WebGrease.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.pdb
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csprojAssemblyReference.cache
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CoreCompileInputs.cache
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CopyComplete
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\SCSE-BACKEND\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.rsp
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.rsp
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.AppContext.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Console.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Compression.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Claims.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.ValueTuple.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.rsp
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Cors.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\WebGrease.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.pdb
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csprojAssemblyReference.cache
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CoreCompileInputs.cache
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CopyComplete
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE\SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\SCSE-BACKEND.dll.config
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\csc.exe
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\csc.exe.config
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\csc.rsp
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\csi.exe
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\csi.exe.config
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\csi.rsp
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.AppContext.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Console.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.IO.Compression.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Security.Claims.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.ValueTuple.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\vbc.exe
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\vbc.exe.config
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\vbc.rsp
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Antlr3.Runtime.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\EntityFramework.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\EntityFramework.SqlServer.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Newtonsoft.Json.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Net.Http.Formatting.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Cors.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Helpers.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Http.Cors.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Http.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Http.WebHost.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Mvc.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Optimization.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Razor.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.WebPages.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\WebGrease.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\EntityFramework.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\EntityFramework.SqlServer.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Net.Http.Formatting.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Http.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Http.Cors.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Http.WebHost.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Newtonsoft.Json.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Helpers.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Mvc.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Optimization.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.Razor.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.WebPages.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Antlr3.Runtime.pdb
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csprojAssemblyReference.cache
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CoreCompileInputs.cache
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CopyComplete
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\1\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.pdb
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csprojAssemblyReference.cache
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CoreCompileInputs.cache
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csprojAssemblyReference.cache
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CoreCompileInputs.cache
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.pdb
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.rsp
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.rsp
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.AppContext.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Console.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Compression.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Claims.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.ValueTuple.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.rsp
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Cors.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\WebGrease.dll
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.pdb
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC DELL\Desktop\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CopyComplete
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll.config
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.pdb
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe.config
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.rsp
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe.config
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.rsp
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Managed.Core.targets
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.AppContext.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Collections.Immutable.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Console.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Compression.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.AccessControl.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Reflection.Metadata.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.AccessControl.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Claims.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Principal.Windows.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.ValueTuple.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XmlDocument.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe.config
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.rsp
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe.config
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.Web.Infrastructure.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Cors.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\WebGrease.dll
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.pdb
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\NCKH\DIGIME\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CopyComplete
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll.config
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.pdb
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe.config
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.rsp
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe.config
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.rsp
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Managed.Core.targets
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.AppContext.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Collections.Immutable.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Console.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Compression.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Reflection.Metadata.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.AccessControl.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Claims.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Principal.Windows.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.ValueTuple.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XmlDocument.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe.config
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.rsp
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe.config
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.Web.Infrastructure.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Cors.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\WebGrease.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.pdb
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CoreCompileInputs.cache
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CopyComplete
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.dll
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.pdb
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll.config
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\SCSE-BACKEND.pdb
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.exe.config
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csc.rsp
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.exe.config
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\csi.rsp
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.AppContext.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Collections.Immutable.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Console.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Compression.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.IO.Pipes.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Reflection.Metadata.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.AccessControl.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Claims.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.ValueTuple.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.exe.config
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\vbc.rsp
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\roslyn\VBCSCompiler.exe.config
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Cors.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\WebGrease.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\EntityFramework.SqlServer.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Logging.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.IdentityModel.Tokens.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Net.Http.Formatting.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.Cors.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Http.WebHost.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Newtonsoft.Json.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Helpers.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Mvc.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Optimization.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.Razor.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Deployment.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\System.Web.WebPages.Razor.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Antlr3.Runtime.pdb
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csprojAssemblyReference.cache
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CoreCompileInputs.cache
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csproj.CopyComplete
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.dll
+D:\Work\FolderUpGithub\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.pdb
+E:\DIGIME-SCSE\DIGI-ME-SCSE-BACKEND\SCSE-BACKEND\obj\Debug\SCSE-BACKEND.csprojAssemblyReference.cache
