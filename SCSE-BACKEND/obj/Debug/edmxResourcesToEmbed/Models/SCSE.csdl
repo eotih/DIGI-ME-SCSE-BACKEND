@@ -87,7 +87,7 @@
     <Key>
       <PropertyRef Name="IDNewsEN" />
     </Key>
-    <Property Name="IDNewsEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDNewsEN" Type="Int32" Nullable="false" />
     <Property Name="IdField" Type="Int32" Nullable="false" />
     <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SlugEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -144,7 +144,9 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PositionEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DetailsEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="Post">
@@ -153,6 +155,7 @@
     </Key>
     <Property Name="IDPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDCat" Type="Int32" Nullable="false" />
+    <Property Name="IDField" Type="Int32" />
     <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -168,6 +171,7 @@
     </Key>
     <Property Name="IDPostEN" Type="Int32" Nullable="false" />
     <Property Name="IDCat" Type="Int32" Nullable="false" />
+    <Property Name="IDField" Type="Int32" />
     <Property Name="Title" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SlugEN" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -183,7 +187,9 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDCat" Type="Int32" Nullable="false" />
+    <Property Name="IDField" Type="Int32" Nullable="false" />
     <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TitleEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
@@ -209,10 +215,14 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDCat" Type="Int32" Nullable="false" />
+    <Property Name="IDField" Type="Int32" Nullable="false" />
+    <Property Name="TitleEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="VideoID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="LinkYTB" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DescriptionEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
     <Property Name="UpdateByDate" Type="DateTime" Precision="0" />
   </EntityType>

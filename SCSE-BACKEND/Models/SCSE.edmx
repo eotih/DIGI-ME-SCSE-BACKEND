@@ -149,7 +149,9 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PositionEN" Type="nchar" MaxLength="10" />
           <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DetailsEN" Type="nchar" MaxLength="10" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Posts">
@@ -158,6 +160,7 @@
           </Key>
           <Property Name="IDPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDCat" Type="int" Nullable="false" />
+          <Property Name="IDField" Type="int" />
           <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
@@ -173,6 +176,7 @@
           </Key>
           <Property Name="IDPostEN" Type="int" Nullable="false" />
           <Property Name="IDCat" Type="int" Nullable="false" />
+          <Property Name="IDField" Type="int" />
           <Property Name="Title" Type="nvarchar" MaxLength="404" Nullable="false" />
           <Property Name="SlugEN" Type="nvarchar" MaxLength="404" Nullable="false" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
@@ -188,7 +192,9 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDCat" Type="int" Nullable="false" />
+          <Property Name="IDField" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TitleEN" Type="nvarchar(max)" />
           <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Image" Type="nvarchar(max)" />
           <Property Name="CreatedByDate" Type="date" />
@@ -214,10 +220,14 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDCat" Type="int" Nullable="false" />
+          <Property Name="IDField" Type="int" Nullable="false" />
+          <Property Name="TitleEN" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="VideoID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Image" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="LinkYTB" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DescriptionEN" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="CreatedByDate" Type="date" />
           <Property Name="UpdateByDate" Type="date" />
         </EntityType>
@@ -537,7 +547,9 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PositionEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DetailsEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Post">
@@ -546,6 +558,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="IDPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDCat" Type="Int32" Nullable="false" />
+          <Property Name="IDField" Type="Int32" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -561,6 +574,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="IDPostEN" Type="Int32" Nullable="false" />
           <Property Name="IDCat" Type="Int32" Nullable="false" />
+          <Property Name="IDField" Type="Int32" />
           <Property Name="Title" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SlugEN" Type="String" MaxLength="404" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -576,7 +590,9 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDCat" Type="Int32" Nullable="false" />
+          <Property Name="IDField" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TitleEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
@@ -602,10 +618,14 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDCat" Type="Int32" Nullable="false" />
+          <Property Name="IDField" Type="Int32" Nullable="false" />
+          <Property Name="TitleEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="VideoID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LinkYTB" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DescriptionEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
           <Property Name="UpdateByDate" Type="DateTime" Precision="0" />
         </EntityType>
@@ -886,7 +906,9 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               <MappingFragment StoreEntitySet="Portfolio">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="PositionEN" ColumnName="PositionEN" />
                 <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="DetailsEN" ColumnName="DetailsEN" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -896,6 +918,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               <MappingFragment StoreEntitySet="Posts">
                 <ScalarProperty Name="IDPost" ColumnName="IDPost" />
                 <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+                <ScalarProperty Name="IDField" ColumnName="IDField" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Slug" ColumnName="Slug" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
@@ -912,6 +935,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               <MappingFragment StoreEntitySet="PostsEN">
                 <ScalarProperty Name="IDPostEN" ColumnName="IDPostEN" />
                 <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+                <ScalarProperty Name="IDField" ColumnName="IDField" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="SlugEN" ColumnName="SlugEN" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
@@ -928,7 +952,9 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               <MappingFragment StoreEntitySet="PhotoGallery">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+                <ScalarProperty Name="IDField" ColumnName="IDField" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
                 <ScalarProperty Name="Slug" ColumnName="Slug" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
@@ -957,10 +983,14 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               <MappingFragment StoreEntitySet="VideoGallery">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+                <ScalarProperty Name="IDField" ColumnName="IDField" />
+                <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="VideoID" ColumnName="VideoID" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="LinkYTB" ColumnName="LinkYTB" />
+                <ScalarProperty Name="DescriptionEN" ColumnName="DescriptionEN" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
                 <ScalarProperty Name="UpdateByDate" ColumnName="UpdateByDate" />
               </MappingFragment>

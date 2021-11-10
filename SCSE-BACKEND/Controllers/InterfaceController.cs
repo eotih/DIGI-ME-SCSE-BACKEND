@@ -32,9 +32,13 @@ namespace SCSE_BACKEND.Controllers
                 VideoGallery video = new VideoGallery
                 {
                     ID = video1.ID,
+                    IDField = video1.IDField,
                     IDCat = video1.IDCat,
+                    TitleEN = video1.TitleEN,
                     Title = video1.Title,
                     VideoID = video1.VideoID,
+                    DescriptionEN = video1.DescriptionEN,
+                    Description = video1.Description,
                     Image = video1.Image,
                     LinkYTB = video1.LinkYTB,
                     CreatedByDate = DateTime.Now,
@@ -53,8 +57,12 @@ namespace SCSE_BACKEND.Controllers
                 if (obj.ID > 0)
                 {
                     obj.IDCat = video1.IDCat;
+                    obj.IDField = video1.IDField;
                     obj.Title = video1.Title;
+                    obj.TitleEN = video1.TitleEN;
                     obj.VideoID = video1.VideoID;
+                    obj.DescriptionEN = video1.DescriptionEN;
+                    obj.Description = video1.Description;
                     obj.Image = video1.Image;
                     obj.LinkYTB = video1.LinkYTB;
                     obj.UpdateByDate = DateTime.Now;
@@ -92,7 +100,13 @@ namespace SCSE_BACKEND.Controllers
             var result = db.VideoGalleries.Where(x => x.ID == id).FirstOrDefault();
             return result;
         }
-
+        [Route("GetVideoByTitleEN")]
+        [HttpGet]
+        public object GetVideoByTitleEN(string TitleEN)
+        {
+            var result = db.VideoGalleries.Where(x => x.TitleEN == TitleEN).FirstOrDefault();
+            return result;
+        }
         //Dữ liệu ban giám đốc 
         [Route("AddOrEditPortfolios")]
         [HttpPost]
@@ -103,8 +117,10 @@ namespace SCSE_BACKEND.Controllers
                 Portfolio po = new Portfolio
                 {
                     Details = po1.Details,
+                    DetailsEN = po1.DetailsEN,
                     FullName = po1.FullName,
                     Position = po1.Position,
+                    PositionEN = po1.PositionEN,
                 };
                 db.Portfolios.Add(po);
                 db.SaveChanges();
@@ -121,7 +137,9 @@ namespace SCSE_BACKEND.Controllers
                 {
                     obj.FullName = po1.FullName;
                     obj.Position = po1.Position;
+                    obj.PositionEN = po1.PositionEN;
                     obj.Details = po1.Details;
+                    obj.DetailsEN = po1.DetailsEN;
                     db.SaveChanges();
                     return new Response
                     {
@@ -147,7 +165,9 @@ namespace SCSE_BACKEND.Controllers
                               po.ID,
                               po.FullName,
                               po.Details,
+                              po.DetailsEN,
                               po.Position,
+                              po.PositionEN,
                               Hinhanh = db.ImgPortfolios.Where(x => x.FullName == po.FullName).ToList()
                           }).ToList();
             return result;
@@ -156,7 +176,7 @@ namespace SCSE_BACKEND.Controllers
         [HttpGet]
         public object GetByIdPortfolios(int id)
         {
-            var obj = db.Portfolios.Where(x => x.ID == id).ToList().FirstOrDefault();
+            var obj = db.Portfolios.Where(x => x.ID == id).FirstOrDefault();
             return obj;
         }
         [Route("GetByNamePortfolios")]
@@ -171,6 +191,8 @@ namespace SCSE_BACKEND.Controllers
                               po.FullName,
                               po.Details,
                               po.Position,
+                              po.DetailsEN,
+                              po.PositionEN,
                               Hinhanh = db.ImgPortfolios.Where(x => x.FullName == po.FullName).ToList()
                           }).FirstOrDefault();
             return result;
@@ -183,9 +205,11 @@ namespace SCSE_BACKEND.Controllers
             {
                 if (imgpo1.ID == 0)
                 {
-                    ImgPortfolio imgpo = new ImgPortfolio();
-                    imgpo.FullName = imgpo1.FullName;
-                    imgpo.ImagePortfolio = imgpo1.ImagePortfolio;
+                    ImgPortfolio imgpo = new ImgPortfolio
+                    {
+                        FullName = imgpo1.FullName,
+                        ImagePortfolio = imgpo1.ImagePortfolio
+                    };
                     db.ImgPortfolios.Add(imgpo);
                     db.SaveChanges();
                     return new Response
@@ -393,7 +417,7 @@ namespace SCSE_BACKEND.Controllers
 
         [Route("ListPartner")]
         [HttpGet]
-        public object listPartner()
+        public object ListPartner()
         {
             var partner = db.Partners.ToList();
             return partner;
@@ -561,7 +585,9 @@ namespace SCSE_BACKEND.Controllers
                 PhotoGallery photo = new PhotoGallery
                 {
                     IDCat = photo1.IDCat,
+                    IDField = photo1.IDField,
                     Title = photo1.Title,
+                    TitleEN = photo1.TitleEN,
                     Slug = Utils.ReplaceSpecialChars(photo1.Title),
                     Image = photo1.Image,
                     CreatedByDate = DateTime.Now
@@ -580,7 +606,9 @@ namespace SCSE_BACKEND.Controllers
                 if (photo1.ID > 0)
                 {
                     obj.IDCat = photo1.IDCat;
+                    obj.IDField = photo1.IDField;
                     obj.Title = photo1.Title;
+                    obj.TitleEN = photo1.TitleEN;
                     obj.Image = photo1.Image;
                     obj.Slug = Utils.ReplaceSpecialChars(photo1.Title);
                     obj.UpdatedByDate = DateTime.Now;
@@ -610,7 +638,14 @@ namespace SCSE_BACKEND.Controllers
         [HttpGet]
         public object GetByIDPhotoGallery(int ID)
         {
-            var category = db.PhotoGalleries.Where(x => x.ID == ID).ToList().FirstOrDefault();
+            var category = db.PhotoGalleries.Where(x => x.ID == ID).FirstOrDefault();
+            return category;
+        }
+        [Route("GetPhotosByTitleEN")]
+        [HttpGet]
+        public object GetPhotosByTitleEN(string TitleEN)
+        {
+            var category = db.PhotoGalleries.Where(x => x.TitleEN == TitleEN).ToList();
             return category;
         }
         [Route("GetBySlugPhotoGallery")]

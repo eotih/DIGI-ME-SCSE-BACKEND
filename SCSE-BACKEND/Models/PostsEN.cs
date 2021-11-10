@@ -16,6 +16,7 @@ namespace SCSE_BACKEND.Models
     {
         public int IDPostEN { get; set; }
         public int IDCat { get; set; }
+        public Nullable<int> IDField { get; set; }
         public string Title { get; set; }
         public string SlugEN { get; set; }
         public string Details { get; set; }

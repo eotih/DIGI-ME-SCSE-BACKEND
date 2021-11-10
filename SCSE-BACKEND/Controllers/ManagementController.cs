@@ -26,6 +26,7 @@ namespace SCSE_BACKEND.Controllers
                 {
                     IDCat = Posts1.IDCat,
                     Title = Posts1.Title,
+                    IDField = Posts1.IDField,
                     Slug = Utils.ReplaceSpecialChars(Posts1.Title),
                     Details = Posts1.Details,
                     Image = Posts1.Image,
@@ -48,6 +49,7 @@ namespace SCSE_BACKEND.Controllers
                 {
                     obj.IDCat = Posts1.IDCat;
                     obj.Title = Posts1.Title;
+                    obj.IDField = Posts1.IDField;
                     obj.Slug = Utils.ReplaceSpecialChars(Posts1.Title);
                     obj.Details = Posts1.Details;
                     obj.Image = Posts1.Image;
@@ -162,6 +164,7 @@ namespace SCSE_BACKEND.Controllers
                     IDPostEN = PostsEN1.IDPostEN,
                     IDCat = PostsEN1.IDCat,
                     Title = PostsEN1.Title,
+                    IDField = PostsEN1.IDField,
                     SlugEN = Utils.ReplaceSpecialChars(PostsEN1.Title),
                     Details = PostsEN1.Details,
                     Image = PostsEN1.Image,
@@ -195,6 +198,7 @@ namespace SCSE_BACKEND.Controllers
             {
                 obj.IDCat = PostsEN1.IDCat;
                 obj.Title = PostsEN1.Title;
+                obj.IDField = PostsEN1.IDField;
                 obj.SlugEN = Utils.ReplaceSpecialChars(PostsEN1.Title);
                 obj.Details = PostsEN1.Details;
                 obj.Image = PostsEN1.Image;

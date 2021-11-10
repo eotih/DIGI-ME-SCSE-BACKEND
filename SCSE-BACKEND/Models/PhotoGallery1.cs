@@ -9,7 +9,9 @@ namespace SCSE_BACKEND.Models
     {
         public int ID { get; set; }
         public int IDCat { get; set; }
+        public int IDField { get; set; }
         public string Title { get; set; }
+        public string TitleEN { get; set; }
         public string Slug { get; set; }
         public string Image { get; set; }
         public Nullable<System.DateTime> CreatedByDate { get; set; }

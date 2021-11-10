@@ -87,7 +87,7 @@
     <Key>
       <PropertyRef Name="IDNewsEN" />
     </Key>
-    <Property Name="IDNewsEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDNewsEN" Type="int" Nullable="false" />
     <Property Name="IdField" Type="int" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SlugEN" Type="nvarchar(max)" Nullable="false" />
@@ -144,7 +144,9 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="PositionEN" Type="nchar" MaxLength="10" />
     <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DetailsEN" Type="nchar" MaxLength="10" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Posts">
@@ -153,6 +155,7 @@
     </Key>
     <Property Name="IDPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="IDField" Type="int" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
@@ -168,6 +171,7 @@
     </Key>
     <Property Name="IDPostEN" Type="int" Nullable="false" />
     <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="IDField" Type="int" />
     <Property Name="Title" Type="nvarchar" MaxLength="404" Nullable="false" />
     <Property Name="SlugEN" Type="nvarchar" MaxLength="404" Nullable="false" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
@@ -183,7 +187,9 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="IDField" Type="int" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TitleEN" Type="nvarchar(max)" />
     <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="CreatedByDate" Type="date" />
@@ -209,10 +215,14 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="IDField" Type="int" Nullable="false" />
+    <Property Name="TitleEN" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="VideoID" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Image" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="LinkYTB" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DescriptionEN" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="CreatedByDate" Type="date" />
     <Property Name="UpdateByDate" Type="date" />
   </EntityType>
