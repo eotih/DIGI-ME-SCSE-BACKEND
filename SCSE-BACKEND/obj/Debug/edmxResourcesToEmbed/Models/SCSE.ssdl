@@ -68,6 +68,17 @@
     <Property Name="CreatedByDate" Type="date" />
     <Property Name="UpdatedByDate" Type="date" />
   </EntityType>
+  <EntityType Name="DocumentEN">
+    <Key>
+      <PropertyRef Name="IDEN" />
+    </Key>
+    <Property Name="IDEN" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SlugEN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
+  </EntityType>
   <EntityType Name="Field">
     <Key>
       <PropertyRef Name="IdField" />
@@ -130,13 +141,16 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactPerson" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrganizationName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Image" Type="nvarchar(max)" />
-    <Property Name="Field" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrganizationProgrames" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Link" Type="nvarchar(max)" />
+    <Property Name="Purpose" Type="nvarchar(max)" />
+    <Property Name="LinkFile" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Portfolio">
     <Key>
@@ -144,9 +158,9 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="PositionEN" Type="nchar" MaxLength="10" />
+    <Property Name="PositionEN" Type="nvarchar" MaxLength="50" />
     <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DetailsEN" Type="nchar" MaxLength="10" />
+    <Property Name="DetailsEN" Type="nvarchar(max)" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Posts">
@@ -242,6 +256,22 @@
     <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'SCSE_DB.dbo.DocumentsforEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DocumentsforEN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Slug" />
+      <PropertyRef Name="Details" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedByDate" Type="date" />
+    <Property Name="UpdatedByDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'SCSE_DB.dbo.ImageForPortfolio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ImageForPortfolio">
     <Key>
@@ -315,6 +345,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
     </Key>
     <Property Name="IDPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDCat" Type="int" Nullable="false" />
+    <Property Name="IDField" Type="int" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
@@ -331,6 +362,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentEN" EntityType="Self.DocumentEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Field" EntityType="Self.Field" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ImgPortfolio" EntityType="Self.ImgPortfolio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NewsEN" EntityType="Self.NewsEN" Schema="dbo" store:Type="Tables" />
@@ -345,6 +377,16 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
     <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VideoGallery" EntityType="Self.VideoGallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentsforEN" EntityType="Self.DocumentsforEN" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DocumentsforEN].[ID] AS [ID], 
+    [DocumentsforEN].[Title] AS [Title], 
+    [DocumentsforEN].[Slug] AS [Slug], 
+    [DocumentsforEN].[Details] AS [Details], 
+    [DocumentsforEN].[CreatedByDate] AS [CreatedByDate], 
+    [DocumentsforEN].[UpdatedByDate] AS [UpdatedByDate]
+    FROM [dbo].[DocumentsforEN] AS [DocumentsforEN]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="ImageForPortfolio" EntityType="Self.ImageForPortfolio" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [ImageForPortfolio].[ID] AS [ID], 
@@ -382,6 +424,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
       <DefiningQuery>SELECT 
     [PostsforEN].[IDPost] AS [IDPost], 
     [PostsforEN].[IDCat] AS [IDCat], 
+    [PostsforEN].[IDField] AS [IDField], 
     [PostsforEN].[Title] AS [Title], 
     [PostsforEN].[Slug] AS [Slug], 
     [PostsforEN].[Details] AS [Details], 

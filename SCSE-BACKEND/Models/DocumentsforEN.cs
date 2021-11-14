@@ -12,18 +12,13 @@ namespace SCSE_BACKEND.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Partner
+    public partial class DocumentsforEN
     {
         public int ID { get; set; }
-        public string ContactPerson { get; set; }
-        public string OrganizationName { get; set; }
-        public string Image { get; set; }
-        public string OrganizationProgrames { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
-        public string Link { get; set; }
-        public string Purpose { get; set; }
-        public string LinkFile { get; set; }
+        public string Title { get; set; }
+        public string Slug { get; set; }
+        public string Details { get; set; }
+        public Nullable<System.DateTime> CreatedByDate { get; set; }
+        public Nullable<System.DateTime> UpdatedByDate { get; set; }
     }
 }

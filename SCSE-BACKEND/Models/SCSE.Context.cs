@@ -31,6 +31,7 @@ namespace SCSE_BACKEND.Models
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Document> Documents { get; set; }
+        public virtual DbSet<DocumentEN> DocumentENs { get; set; }
         public virtual DbSet<Field> Fields { get; set; }
         public virtual DbSet<ImgPortfolio> ImgPortfolios { get; set; }
         public virtual DbSet<NewsEN> NewsENs { get; set; }
@@ -45,6 +46,7 @@ namespace SCSE_BACKEND.Models
         public virtual DbSet<State> States { get; set; }
         public virtual DbSet<VideoGallery> VideoGalleries { get; set; }
         public virtual DbSet<Volunteer> Volunteers { get; set; }
+        public virtual DbSet<DocumentsforEN> DocumentsforENs { get; set; }
         public virtual DbSet<ImageForPortfolio> ImageForPortfolios { get; set; }
         public virtual DbSet<LoginRole> LoginRoles { get; set; }
         public virtual DbSet<NewsVNforEN> NewsVNforENs { get; set; }

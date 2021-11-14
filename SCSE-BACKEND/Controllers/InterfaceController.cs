@@ -364,13 +364,16 @@ namespace SCSE_BACKEND.Controllers
             {
                 Partner pn = new Partner
                 {
-                    Name = pn1.Name,
+                    ContactPerson = pn1.ContactPerson,
+                    OrganizationName = pn1.OrganizationName,
                     Image = pn1.Image,
-                    Field = pn1.Field,
+                    OrganizationProgrames = pn1.OrganizationProgrames,
                     Phone = pn1.Phone,
                     Email = pn1.Email,
                     Address = pn1.Address,
-                    Link = pn1.Link
+                    Link = pn1.Link,
+                    Purpose =pn1.Purpose,
+                    LinkFile = pn1.LinkFile
                 };
                 db.Partners.Add(pn);
                 db.SaveChanges();
@@ -385,13 +388,16 @@ namespace SCSE_BACKEND.Controllers
                 var obj = db.Partners.Where(x => x.ID == pn1.ID).ToList().FirstOrDefault();
                 if (obj.ID > 0)
                 {
-                    obj.Name = pn1.Name;
+                    obj.OrganizationName = pn1.OrganizationName;
+                    obj.ContactPerson = pn1.ContactPerson;
                     obj.Image = pn1.Image;
-                    obj.Field = pn1.Field;
+                    obj.OrganizationProgrames = pn1.OrganizationProgrames;
+                    obj.Purpose = pn1.Purpose;
                     obj.Phone = pn1.Phone;
                     obj.Email = pn1.Email;
                     obj.Address = pn1.Address;
                     obj.Link = pn1.Link;
+                    obj.LinkFile = pn1.LinkFile;
                     db.SaveChanges();
                     return new Response
                     {
@@ -744,6 +750,100 @@ namespace SCSE_BACKEND.Controllers
                 Message = "Delete Successfuly"
             };
         }
+        //---------------Tài liệu tiếng anh ---------------------------
+        [Route("AddDocumentEN")]
+        [HttpPost]
+        public object AddDocumentEN(DocumentEN1 doc1)
+        {
+            try
+            {
+                DocumentEN doc = new DocumentEN
+                {
+                    IDEN = doc1.IDEN,
+                    Title = doc1.Title,
+                    SlugEN = Utils.ReplaceSpecialChars(doc1.Title),
+                    Details = doc1.Details,
+                    CreatedByDate = DateTime.Now,
+
+                };
+                db.DocumentENs.Add(doc);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Success",
+                    Message = "Data Success"
+                };
+            }
+            catch
+            {
+                return new Response
+                {
+                    Status = "Fail",
+                    Message = "Data Fail"
+                };
+            }
+        }
+        /*[Route("EditDocumentEN")]
+        [HttpPost]
+        public object EditDocumentEN(DocumentEN1 doc1)
+        {
+            var obj = db.DocumentENs.Where(x => x.IDEN == doc1.IDEN).FirstOrDefault();
+            if (obj.IDEN > 0)
+            {
+                obj.Title = doc1.Title;
+                obj.SlugEN = Utils.ReplaceSpecialChars(doc1.Title);
+                obj.Details = doc1.Details;
+                obj.UpdatedByDate = DateTime.Now;
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Updated",
+                    Message = "Updated Successfully"
+                };
+            }
+            return new Response
+            {
+                Status = "Fail",
+                Message = "Updated Fail"
+            };
+        }
+        */
+        [Route("ListDocumentEN")]
+        [HttpGet]
+        public object ListDocumentEN()
+        {
+            var doc = db.DocumentENs.ToList();
+            return doc;
+        }
+
+        [Route("GetBySlugDocumentEN")]
+        [HttpGet]
+        public object GetBySlugDocumentEN(string slug)
+        {
+            var category = db.DocumentENs.Where(x => x.SlugEN == slug).ToList();
+            return category;
+        }
+        [Route("ListDocumentNotVersionEN")]
+        [HttpGet]
+        public object ListDocumentNotVersionEN()
+        {
+            var a = db.DocumentsforENs.ToList();
+            return a;
+        }
+        [Route("DeleteDocumentEN")]
+        [HttpDelete]
+        public object DeleteDocumentEN(int id)
+        {
+            var result = db.DocumentENs.Where(x => x.IDEN == id).ToList().FirstOrDefault();
+            db.DocumentENs.Remove(result);
+            db.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
+        }
+        //------------------------------------------
         [Route("AddOrEditBanner")]
         [HttpPost]
         public object AddOrEditBanner(Banner1 bn1)

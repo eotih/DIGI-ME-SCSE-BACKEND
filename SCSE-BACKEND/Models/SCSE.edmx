@@ -73,6 +73,17 @@
           <Property Name="CreatedByDate" Type="date" />
           <Property Name="UpdatedByDate" Type="date" />
         </EntityType>
+        <EntityType Name="DocumentEN">
+          <Key>
+            <PropertyRef Name="IDEN" />
+          </Key>
+          <Property Name="IDEN" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SlugEN" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedByDate" Type="date" />
+          <Property Name="UpdatedByDate" Type="date" />
+        </EntityType>
         <EntityType Name="Field">
           <Key>
             <PropertyRef Name="IdField" />
@@ -135,13 +146,16 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactPerson" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OrganizationName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Image" Type="nvarchar(max)" />
-          <Property Name="Field" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OrganizationProgrames" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="Purpose" Type="nvarchar(max)" />
+          <Property Name="LinkFile" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Portfolio">
           <Key>
@@ -149,9 +163,9 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="PositionEN" Type="nchar" MaxLength="10" />
+          <Property Name="PositionEN" Type="nvarchar" MaxLength="50" />
           <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DetailsEN" Type="nchar" MaxLength="10" />
+          <Property Name="DetailsEN" Type="nvarchar(max)" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Posts">
@@ -247,6 +261,22 @@
           <Property Name="IDState" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'SCSE_DB.dbo.DocumentsforEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DocumentsforEN">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Slug" />
+            <PropertyRef Name="Details" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedByDate" Type="date" />
+          <Property Name="UpdatedByDate" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'SCSE_DB.dbo.ImageForPortfolio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ImageForPortfolio">
           <Key>
@@ -320,6 +350,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="IDPost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDCat" Type="int" Nullable="false" />
+          <Property Name="IDField" Type="int" />
           <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Slug" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
@@ -336,6 +367,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocumentEN" EntityType="Self.DocumentEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Field" EntityType="Self.Field" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ImgPortfolio" EntityType="Self.ImgPortfolio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NewsEN" EntityType="Self.NewsEN" Schema="dbo" store:Type="Tables" />
@@ -350,6 +382,16 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VideoGallery" EntityType="Self.VideoGallery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocumentsforEN" EntityType="Self.DocumentsforEN" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DocumentsforEN].[ID] AS [ID], 
+    [DocumentsforEN].[Title] AS [Title], 
+    [DocumentsforEN].[Slug] AS [Slug], 
+    [DocumentsforEN].[Details] AS [Details], 
+    [DocumentsforEN].[CreatedByDate] AS [CreatedByDate], 
+    [DocumentsforEN].[UpdatedByDate] AS [UpdatedByDate]
+    FROM [dbo].[DocumentsforEN] AS [DocumentsforEN]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="ImageForPortfolio" EntityType="Self.ImageForPortfolio" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ImageForPortfolio].[ID] AS [ID], 
@@ -387,6 +429,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
             <DefiningQuery>SELECT 
     [PostsforEN].[IDPost] AS [IDPost], 
     [PostsforEN].[IDCat] AS [IDCat], 
+    [PostsforEN].[IDField] AS [IDField], 
     [PostsforEN].[Title] AS [Title], 
     [PostsforEN].[Slug] AS [Slug], 
     [PostsforEN].[Details] AS [Details], 
@@ -471,6 +514,17 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
           <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
         </EntityType>
+        <EntityType Name="DocumentEN">
+          <Key>
+            <PropertyRef Name="IDEN" />
+          </Key>
+          <Property Name="IDEN" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SlugEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="Field">
           <Key>
             <PropertyRef Name="IdField" />
@@ -533,13 +587,16 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrganizationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Field" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrganizationProgrames" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Purpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Portfolio">
           <Key>
@@ -547,9 +604,9 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PositionEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PositionEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DetailsEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DetailsEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Post">
@@ -644,6 +701,20 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           <Property Name="Purpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDState" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="DocumentsforEN">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Slug" />
+            <PropertyRef Name="Details" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="ImageForPortfolio">
           <Key>
             <PropertyRef Name="ID" />
@@ -710,6 +781,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           </Key>
           <Property Name="IDPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDCat" Type="Int32" Nullable="false" />
+          <Property Name="IDField" Type="Int32" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -726,6 +798,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Contacts" EntityType="Self.Contact" />
           <EntitySet Name="Documents" EntityType="Self.Document" />
+          <EntitySet Name="DocumentENs" EntityType="Self.DocumentEN" />
           <EntitySet Name="Fields" EntityType="Self.Field" />
           <EntitySet Name="ImgPortfolios" EntityType="Self.ImgPortfolio" />
           <EntitySet Name="NewsENs" EntityType="Self.NewsEN" />
@@ -740,6 +813,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
           <EntitySet Name="States" EntityType="Self.State" />
           <EntitySet Name="VideoGalleries" EntityType="Self.VideoGallery" />
           <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
+          <EntitySet Name="DocumentsforENs" EntityType="Self.DocumentsforEN" />
           <EntitySet Name="ImageForPortfolios" EntityType="Self.ImageForPortfolio" />
           <EntitySet Name="LoginRoles" EntityType="Self.LoginRole" />
           <EntitySet Name="NewsVNforENs" EntityType="Self.NewsVNforEN" />
@@ -825,6 +899,18 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DocumentENs">
+            <EntityTypeMapping TypeName="SCSE_DBModel.DocumentEN">
+              <MappingFragment StoreEntitySet="DocumentEN">
+                <ScalarProperty Name="IDEN" ColumnName="IDEN" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SlugEN" ColumnName="SlugEN" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+                <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Fields">
             <EntityTypeMapping TypeName="SCSE_DBModel.Field">
               <MappingFragment StoreEntitySet="Field">
@@ -891,13 +977,16 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
             <EntityTypeMapping TypeName="SCSE_DBModel.Partner">
               <MappingFragment StoreEntitySet="Partners">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Field" ColumnName="Field" />
+                <ScalarProperty Name="OrganizationProgrames" ColumnName="OrganizationProgrames" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+                <ScalarProperty Name="LinkFile" ColumnName="LinkFile" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1012,6 +1101,18 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DocumentsforENs">
+            <EntityTypeMapping TypeName="SCSE_DBModel.DocumentsforEN">
+              <MappingFragment StoreEntitySet="DocumentsforEN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+                <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ImageForPortfolios">
             <EntityTypeMapping TypeName="SCSE_DBModel.ImageForPortfolio">
               <MappingFragment StoreEntitySet="ImageForPortfolio">
@@ -1056,6 +1157,7 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
               <MappingFragment StoreEntitySet="PostsforEN">
                 <ScalarProperty Name="IDPost" ColumnName="IDPost" />
                 <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+                <ScalarProperty Name="IDField" ColumnName="IDField" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Slug" ColumnName="Slug" />
                 <ScalarProperty Name="Details" ColumnName="Details" />

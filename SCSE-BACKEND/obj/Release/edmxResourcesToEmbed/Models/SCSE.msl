@@ -75,6 +75,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DocumentENs">
+      <EntityTypeMapping TypeName="SCSE_DBModel.DocumentEN">
+        <MappingFragment StoreEntitySet="DocumentEN">
+          <ScalarProperty Name="IDEN" ColumnName="IDEN" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SlugEN" ColumnName="SlugEN" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Fields">
       <EntityTypeMapping TypeName="SCSE_DBModel.Field">
         <MappingFragment StoreEntitySet="Field">
@@ -141,13 +153,16 @@
       <EntityTypeMapping TypeName="SCSE_DBModel.Partner">
         <MappingFragment StoreEntitySet="Partners">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
           <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="Field" ColumnName="Field" />
+          <ScalarProperty Name="OrganizationProgrames" ColumnName="OrganizationProgrames" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="LinkFile" ColumnName="LinkFile" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -156,7 +171,9 @@
         <MappingFragment StoreEntitySet="Portfolio">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PositionEN" ColumnName="PositionEN" />
           <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="DetailsEN" ColumnName="DetailsEN" />
           <ScalarProperty Name="Details" ColumnName="Details" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -166,6 +183,7 @@
         <MappingFragment StoreEntitySet="Posts">
           <ScalarProperty Name="IDPost" ColumnName="IDPost" />
           <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="IDField" ColumnName="IDField" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Slug" ColumnName="Slug" />
           <ScalarProperty Name="Details" ColumnName="Details" />
@@ -182,6 +200,7 @@
         <MappingFragment StoreEntitySet="PostsEN">
           <ScalarProperty Name="IDPostEN" ColumnName="IDPostEN" />
           <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="IDField" ColumnName="IDField" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="SlugEN" ColumnName="SlugEN" />
           <ScalarProperty Name="Details" ColumnName="Details" />
@@ -198,7 +217,9 @@
         <MappingFragment StoreEntitySet="PhotoGallery">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="IDField" ColumnName="IDField" />
           <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
           <ScalarProperty Name="Slug" ColumnName="Slug" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
@@ -227,10 +248,14 @@
         <MappingFragment StoreEntitySet="VideoGallery">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="IDField" ColumnName="IDField" />
+          <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="VideoID" ColumnName="VideoID" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="LinkYTB" ColumnName="LinkYTB" />
+          <ScalarProperty Name="DescriptionEN" ColumnName="DescriptionEN" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
           <ScalarProperty Name="UpdateByDate" ColumnName="UpdateByDate" />
         </MappingFragment>
@@ -249,6 +274,18 @@
           <ScalarProperty Name="Project" ColumnName="Project" />
           <ScalarProperty Name="Purpose" ColumnName="Purpose" />
           <ScalarProperty Name="IDState" ColumnName="IDState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentsforENs">
+      <EntityTypeMapping TypeName="SCSE_DBModel.DocumentsforEN">
+        <MappingFragment StoreEntitySet="DocumentsforEN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
+          <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -296,6 +333,7 @@
         <MappingFragment StoreEntitySet="PostsforEN">
           <ScalarProperty Name="IDPost" ColumnName="IDPost" />
           <ScalarProperty Name="IDCat" ColumnName="IDCat" />
+          <ScalarProperty Name="IDField" ColumnName="IDField" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Slug" ColumnName="Slug" />
           <ScalarProperty Name="Details" ColumnName="Details" />

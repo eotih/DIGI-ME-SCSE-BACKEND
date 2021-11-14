@@ -212,6 +212,13 @@
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Document1.cs" />
+    <Compile Include="Models\DocumentEN.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentEN1.cs" />
+    <Compile Include="Models\DocumentsforEN.cs">
+      <DependentUpon>SCSE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmailClass.cs" />
     <Compile Include="Models\Field.cs">
       <DependentUpon>SCSE.tt</DependentUpon>

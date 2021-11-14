@@ -68,6 +68,17 @@
     <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
     <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
   </EntityType>
+  <EntityType Name="DocumentEN">
+    <Key>
+      <PropertyRef Name="IDEN" />
+    </Key>
+    <Property Name="IDEN" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SlugEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+  </EntityType>
   <EntityType Name="Field">
     <Key>
       <PropertyRef Name="IdField" />
@@ -130,13 +141,16 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrganizationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Field" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrganizationProgrames" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Purpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LinkFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Portfolio">
     <Key>
@@ -144,9 +158,9 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PositionEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PositionEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DetailsEN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DetailsEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="Post">
@@ -241,6 +255,20 @@
     <Property Name="Purpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IDState" Type="Int32" Nullable="false" />
   </EntityType>
+  <EntityType Name="DocumentsforEN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Slug" />
+      <PropertyRef Name="Details" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
+  </EntityType>
   <EntityType Name="ImageForPortfolio">
     <Key>
       <PropertyRef Name="ID" />
@@ -307,6 +335,7 @@
     </Key>
     <Property Name="IDPost" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IDCat" Type="Int32" Nullable="false" />
+    <Property Name="IDField" Type="Int32" />
     <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -323,6 +352,7 @@
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Contacts" EntityType="Self.Contact" />
     <EntitySet Name="Documents" EntityType="Self.Document" />
+    <EntitySet Name="DocumentENs" EntityType="Self.DocumentEN" />
     <EntitySet Name="Fields" EntityType="Self.Field" />
     <EntitySet Name="ImgPortfolios" EntityType="Self.ImgPortfolio" />
     <EntitySet Name="NewsENs" EntityType="Self.NewsEN" />
@@ -337,6 +367,7 @@
     <EntitySet Name="States" EntityType="Self.State" />
     <EntitySet Name="VideoGalleries" EntityType="Self.VideoGallery" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
+    <EntitySet Name="DocumentsforENs" EntityType="Self.DocumentsforEN" />
     <EntitySet Name="ImageForPortfolios" EntityType="Self.ImageForPortfolio" />
     <EntitySet Name="LoginRoles" EntityType="Self.LoginRole" />
     <EntitySet Name="NewsVNforENs" EntityType="Self.NewsVNforEN" />
