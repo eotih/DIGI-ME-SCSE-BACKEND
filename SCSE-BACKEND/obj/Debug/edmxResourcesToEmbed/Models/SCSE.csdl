@@ -86,14 +86,6 @@
     <Property Name="IdField" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FieldName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityType Name="ImgPortfolio">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ImagePortfolio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="NewsEN">
     <Key>
       <PropertyRef Name="IDNewsEN" />
@@ -162,6 +154,9 @@
     <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DetailsEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Post">
     <Key>
@@ -354,7 +349,6 @@
     <EntitySet Name="Documents" EntityType="Self.Document" />
     <EntitySet Name="DocumentENs" EntityType="Self.DocumentEN" />
     <EntitySet Name="Fields" EntityType="Self.Field" />
-    <EntitySet Name="ImgPortfolios" EntityType="Self.ImgPortfolio" />
     <EntitySet Name="NewsENs" EntityType="Self.NewsEN" />
     <EntitySet Name="NewsVNs" EntityType="Self.NewsVN" />
     <EntitySet Name="Notifications" EntityType="Self.Notification" />

@@ -95,15 +95,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ImgPortfolios">
-      <EntityTypeMapping TypeName="SCSE_DBModel.ImgPortfolio">
-        <MappingFragment StoreEntitySet="ImgPortfolio">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="ImagePortfolio" ColumnName="ImagePortfolio" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="NewsENs">
       <EntityTypeMapping TypeName="SCSE_DBModel.NewsEN">
         <MappingFragment StoreEntitySet="NewsEN">
@@ -175,6 +166,9 @@
           <ScalarProperty Name="Position" ColumnName="Position" />
           <ScalarProperty Name="DetailsEN" ColumnName="DetailsEN" />
           <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

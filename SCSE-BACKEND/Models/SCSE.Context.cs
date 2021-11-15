@@ -33,7 +33,6 @@ namespace SCSE_BACKEND.Models
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<DocumentEN> DocumentENs { get; set; }
         public virtual DbSet<Field> Fields { get; set; }
-        public virtual DbSet<ImgPortfolio> ImgPortfolios { get; set; }
         public virtual DbSet<NewsEN> NewsENs { get; set; }
         public virtual DbSet<NewsVN> NewsVNs { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }

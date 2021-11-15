@@ -228,10 +228,6 @@
     <Compile Include="Models\ImageForPortfolio.cs">
       <DependentUpon>SCSE.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ImgPortfolio.cs">
-      <DependentUpon>SCSE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ImgPortfolio1.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginAPI.cs" />
     <Compile Include="Models\LoginRole.cs">

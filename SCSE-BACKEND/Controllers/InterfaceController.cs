@@ -121,6 +121,9 @@ namespace SCSE_BACKEND.Controllers
                     FullName = po1.FullName,
                     Position = po1.Position,
                     PositionEN = po1.PositionEN,
+                    Image1 = po1.Image1, 
+                    Image2 = po1.Image2, 
+                    Image3 = po1.Image3, 
                 };
                 db.Portfolios.Add(po);
                 db.SaveChanges();
@@ -140,6 +143,9 @@ namespace SCSE_BACKEND.Controllers
                     obj.PositionEN = po1.PositionEN;
                     obj.Details = po1.Details;
                     obj.DetailsEN = po1.DetailsEN;
+                    //obj.Image1 = po1.Image1;
+                    //obj.Image2 = po1.Image2;
+                    //obj.Image3 = po1.Image3;
                     db.SaveChanges();
                     return new Response
                     {
@@ -155,21 +161,34 @@ namespace SCSE_BACKEND.Controllers
             };
         
         }
+        [Route("EditImagePortfolios")]
+        [HttpPost]
+        public object EditImagePortfolios(Portfolio1 po1)
+        {
+            var obj = db.Portfolios.Where(x => x.ID == po1.ID).FirstOrDefault();
+            if (obj.ID > 0)
+            {
+                obj.Image1 = po1.Image1;
+                obj.Image2 = po1.Image2;
+                obj.Image3 = po1.Image3;
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Updated",
+                    Message = "Updated Successfully"
+                };
+            }
+            return new Response
+            {
+                Status = "Error",
+                Message = "Data not insert"
+            };
+        }
         [Route("ShowAllPortfolio")]
         [HttpGet]
         public object ShowAllPortfolio()
         {
-            var result = (from po in db.Portfolios
-                          select new
-                          {
-                              po.ID,
-                              po.FullName,
-                              po.Details,
-                              po.DetailsEN,
-                              po.Position,
-                              po.PositionEN,
-                              Hinhanh = db.ImgPortfolios.Where(x => x.FullName == po.FullName).ToList()
-                          }).ToList();
+            var result = db.Portfolios.ToList();
             return result;
         }
         [Route("GetByIdPortfolios")]
@@ -179,105 +198,12 @@ namespace SCSE_BACKEND.Controllers
             var obj = db.Portfolios.Where(x => x.ID == id).FirstOrDefault();
             return obj;
         }
-        [Route("GetByNamePortfolios")]
-        [HttpGet]
-        public object GetByNamePortfolios(string name)
-        {
-            var obj = db.Portfolios.Where(x => x.FullName == name).ToList();
-            var result = (from po in obj
-                          select new
-                          {
-                              po.ID,
-                              po.FullName,
-                              po.Details,
-                              po.Position,
-                              po.DetailsEN,
-                              po.PositionEN,
-                              Hinhanh = db.ImgPortfolios.Where(x => x.FullName == po.FullName).ToList()
-                          }).FirstOrDefault();
-            return result;
-        }
-        [Route("EditImagePortfolios")]
-        [HttpPost]
-        public object EditImagePortfolios(ImgPortfolio1 imgpo1)
-        {
-            try
-            {
-                if (imgpo1.ID == 0)
-                {
-                    ImgPortfolio imgpo = new ImgPortfolio
-                    {
-                        FullName = imgpo1.FullName,
-                        ImagePortfolio = imgpo1.ImagePortfolio
-                    };
-                    db.ImgPortfolios.Add(imgpo);
-                    db.SaveChanges();
-                    return new Response
-                    {
-                        Status = "Success",
-                        Message = "Data Successfully"
-                    };
-                }
-                else
-                {
-                    var obj = db.ImgPortfolios.Where(x => x.ID == imgpo1.ID).ToList().FirstOrDefault();
-                    if (obj.ID > 0)
-                    {
-                        obj.ImagePortfolio = imgpo1.ImagePortfolio;
-                        db.SaveChanges();
-                        return new Response
-                        {
-                            Status = "Updated",
-                            Message = "Updated Successfully"
-                        };
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
-            }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
-        }
-        [Route("GetByFullNameImgPortfolios")]
-        [HttpGet]
-        public object GetByFullNameImgPortfolios(string FullName)
-        {
-            var obj = db.ImgPortfolios.Where(x => x.FullName == FullName).ToList();
-            return obj;
-        }
-        [Route("ImageForPortfolio")]
-        [HttpGet]
-        public object ImageForPortfolio()
-        {
-            var obj = db.ImageForPortfolios.ToList();
-            return obj;
-        }
         [Route("DeletePortfolio")]
         [HttpDelete]
         public object DeletePortfolio(string fullname)
         {
             var obj = db.Portfolios.Where(x => x.FullName == fullname).FirstOrDefault();
             db.Portfolios.Remove(obj);
-            DeleteImgPortfolio(fullname);
-            db.SaveChanges();
-            return new Response
-            {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
-        }
-        public object DeleteImgPortfolio(string fullname)
-        {
-            var result = db.ImgPortfolios.Where(x => x.FullName == fullname).ToList();
-            for (var i = 0; i < result.Count; i++)
-            {
-                db.ImgPortfolios.Remove(result[i]);
-            }
             db.SaveChanges();
             return new Response
             {

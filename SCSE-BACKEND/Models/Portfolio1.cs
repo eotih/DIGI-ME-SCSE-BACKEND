@@ -13,6 +13,9 @@ namespace SCSE_BACKEND.Models
         public string Position { get; set; }
         public string DetailsEN { get; set; }
         public string Details { get; set; }
+        public string Image1 { get; set; }
+        public string Image2 { get; set; }
+        public string Image3 { get; set; }
 
     }
 }
