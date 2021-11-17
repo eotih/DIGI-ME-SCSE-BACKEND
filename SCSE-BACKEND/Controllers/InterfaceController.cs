@@ -6,6 +6,9 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Data.Entity;
 using System.Web.Http;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.IO;
 
 namespace SCSE_BACKEND.Controllers
 {
@@ -299,7 +302,8 @@ namespace SCSE_BACKEND.Controllers
                     Address = pn1.Address,
                     Link = pn1.Link,
                     Purpose =pn1.Purpose,
-                    LinkFile = pn1.LinkFile
+                    LinkFile = pn1.LinkFile,
+                    IDState = 1
                 };
                 db.Partners.Add(pn);
                 db.SaveChanges();
@@ -324,6 +328,7 @@ namespace SCSE_BACKEND.Controllers
                     obj.Address = pn1.Address;
                     obj.Link = pn1.Link;
                     obj.LinkFile = pn1.LinkFile;
+                    obj.IDState = pn1.IDState;
                     db.SaveChanges();
                     return new Response
                     {
@@ -338,7 +343,32 @@ namespace SCSE_BACKEND.Controllers
                 Message = "Data not insert"
             };
         }
-
+        [HttpPost]
+        [Route("UploadFile")]
+        public async Task<string> UploadFile()
+        {
+            var ctx = HttpContext.Current;
+            var root = ctx.Server.MapPath("~/assets");
+            var provider = new MultipartFormDataStreamProvider(root);
+            try
+            {
+                await Request.Content
+                    .ReadAsMultipartAsync(provider);
+                foreach (var file in provider.FileData)
+                {
+                    var name = file.Headers.ContentDisposition.FileName;
+                    name = name.Trim('"');
+                    var localFileName = file.LocalFileName;
+                    var filePath = Path.Combine(root, name);
+                    File.Move(localFileName, filePath);
+                }
+            }
+            catch (Exception e)
+            {
+                return $"Eror: {e.Message}";
+            }
+            return "File uploaded!";
+        }
         [Route("GetByIdPartner")]
         [HttpGet]
         public object GetByIdPartner(int ID)
@@ -663,6 +693,13 @@ namespace SCSE_BACKEND.Controllers
             var category = db.Documents.Where(x => x.Slug == slug).ToList();
             return category;
         }
+        [Route("GetByIDDocument")]
+        [HttpGet]
+        public object GetByIDDocument(int ID)
+        {
+            var category = db.Documents.Where(x => x.ID == ID).FirstOrDefault();
+            return category;
+        }
         [Route("DeleteDocument")]
         [HttpDelete]
         public object DeleteDocument(int id)
@@ -709,6 +746,13 @@ namespace SCSE_BACKEND.Controllers
                 };
             }
         }
+        [Route("GetByIDDocumentEN")]
+        [HttpGet]
+        public object GetByIDDocumentEN(int IDEN)
+        {
+            var category = db.DocumentENs.Where(x => x.IDEN == IDEN).FirstOrDefault();
+            return category;
+        }
         /*[Route("EditDocumentEN")]
         [HttpPost]
         public object EditDocumentEN(DocumentEN1 doc1)
@@ -744,9 +788,9 @@ namespace SCSE_BACKEND.Controllers
 
         [Route("GetBySlugDocumentEN")]
         [HttpGet]
-        public object GetBySlugDocumentEN(string slug)
+        public object GetBySlugDocumentEN(string slugen)
         {
-            var category = db.DocumentENs.Where(x => x.SlugEN == slug).ToList();
+            var category = db.DocumentENs.Where(x => x.SlugEN == slugen).ToList();
             return category;
         }
         [Route("ListDocumentNotVersionEN")]

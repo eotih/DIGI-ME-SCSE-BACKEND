@@ -143,6 +143,7 @@
     <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Purpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LinkFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDState" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Portfolio">
     <Key>
@@ -264,16 +265,6 @@
     <Property Name="CreatedByDate" Type="DateTime" Precision="0" />
     <Property Name="UpdatedByDate" Type="DateTime" Precision="0" />
   </EntityType>
-  <EntityType Name="ImageForPortfolio">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="FullName" />
-      <PropertyRef Name="ImagePortfolio" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ImagePortfolio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="LoginRole">
     <Key>
       <PropertyRef Name="IDUser" />
@@ -362,7 +353,6 @@
     <EntitySet Name="VideoGalleries" EntityType="Self.VideoGallery" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
     <EntitySet Name="DocumentsforENs" EntityType="Self.DocumentsforEN" />
-    <EntitySet Name="ImageForPortfolios" EntityType="Self.ImageForPortfolio" />
     <EntitySet Name="LoginRoles" EntityType="Self.LoginRole" />
     <EntitySet Name="NewsVNforENs" EntityType="Self.NewsVNforEN" />
     <EntitySet Name="PostsforENs" EntityType="Self.PostsforEN" />

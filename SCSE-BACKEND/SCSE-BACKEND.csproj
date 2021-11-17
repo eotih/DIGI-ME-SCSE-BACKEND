@@ -225,9 +225,6 @@
     </Compile>
     <Compile Include="Models\Field1.cs" />
     <Compile Include="Models\FilePDF.cs" />
-    <Compile Include="Models\ImageForPortfolio.cs">
-      <DependentUpon>SCSE.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginAPI.cs" />
     <Compile Include="Models\LoginRole.cs">
@@ -409,6 +406,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\" />
     <Folder Include="System\Web\HttpContext\Current\" />
     <Folder Include="Views\Interface\" />
     <Folder Include="Views\Management\" />

@@ -19,5 +19,6 @@ namespace SCSE_BACKEND.Models
         public string Link { get; set; }
         public string Purpose { get; set; }
         public string LinkFile { get; set; }
+        public int IDState { get; set; }
     }
 }

@@ -46,7 +46,6 @@ namespace SCSE_BACKEND.Models
         public virtual DbSet<VideoGallery> VideoGalleries { get; set; }
         public virtual DbSet<Volunteer> Volunteers { get; set; }
         public virtual DbSet<DocumentsforEN> DocumentsforENs { get; set; }
-        public virtual DbSet<ImageForPortfolio> ImageForPortfolios { get; set; }
         public virtual DbSet<LoginRole> LoginRoles { get; set; }
         public virtual DbSet<NewsVNforEN> NewsVNforENs { get; set; }
         public virtual DbSet<PostsforEN> PostsforENs { get; set; }

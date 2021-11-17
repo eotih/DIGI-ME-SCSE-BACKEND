@@ -143,6 +143,7 @@
     <Property Name="Link" Type="nvarchar(max)" />
     <Property Name="Purpose" Type="nvarchar(max)" />
     <Property Name="LinkFile" Type="nvarchar(max)" />
+    <Property Name="IDState" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Portfolio">
     <Key>
@@ -267,18 +268,6 @@ warning 6002: The table/view 'SCSE_DB.dbo.DocumentsforEN' does not have a primar
     <Property Name="UpdatedByDate" Type="date" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'SCSE_DB.dbo.ImageForPortfolio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="ImageForPortfolio">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="FullName" />
-      <PropertyRef Name="ImagePortfolio" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="ImagePortfolio" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <!--Errors Found During Generation:
 warning 6002: The table/view 'SCSE_DB.dbo.LoginRole' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="LoginRole">
     <Key>
@@ -380,13 +369,6 @@ warning 6002: The table/view 'SCSE_DB.dbo.PostsforEN' does not have a primary ke
     [DocumentsforEN].[CreatedByDate] AS [CreatedByDate], 
     [DocumentsforEN].[UpdatedByDate] AS [UpdatedByDate]
     FROM [dbo].[DocumentsforEN] AS [DocumentsforEN]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="ImageForPortfolio" EntityType="Self.ImageForPortfolio" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ImageForPortfolio].[ID] AS [ID], 
-    [ImageForPortfolio].[FullName] AS [FullName], 
-    [ImageForPortfolio].[ImagePortfolio] AS [ImagePortfolio]
-    FROM [dbo].[ImageForPortfolio] AS [ImageForPortfolio]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="LoginRole" EntityType="Self.LoginRole" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
