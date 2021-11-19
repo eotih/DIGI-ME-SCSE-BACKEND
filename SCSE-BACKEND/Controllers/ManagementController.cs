@@ -11,7 +11,7 @@ using System.Web.Http;
 namespace SCSE_BACKEND.Controllers
 {
 
-    [RoutePrefix("API/Management")]
+    [RoutePrefix("Management")]
     public class ManagementController : ApiController
     {
         SCSE_DBEntities db = new SCSE_DBEntities();

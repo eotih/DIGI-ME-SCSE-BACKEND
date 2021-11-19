@@ -8,7 +8,7 @@ using System.Net.Http;
 
 namespace SCSE_BACKEND.Controllers
 {
-    [RoutePrefix("API/User")]
+    [RoutePrefix("User")]
     
     public class UserController : ApiController
     {

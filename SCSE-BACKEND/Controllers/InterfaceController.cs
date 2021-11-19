@@ -12,7 +12,7 @@ using System.IO;
 
 namespace SCSE_BACKEND.Controllers
 {
-    [RoutePrefix("API/Interface")]
+    [RoutePrefix("Interface")]
     public class InterfaceController : ApiController
     {
         //Nội Dung Trang Chủ 
@@ -287,7 +287,7 @@ namespace SCSE_BACKEND.Controllers
         //Thông Tin Đối Tác 
         [Route("AddOrEditPartner")]
         [HttpPost]
-        public object AddOrEditPartner(Partner1 pn1)
+        public  object AddOrEditPartnerAsync(Partner1 pn1)
         {
             if (pn1.ID == 0)
             {
@@ -343,8 +343,9 @@ namespace SCSE_BACKEND.Controllers
                 Message = "Data not insert"
             };
         }
+        [Route("UploadFileVipPro")]
         [HttpPost]
-        [Route("UploadFile")]
+        // Upload file to directory
         public async Task<string> UploadFile()
         {
             var ctx = HttpContext.Current;
@@ -354,18 +355,67 @@ namespace SCSE_BACKEND.Controllers
             {
                 await Request.Content
                     .ReadAsMultipartAsync(provider);
-                foreach (var file in provider.FileData)
+                Partner1 p = new Partner1
                 {
-                    var name = file.Headers.ContentDisposition.FileName;
-                    name = name.Trim('"');
-                    var localFileName = file.LocalFileName;
-                    var filePath = Path.Combine(root, name);
-                    File.Move(localFileName, filePath);
+                    OrganizationName = provider.FormData["OrganizationName"],
+                    ContactPerson = provider.FormData["ContactPerson"],
+                    OrganizationProgrames = provider.FormData["OrganizationProgrames"],
+                    Phone = provider.FormData["Phone"],
+                    Email = provider.FormData["Email"],
+                    Address = provider.FormData["Address"],
+                    Link = provider.FormData["Link"],
+                    Purpose = provider.FormData["Purpose"]
+                };
+                var pathName = provider.FormData["OrganizationName"];
+                var folderUpload = Utils.ReplaceSpecialChars(pathName);
+                var pathString = Path.Combine(root, folderUpload);
+                if (!Directory.Exists(pathString))
+                {
+                    Directory.CreateDirectory(pathString);
+                    foreach (var file in provider.FileData)
+                    {
+                        var name = file.Headers.ContentDisposition.FileName;
+                        name = name.Trim('"');
+                        var localFileName = file.LocalFileName;
+                        var filePath = Path.Combine(pathString, name);
+                        if (File.Exists(filePath))
+                        {
+                            File.Delete(file.LocalFileName);
+                            return $"Error: File Exists";
+                        }
+                        else
+                        {
+                            p.LinkFile = "assets/" + folderUpload + "/" + name;
+                            AddOrEditPartnerAsync(p);
+                            File.Move(localFileName, filePath);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var file in provider.FileData)
+                    {
+                        var name = file.Headers.ContentDisposition.FileName;
+                        name = name.Trim('"');
+                        var localFileName = file.LocalFileName;
+                        var filePath = Path.Combine(pathString, name);
+                        if (File.Exists(filePath))
+                        {
+                            File.Delete(file.LocalFileName);
+                            return $"Error: File Exists";
+                        }
+                        else
+                        {
+                            p.LinkFile = "assets/" + folderUpload + "/" + name;
+                            AddOrEditPartnerAsync(p);
+                            File.Move(localFileName, filePath);
+                        }
+                    }
                 }
             }
             catch (Exception e)
             {
-                return $"Eror: {e.Message}";
+                return $"Error: {e.Message}";
             }
             return "File uploaded!";
         }

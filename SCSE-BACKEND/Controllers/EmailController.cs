@@ -12,7 +12,7 @@ namespace SCSE_BACKEND.Controllers
     public class EmailController : ApiController
     {
         [HttpPost]
-        [Route("API/send-email")]
+        [Route("send-email")]
         public IHttpActionResult SendMail(EmailClass Email)
         {
             MailMessage mm = new MailMessage
