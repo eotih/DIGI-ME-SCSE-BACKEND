@@ -16,6 +16,7 @@ namespace SCSE_BACKEND.Controllers
     public class InterfaceController : ApiController
     {
         //Nội Dung Trang Chủ 
+        string data = TokenManager.ValidateCheck();
         SCSE_DBEntities db = new SCSE_DBEntities();
 
         //---------------------------Video Model---------------------------//
@@ -30,71 +31,94 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddOrEditVideo(VideoGallery1 video1)
         {
-            if (video1.ID == 0)
+            if (data == "OK")
             {
-                VideoGallery video = new VideoGallery
+                if (video1.ID == 0)
                 {
-                    ID = video1.ID,
-                    IDField = video1.IDField,
-                    IDCat = video1.IDCat,
-                    TitleEN = video1.TitleEN,
-                    Title = video1.Title,
-                    VideoID = video1.VideoID,
-                    DescriptionEN = video1.DescriptionEN,
-                    Description = video1.Description,
-                    Image = video1.Image,
-                    LinkYTB = video1.LinkYTB,
-                    CreatedByDate = DateTime.Now,
-                };
-                db.VideoGalleries.Add(video);
-                db.SaveChanges();
+                    VideoGallery video = new VideoGallery
+                    {
+                        ID = video1.ID,
+                        IDField = video1.IDField,
+                        IDCat = video1.IDCat,
+                        TitleEN = video1.TitleEN,
+                        Title = video1.Title,
+                        VideoID = video1.VideoID,
+                        DescriptionEN = video1.DescriptionEN,
+                        Description = video1.Description,
+                        Image = video1.Image,
+                        LinkYTB = video1.LinkYTB,
+                        CreatedByDate = DateTime.Now,
+                    };
+                    db.VideoGalleries.Add(video);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
+                else
+                {
+                    var obj = db.VideoGalleries.Where(x => x.ID == video1.ID).ToList().FirstOrDefault();
+                    if (obj.ID > 0)
+                    {
+                        obj.IDCat = video1.IDCat;
+                        obj.IDField = video1.IDField;
+                        obj.Title = video1.Title;
+                        obj.TitleEN = video1.TitleEN;
+                        obj.VideoID = video1.VideoID;
+                        obj.DescriptionEN = video1.DescriptionEN;
+                        obj.Description = video1.Description;
+                        obj.Image = video1.Image;
+                        obj.LinkYTB = video1.LinkYTB;
+                        obj.UpdateByDate = DateTime.Now;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfully"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Success"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.VideoGalleries.Where(x => x.ID == video1.ID).ToList().FirstOrDefault();
-                if (obj.ID > 0)
+                return new Response
                 {
-                    obj.IDCat = video1.IDCat;
-                    obj.IDField = video1.IDField;
-                    obj.Title = video1.Title;
-                    obj.TitleEN = video1.TitleEN;
-                    obj.VideoID = video1.VideoID;
-                    obj.DescriptionEN = video1.DescriptionEN;
-                    obj.Description = video1.Description;
-                    obj.Image = video1.Image;
-                    obj.LinkYTB = video1.LinkYTB;
-                    obj.UpdateByDate = DateTime.Now;
-                    db.SaveChanges();
-                    return new Response
-                    {
-                        Status = "Updated",
-                        Message = "Updated Successfully"
-                    };
-                }
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
             }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+
         }
         [Route("DeleteVideo")]
         [HttpDelete]
         public object DeleteVideo(int id)
         {
-            var obj = db.VideoGalleries.Where(x => x.ID == id).ToList().FirstOrDefault();
-            db.VideoGalleries.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var obj = db.VideoGalleries.Where(x => x.ID == id).FirstOrDefault();
+                db.VideoGalleries.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
         }
         [Route("GetByIDVideo")]
         [HttpGet]
@@ -115,40 +139,79 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddOrEditPortfolios(Portfolio1 po1)
         {
-            if (po1.ID == 0)
+            if (data == "OK")
             {
-                Portfolio po = new Portfolio
+                if (po1.ID == 0)
                 {
-                    Details = po1.Details,
-                    DetailsEN = po1.DetailsEN,
-                    FullName = po1.FullName,
-                    Position = po1.Position,
-                    PositionEN = po1.PositionEN,
-                    Image1 = po1.Image1, 
-                    Image2 = po1.Image2, 
-                    Image3 = po1.Image3, 
-                };
-                db.Portfolios.Add(po);
-                db.SaveChanges();
+                    Portfolio po = new Portfolio
+                    {
+                        Details = po1.Details,
+                        DetailsEN = po1.DetailsEN,
+                        FullName = po1.FullName,
+                        Position = po1.Position,
+                        PositionEN = po1.PositionEN,
+                        Image1 = po1.Image1,
+                        Image2 = po1.Image2,
+                        Image3 = po1.Image3,
+                    };
+                    db.Portfolios.Add(po);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
+                else
+                {
+                    var obj = db.Portfolios.Where(x => x.ID == po1.ID).ToList().FirstOrDefault();
+                    if (obj.ID > 0)
+                    {
+                        obj.FullName = po1.FullName;
+                        obj.Position = po1.Position;
+                        obj.PositionEN = po1.PositionEN;
+                        obj.Details = po1.Details;
+                        obj.DetailsEN = po1.DetailsEN;
+                        //obj.Image1 = po1.Image1;
+                        //obj.Image2 = po1.Image2;
+                        //obj.Image3 = po1.Image3;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfully"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Success"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.Portfolios.Where(x => x.ID == po1.ID).ToList().FirstOrDefault();
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
+
+        }
+        [Route("EditImagePortfolios")]
+        [HttpPost]
+        public object EditImagePortfolios(Portfolio1 po1)
+        {
+            if (data == "OK")
+            {
+                var obj = db.Portfolios.Where(x => x.ID == po1.ID).FirstOrDefault();
                 if (obj.ID > 0)
                 {
-                    obj.FullName = po1.FullName;
-                    obj.Position = po1.Position;
-                    obj.PositionEN = po1.PositionEN;
-                    obj.Details = po1.Details;
-                    obj.DetailsEN = po1.DetailsEN;
-                    //obj.Image1 = po1.Image1;
-                    //obj.Image2 = po1.Image2;
-                    //obj.Image3 = po1.Image3;
+                    obj.Image1 = po1.Image1;
+                    obj.Image2 = po1.Image2;
+                    obj.Image3 = po1.Image3;
                     db.SaveChanges();
                     return new Response
                     {
@@ -156,36 +219,21 @@ namespace SCSE_BACKEND.Controllers
                         Message = "Updated Successfully"
                     };
                 }
-            }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
-        
-        }
-        [Route("EditImagePortfolios")]
-        [HttpPost]
-        public object EditImagePortfolios(Portfolio1 po1)
-        {
-            var obj = db.Portfolios.Where(x => x.ID == po1.ID).FirstOrDefault();
-            if (obj.ID > 0)
-            {
-                obj.Image1 = po1.Image1;
-                obj.Image2 = po1.Image2;
-                obj.Image3 = po1.Image3;
-                db.SaveChanges();
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         [Route("ShowAllPortfolio")]
         [HttpGet]
@@ -205,53 +253,77 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeletePortfolio(string fullname)
         {
-            var obj = db.Portfolios.Where(x => x.FullName == fullname).FirstOrDefault();
-            db.Portfolios.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+
+                var obj = db.Portfolios.Where(x => x.FullName == fullname).FirstOrDefault();
+                db.Portfolios.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
         }
         //  Thêm/Sửa Thông Tin Ngân Hàng 
         [Route("AddOrEditBankInfo")]
         [HttpPost]
         public object AddOrEditBankInfo(BankInformation1 bank1)
         {
-            if (bank1.ID == 0)
+            if (data == "OK")
             {
-                BankInformation bank = new BankInformation();
-                bank.BankName = bank1.BankName;
-                bank.ImageQR = bank1.ImageQR;
-                db.BankInformations.Add(bank);
-                db.SaveChanges();
+                if (bank1.ID == 0)
+                {
+                    BankInformation bank = new BankInformation();
+                    bank.BankName = bank1.BankName;
+                    bank.ImageQR = bank1.ImageQR;
+                    db.BankInformations.Add(bank);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Successfully"
+                    };
+                }
+                else
+                {
+                    var obj = db.BankInformations.Where(x => x.ID == bank1.ID).ToList().FirstOrDefault();
+                    if (obj.ID > 0)
+                    {
+                        obj.ImageQR = bank1.ImageQR;
+                        obj.BankName = bank1.BankName;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfully"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Successfully"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.BankInformations.Where(x => x.ID == bank1.ID).ToList().FirstOrDefault();
-                if (obj.ID > 0)
+                return new Response
                 {
-                    obj.ImageQR = bank1.ImageQR;
-                    obj.BankName = bank1.BankName;
-                    db.SaveChanges();
-                    return new Response
-                    {
-                        Status = "Updated",
-                        Message = "Updated Successfully"
-                    };
-                }
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
             }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+
 
         }
 
@@ -275,19 +347,31 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeleteBankInfo(int ID)
         {
-            var obj = db.BankInformations.Where(x => x.ID == ID).ToList().FirstOrDefault();
-            db.BankInformations.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var obj = db.BankInformations.Where(x => x.ID == ID).ToList().FirstOrDefault();
+                db.BankInformations.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         //Thông Tin Đối Tác 
         [Route("AddOrEditPartner")]
         [HttpPost]
-        public  object AddOrEditPartnerAsync(Partner1 pn1)
+        public object AddOrEditPartnerAsync(Partner1 pn1)
         {
             if (pn1.ID == 0)
             {
@@ -301,7 +385,7 @@ namespace SCSE_BACKEND.Controllers
                     Email = pn1.Email,
                     Address = pn1.Address,
                     Link = pn1.Link,
-                    Purpose =pn1.Purpose,
+                    Purpose = pn1.Purpose,
                     LinkFile = pn1.LinkFile,
                     IDState = 1
                 };
@@ -315,27 +399,40 @@ namespace SCSE_BACKEND.Controllers
             }
             else
             {
-                var obj = db.Partners.Where(x => x.ID == pn1.ID).ToList().FirstOrDefault();
-                if (obj.ID > 0)
+                string data = TokenManager.ValidateCheck();
+                if (data == "OK")
                 {
-                    obj.OrganizationName = pn1.OrganizationName;
-                    obj.ContactPerson = pn1.ContactPerson;
-                    obj.Image = pn1.Image;
-                    obj.OrganizationProgrames = pn1.OrganizationProgrames;
-                    obj.Purpose = pn1.Purpose;
-                    obj.Phone = pn1.Phone;
-                    obj.Email = pn1.Email;
-                    obj.Address = pn1.Address;
-                    obj.Link = pn1.Link;
-                    obj.LinkFile = pn1.LinkFile;
-                    obj.IDState = pn1.IDState;
-                    db.SaveChanges();
+                    var obj = db.Partners.Where(x => x.ID == pn1.ID).ToList().FirstOrDefault();
+                    if (obj.ID > 0)
+                    {
+                        obj.OrganizationName = pn1.OrganizationName;
+                        obj.ContactPerson = pn1.ContactPerson;
+                        obj.Image = pn1.Image;
+                        obj.OrganizationProgrames = pn1.OrganizationProgrames;
+                        obj.Purpose = pn1.Purpose;
+                        obj.Phone = pn1.Phone;
+                        obj.Email = pn1.Email;
+                        obj.Address = pn1.Address;
+                        obj.Link = pn1.Link;
+                        obj.LinkFile = pn1.LinkFile;
+                        obj.IDState = pn1.IDState;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfuly"
+                        };
+                    }
+                }
+                else
+                {
                     return new Response
                     {
-                        Status = "Updated",
-                        Message = "Updated Successfuly"
+                        Status = "Error",
+                        Message = "Token Fail"
                     };
                 }
+
             }
             return new Response
             {
@@ -439,14 +536,26 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeletePartner(int ID)
         {
-            var partner = db.Partners.Where(x => x.ID == ID).ToList().FirstOrDefault();
-            db.Partners.Remove(partner);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var partner = db.Partners.Where(x => x.ID == ID).ToList().FirstOrDefault();
+                db.Partners.Remove(partner);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
 
         //Thông tin liên hệ 
@@ -462,101 +571,137 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeleteContact(int ID)
         {
-            var result = db.Contacts.Where(x => x.ID == ID).ToList().FirstOrDefault();
-            db.Contacts.Remove(result);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var result = db.Contacts.Where(x => x.ID == ID).ToList().FirstOrDefault();
+                db.Contacts.Remove(result);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
 
         [Route("AddOrEditContact")]
         [HttpPost]
         public object AddOrEditContact(Contact1 ct1)
         {
-            if (ct1.ID == 0)
+            if (data == "OK")
             {
-                Contact ct = new Contact
+                if (ct1.ID == 0)
                 {
-                    Address = ct1.Address,
-                    FullName = ct1.FullName,
-                    Subtitle = ct1.Subtitle,
-                    Phone = ct1.Phone,
-                    Email = ct1.Email,
-                    Details = ct1.Details,
-                    CreatedByDate = DateTime.Now
-                };
-                db.Contacts.Add(ct);
-                db.SaveChanges();
+                    Contact ct = new Contact
+                    {
+                        Address = ct1.Address,
+                        FullName = ct1.FullName,
+                        Subtitle = ct1.Subtitle,
+                        Phone = ct1.Phone,
+                        Email = ct1.Email,
+                        Details = ct1.Details,
+                        CreatedByDate = DateTime.Now
+                    };
+                    db.Contacts.Add(ct);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Successfuly"
+                    };
+                }
+                else
+                {
+                    var contact = db.Contacts.Where(x => x.ID == ct1.ID).ToList().FirstOrDefault();
+                    if (ct1.ID > 0)
+                    {
+                        contact.FullName = ct1.FullName;
+                        contact.Subtitle = ct1.Subtitle;
+                        contact.Phone = ct1.Phone;
+                        contact.Email = ct1.Email;
+                        contact.Details = ct1.Details;
+                        contact.Address = ct1.Address;
+                        contact.UpdatedByDate = DateTime.Now;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfuly"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Successfuly"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var contact = db.Contacts.Where(x => x.ID == ct1.ID).ToList().FirstOrDefault();
-                if (ct1.ID > 0)
+                return new Response
                 {
-                    contact.FullName = ct1.FullName;
-                    contact.Subtitle = ct1.Subtitle;
-                    contact.Phone = ct1.Phone;
-                    contact.Email = ct1.Email;
-                    contact.Details = ct1.Details;
-                    contact.Address = ct1.Address;
-                    contact.UpdatedByDate = DateTime.Now;
-                    db.SaveChanges();
-                    return new Response
-                    {
-                        Status = "Updated",
-                        Message = "Updated Successfuly"
-                    };
-                }
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
             }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+
         }
         [Route("AddOrEditCategory")]
         [HttpPost]
         public object AddOrEditCategory(Category1 category1)
         {
-            if (category1.IDCat == 0)
+            if (data == "OK")
             {
-                Category category = new Category();
-                category.CategoryName = category1.CategoryName;
-                db.Categories.Add(category);
-                db.SaveChanges();
+                if (category1.IDCat == 0)
+                {
+                    Category category = new Category();
+                    category.CategoryName = category1.CategoryName;
+                    db.Categories.Add(category);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Successfuly"
+                    };
+                }
+                else
+                {
+                    var obj = db.Categories.Where(x => x.IDCat == category1.IDCat).ToList().FirstOrDefault();
+                    if (category1.IDCat > 0)
+                    {
+                        obj.CategoryName = category1.CategoryName;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfuly"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Successfuly"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.Categories.Where(x => x.IDCat == category1.IDCat).ToList().FirstOrDefault();
-                if (category1.IDCat > 0)
+                return new Response
                 {
-                    obj.CategoryName = category1.CategoryName;
-                    db.SaveChanges();
-                    return new Response
-                    {
-                        Status = "Updated",
-                        Message = "Updated Successfuly"
-                    };
-                }
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
             }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+
         }
         [Route("ListCategory")]
         [HttpGet]
@@ -592,53 +737,65 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddOrEditPhotoGallery(PhotoGallery1 photo1)
         {
-            if (photo1.ID == 0)
+            if (data == "OK")
             {
-                PhotoGallery photo = new PhotoGallery
+                if (photo1.ID == 0)
                 {
-                    IDCat = photo1.IDCat,
-                    IDField = photo1.IDField,
-                    Title = photo1.Title,
-                    TitleEN = photo1.TitleEN,
-                    Slug = Utils.ReplaceSpecialChars(photo1.Title),
-                    Image = photo1.Image,
-                    CreatedByDate = DateTime.Now
-                };
-                db.PhotoGalleries.Add(photo);
-                db.SaveChanges();
+                    PhotoGallery photo = new PhotoGallery
+                    {
+                        IDCat = photo1.IDCat,
+                        IDField = photo1.IDField,
+                        Title = photo1.Title,
+                        TitleEN = photo1.TitleEN,
+                        Slug = Utils.ReplaceSpecialChars(photo1.Title),
+                        Image = photo1.Image,
+                        CreatedByDate = DateTime.Now
+                    };
+                    db.PhotoGalleries.Add(photo);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data successfuly"
+                    };
+                }
+                else
+                {
+                    var obj = db.PhotoGalleries.Where(x => x.ID == photo1.ID).ToList().FirstOrDefault();
+                    if (photo1.ID > 0)
+                    {
+                        obj.IDCat = photo1.IDCat;
+                        obj.IDField = photo1.IDField;
+                        obj.Title = photo1.Title;
+                        obj.TitleEN = photo1.TitleEN;
+                        obj.Image = photo1.Image;
+                        obj.Slug = Utils.ReplaceSpecialChars(photo1.Title);
+                        obj.UpdatedByDate = DateTime.Now;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfuly"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data successfuly"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.PhotoGalleries.Where(x => x.ID == photo1.ID).ToList().FirstOrDefault();
-                if (photo1.ID > 0)
+                return new Response
                 {
-                    obj.IDCat = photo1.IDCat;
-                    obj.IDField = photo1.IDField;
-                    obj.Title = photo1.Title;
-                    obj.TitleEN = photo1.TitleEN;
-                    obj.Image = photo1.Image;
-                    obj.Slug = Utils.ReplaceSpecialChars(photo1.Title);
-                    obj.UpdatedByDate = DateTime.Now;
-                    db.SaveChanges();
-                    return new Response
-                    {
-                        Status = "Updated",
-                        Message = "Updated Successfuly"
-                    };
-                }
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
             }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+
         }
-        
+
         [Route("ListPhoto")]
         [HttpGet]
         public object ListPhoto()
@@ -671,61 +828,85 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeletePhotosByTitle(string title)
         {
-            var result = db.PhotoGalleries.Where(x => x.Title == title).ToList();
-            for (var i = 0; i < result.Count; i++)
+            if (data == "OK")
             {
-                db.PhotoGalleries.Remove(result[i]);
+                var result = db.PhotoGalleries.Where(x => x.Title == title).ToList();
+                for (var i = 0; i < result.Count; i++)
+                {
+                    db.PhotoGalleries.Remove(result[i]);
+                }
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
             }
-            db.SaveChanges();
-            return new Response
+            else
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         [Route("AddOrEditDocument")]
         [HttpPost]
         public object AddOrEditDocument(Document1 doc1)
         {
-            if (doc1.ID == 0)
+            if (data == "OK")
             {
-                Document doc = new Document
+                if (doc1.ID == 0)
                 {
-                    ID = doc1.ID,
-                    Title = doc1.Title,
-                    Slug = Utils.ReplaceSpecialChars(doc1.Title),
-                    Details = doc1.Details,
-                    CreatedByDate = DateTime.Now
-                };
-                db.Documents.Add(doc);
-                db.SaveChanges();
+                    Document doc = new Document
+                    {
+                        ID = doc1.ID,
+                        Title = doc1.Title,
+                        Slug = Utils.ReplaceSpecialChars(doc1.Title),
+                        Details = doc1.Details,
+                        CreatedByDate = DateTime.Now
+                    };
+                    db.Documents.Add(doc);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data successfuly"
+                    };
+                }
+                else
+                {
+                    var obj = db.Documents.Where(x => x.ID == doc1.ID).ToList().FirstOrDefault();
+                    if (doc1.ID > 0)
+                    {
+                        obj.Title = doc1.Title;
+                        obj.Details = doc1.Details;
+                        obj.UpdatedByDate = DateTime.Now;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfuly"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data successfuly"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.Documents.Where(x => x.ID == doc1.ID).ToList().FirstOrDefault();
-                if (doc1.ID > 0)
+                return new Response
                 {
-                    obj.Title = doc1.Title;
-                    obj.Details = doc1.Details;
-                    obj.UpdatedByDate = DateTime.Now;
-                    db.SaveChanges();
-                    return new Response
-                    {
-                        Status = "Updated",
-                        Message = "Updated Successfuly"
-                    };
-                }
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
             }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+
         }
 
         [Route("ListDocument")]
@@ -754,45 +935,69 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeleteDocument(int id)
         {
-            var result = db.Documents.Where(x => x.ID == id).ToList().FirstOrDefault();
-            db.Documents.Remove(result);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+
+                var result = db.Documents.Where(x => x.ID == id).ToList().FirstOrDefault();
+                db.Documents.Remove(result);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
         }
         //---------------Tài liệu tiếng anh ---------------------------
         [Route("AddDocumentEN")]
         [HttpPost]
         public object AddDocumentEN(DocumentEN1 doc1)
         {
-            try
+            if (data == "OK")
             {
-                DocumentEN doc = new DocumentEN
-                {
-                    IDEN = doc1.IDEN,
-                    Title = doc1.Title,
-                    SlugEN = Utils.ReplaceSpecialChars(doc1.Title),
-                    Details = doc1.Details,
-                    CreatedByDate = DateTime.Now,
 
-                };
-                db.DocumentENs.Add(doc);
-                db.SaveChanges();
-                return new Response
+                try
                 {
-                    Status = "Success",
-                    Message = "Data Success"
-                };
+                    DocumentEN doc = new DocumentEN
+                    {
+                        IDEN = doc1.IDEN,
+                        Title = doc1.Title,
+                        SlugEN = Utils.ReplaceSpecialChars(doc1.Title),
+                        Details = doc1.Details,
+                        CreatedByDate = DateTime.Now,
+
+                    };
+                    db.DocumentENs.Add(doc);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
+                catch
+                {
+                    return new Response
+                    {
+                        Status = "Fail",
+                        Message = "Data Fail"
+                    };
+                }
             }
-            catch
+            else
             {
                 return new Response
                 {
-                    Status = "Fail",
-                    Message = "Data Fail"
+                    Status = "Error",
+                    Message = "Token Fail"
                 };
             }
         }
@@ -854,55 +1059,78 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeleteDocumentEN(int id)
         {
-            var result = db.DocumentENs.Where(x => x.IDEN == id).ToList().FirstOrDefault();
-            db.DocumentENs.Remove(result);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var result = db.DocumentENs.Where(x => x.IDEN == id).ToList().FirstOrDefault();
+                db.DocumentENs.Remove(result);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
         }
         //------------------------------------------
         [Route("AddOrEditBanner")]
         [HttpPost]
         public object AddOrEditBanner(Banner1 bn1)
         {
-            if (bn1.ID == 0)
+            if (data == "OK")
             {
-                Banner bn = new Banner
+                if (bn1.ID == 0)
                 {
-                    Name = bn1.Name,
-                    Image = bn1.Image,
-                    CreatedByUser = bn1.CreatedByUser,
-                    CreatedByDate = DateTime.Now,
+                    Banner bn = new Banner
+                    {
+                        Name = bn1.Name,
+                        Image = bn1.Image,
+                        CreatedByUser = bn1.CreatedByUser,
+                        CreatedByDate = DateTime.Now,
 
-                };
-                db.Banners.Add(bn);
-                db.SaveChanges();
-                return new Response
-                {
-                    Status = "Success",
-                    Message = "Data Successfuly"
-                };
-            }
-            else
-            {
-                var obj = db.Banners.Where(x => x.ID == bn1.ID).ToList().FirstOrDefault();
-                if (obj.ID > 0)
-                {
-                    obj.Name = bn1.Name;
-                    obj.Image = bn1.Image;
-                    obj.UpdateByUser = bn1.UpdateByUser;
-                    obj.UpdatedByDate = DateTime.Now;
+                    };
+                    db.Banners.Add(bn);
                     db.SaveChanges();
                     return new Response
                     {
-                        Status = "Updated",
-                        Message = "Updated Successfuly"
+                        Status = "Success",
+                        Message = "Data Successfuly"
                     };
                 }
+                else
+                {
+                    var obj = db.Banners.Where(x => x.ID == bn1.ID).ToList().FirstOrDefault();
+                    if (obj.ID > 0)
+                    {
+                        obj.Name = bn1.Name;
+                        obj.Image = bn1.Image;
+                        obj.UpdateByUser = bn1.UpdateByUser;
+                        obj.UpdatedByDate = DateTime.Now;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfuly"
+                        };
+                    }
+                }
             }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
             return new Response
             {
                 Status = "Error",
@@ -930,14 +1158,26 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeleteBanner(int ID)
         {
-            var partner = db.Banners.Where(x => x.ID == ID).ToList().FirstOrDefault();
-            db.Banners.Remove(partner);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var partner = db.Banners.Where(x => x.ID == ID).ToList().FirstOrDefault();
+                db.Banners.Remove(partner);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
 
     }

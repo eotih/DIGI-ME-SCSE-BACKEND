@@ -14,47 +14,85 @@ namespace SCSE_BACKEND.Controllers
     [RoutePrefix("Management")]
     public class ManagementController : ApiController
     {
+        string data = TokenManager.ValidateCheck();
         SCSE_DBEntities db = new SCSE_DBEntities();
-        
+
         [Route("AddOrEditPost")]
         [HttpPost]
         public object AddOrEditPost(Posts1 Posts1)
         {
-            if (Posts1.IDPost == 0)
+            if (data == "OK")
             {
-                Post Posts = new Post
+                if (Posts1.IDPost == 0)
                 {
-                    IDCat = Posts1.IDCat,
-                    Title = Posts1.Title,
-                    IDField = Posts1.IDField,
-                    Slug = Utils.ReplaceSpecialChars(Posts1.Title),
-                    Details = Posts1.Details,
-                    Image = Posts1.Image,
-                    IDState = 1,
-                    Author = Posts1.Author,
-                    CreatedByDate = DateTime.Now
-                };
-                db.Posts.Add(Posts);
-                db.SaveChanges();
+                    Post Posts = new Post
+                    {
+                        IDCat = Posts1.IDCat,
+                        Title = Posts1.Title,
+                        IDField = Posts1.IDField,
+                        Slug = Utils.ReplaceSpecialChars(Posts1.Title),
+                        Details = Posts1.Details,
+                        Image = Posts1.Image,
+                        IDState = 1,
+                        Author = Posts1.Author,
+                        CreatedByDate = DateTime.Now
+                    };
+                    db.Posts.Add(Posts);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
+                else
+                {
+                    var obj = db.Posts.Where(x => x.IDPost == Posts1.IDPost).ToList().FirstOrDefault();
+                    if (obj.IDPost > 0)
+                    {
+                        obj.IDCat = Posts1.IDCat;
+                        obj.Title = Posts1.Title;
+                        obj.IDField = Posts1.IDField;
+                        obj.Slug = Utils.ReplaceSpecialChars(Posts1.Title);
+                        obj.Details = Posts1.Details;
+                        obj.Image = Posts1.Image;
+                        obj.IDState = Posts1.IDState;
+                        obj.Author = Posts1.Author;
+                        obj.UpdatedByDate = DateTime.Now;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfully"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Success"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.Posts.Where(x => x.IDPost == Posts1.IDPost).ToList().FirstOrDefault();
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
+        }
+        [Route("EditStatePost")]
+        [HttpPost]
+        public object EditStatePost(Posts1 Posts1)
+        {
+            if (data == "OK")
+            {
+                var obj = db.Posts.Where(x => x.IDPost == Posts1.IDPost).FirstOrDefault();
                 if (obj.IDPost > 0)
                 {
-                    obj.IDCat = Posts1.IDCat;
-                    obj.Title = Posts1.Title;
-                    obj.IDField = Posts1.IDField;
-                    obj.Slug = Utils.ReplaceSpecialChars(Posts1.Title);
-                    obj.Details = Posts1.Details;
-                    obj.Image = Posts1.Image;
                     obj.IDState = Posts1.IDState;
-                    obj.Author = Posts1.Author;
                     obj.UpdatedByDate = DateTime.Now;
                     db.SaveChanges();
                     return new Response
@@ -63,34 +101,21 @@ namespace SCSE_BACKEND.Controllers
                         Message = "Updated Successfully"
                     };
                 }
-            }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
-        }
-        [Route("EditStatePost")]
-        [HttpPost]
-        public object EditStatePost(Posts1 Posts1)
-        {
-            var obj = db.Posts.Where(x => x.IDPost == Posts1.IDPost).FirstOrDefault();
-            if (obj.IDPost > 0)
-            {
-                obj.IDState = Posts1.IDState;
-                obj.UpdatedByDate = DateTime.Now;
-                db.SaveChanges();
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Fail",
+                    Message = "Updated Fail"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Fail",
-                Message = "Updated Fail"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // Xem danh sách tài khoản
         [Route("ShowAllPost")]
@@ -121,14 +146,26 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeletePost(int ID)
         {
-            var obj = db.Posts.Where(x => x.IDPost == ID).ToList().FirstOrDefault();
-            db.Posts.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var obj = db.Posts.Where(x => x.IDPost == ID).ToList().FirstOrDefault();
+                db.Posts.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         [Route("GetByStatePost")]
         [HttpGet]
@@ -157,66 +194,90 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddPostEN(PostsEN1 PostsEN1)
         {
-            try
+            if (data == "OK")
             {
-                PostsEN PostsEN = new PostsEN
+                try
                 {
-                    IDPostEN = PostsEN1.IDPostEN,
-                    IDCat = PostsEN1.IDCat,
-                    Title = PostsEN1.Title,
-                    IDField = PostsEN1.IDField,
-                    SlugEN = Utils.ReplaceSpecialChars(PostsEN1.Title),
-                    Details = PostsEN1.Details,
-                    Image = PostsEN1.Image,
-                    IDState = 1,
-                    Author = PostsEN1.Author,
-                    CreatedByDate = DateTime.Now,
-                };
-                db.PostsENs.Add(PostsEN);
-                db.SaveChanges();
+                    PostsEN PostsEN = new PostsEN
+                    {
+                        IDPostEN = PostsEN1.IDPostEN,
+                        IDCat = PostsEN1.IDCat,
+                        Title = PostsEN1.Title,
+                        IDField = PostsEN1.IDField,
+                        SlugEN = Utils.ReplaceSpecialChars(PostsEN1.Title),
+                        Details = PostsEN1.Details,
+                        Image = PostsEN1.Image,
+                        IDState = 1,
+                        Author = PostsEN1.Author,
+                        CreatedByDate = DateTime.Now,
+                    };
+                    db.PostsENs.Add(PostsEN);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
+                catch
+                {
+                    return new Response
+                    {
+                        Status = "Fail",
+                        Message = "Data Fail"
+                    };
+                }
+            }
+            else
+            {
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Success"
+                    Status = "Error",
+                    Message = "Token Fail"
                 };
             }
-            catch
-            {
-                return new Response
-                {
-                    Status = "Fail",
-                    Message = "Data Fail"
-                };
-            }
+
         }
         [Route("EditPostEN")]
         [HttpPost]
         public object EditPostEN(PostsEN1 PostsEN1)
         {
-            var obj = db.PostsENs.Where(x => x.IDPostEN == PostsEN1.IDPostEN).FirstOrDefault();
-            if (obj.IDPostEN > 0)
+            if (data == "OK")
             {
-                obj.IDCat = PostsEN1.IDCat;
-                obj.Title = PostsEN1.Title;
-                obj.IDField = PostsEN1.IDField;
-                obj.SlugEN = Utils.ReplaceSpecialChars(PostsEN1.Title);
-                obj.Details = PostsEN1.Details;
-                obj.Image = PostsEN1.Image;
-                obj.IDState = PostsEN1.IDState;
-                obj.Author = PostsEN1.Author;
-                obj.UpdatedByDate = DateTime.Now;
-                db.SaveChanges();
+                var obj = db.PostsENs.Where(x => x.IDPostEN == PostsEN1.IDPostEN).FirstOrDefault();
+                if (obj.IDPostEN > 0)
+                {
+                    obj.IDCat = PostsEN1.IDCat;
+                    obj.Title = PostsEN1.Title;
+                    obj.IDField = PostsEN1.IDField;
+                    obj.SlugEN = Utils.ReplaceSpecialChars(PostsEN1.Title);
+                    obj.Details = PostsEN1.Details;
+                    obj.Image = PostsEN1.Image;
+                    obj.IDState = PostsEN1.IDState;
+                    obj.Author = PostsEN1.Author;
+                    obj.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Fail",
+                    Message = "Updated Fail"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Fail",
-                Message = "Updated Fail"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // Xem danh sách tài khoản
         [Route("ShowAllPostEN")]
@@ -246,37 +307,61 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object EditStatePostEN(PostsEN1 PostsEN1)
         {
-            var obj = db.PostsENs.Where(x => x.IDPostEN == PostsEN1.IDPostEN).FirstOrDefault();
-            if (obj.IDPostEN > 0)
+            if (data == "OK")
             {
-                obj.IDState = PostsEN1.IDState;
-                obj.UpdatedByDate = DateTime.Now;
-                db.SaveChanges();
+                var obj = db.PostsENs.Where(x => x.IDPostEN == PostsEN1.IDPostEN).FirstOrDefault();
+                if (obj.IDPostEN > 0)
+                {
+                    obj.IDState = PostsEN1.IDState;
+                    obj.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Fail",
+                    Message = "Updated Fail"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Fail",
-                Message = "Updated Fail"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // Xóa bài viết
         [Route("DeletePostEN")]
         [HttpDelete]
         public object DeletePostEN(int ID)
         {
-            var obj = db.PostsENs.Where(x => x.IDPostEN == ID).FirstOrDefault();
-            db.PostsENs.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var obj = db.PostsENs.Where(x => x.IDPostEN == ID).FirstOrDefault();
+                db.PostsENs.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
 
 
@@ -342,55 +427,79 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object RegisterVolunteer(Volunteer1 vol1)
         {
-            if (vol1.ID == 0)
+            if (data == "OK")
             {
-                Volunteer vol = new Volunteer
+                if (vol1.ID == 0)
                 {
-                    ID = vol1.ID,
-                    FirstName = vol1.FirstName,
-                    LastName = vol1.LastName,
-                    DOB = vol1.DOB,
-                    Phone = vol1.Phone,
-                    Email = vol1.Email,
-                    Address = vol1.Address,
-                    Purpose = vol1.Purpose,
-                    Project = vol1.Project,
-                    IDState = 1 // Pending 
-                };
-                db.Volunteers.Add(vol);
-                db.SaveChanges();
+                    Volunteer vol = new Volunteer
+                    {
+                        ID = vol1.ID,
+                        FirstName = vol1.FirstName,
+                        LastName = vol1.LastName,
+                        DOB = vol1.DOB,
+                        Phone = vol1.Phone,
+                        Email = vol1.Email,
+                        Address = vol1.Address,
+                        Purpose = vol1.Purpose,
+                        Project = vol1.Project,
+                        IDState = 1 // Pending 
+                    };
+                    db.Volunteers.Add(vol);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Success"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         [Route("EditState")]
         [HttpPost]
         public object EditState(Volunteer1 vol1)
         {
-            var obj = db.Volunteers.Where(x => x.ID == vol1.ID).ToList().FirstOrDefault();
-            if (obj.ID > 0)
+            if (data == "OK")
             {
-                obj.IDState = vol1.IDState;
-                db.SaveChanges();
+                var obj = db.Volunteers.Where(x => x.ID == vol1.ID).ToList().FirstOrDefault();
+                if (obj.ID > 0)
+                {
+                    obj.IDState = vol1.IDState;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Error",
-                Message = "Data not insert"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // Xem danh sách bài viết
         [Route("ShowAllVolunteers")]
@@ -405,14 +514,26 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeleteVolunteer(int id)
         {
-            var obj = db.Volunteers.Where(x => x.ID == id).ToList().FirstOrDefault();
-            db.Volunteers.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var obj = db.Volunteers.Where(x => x.ID == id).ToList().FirstOrDefault();
+                db.Volunteers.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // getbyID bài viết
         [Route("GetByIdVolunteer")]
@@ -488,39 +609,77 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddOrEditNewsVN(NewsVN1 newsVN1)
         {
-            if (newsVN1.IDNews == 0)
+            if (data == "OK")
             {
-                NewsVN newsVN = new NewsVN
+                if (newsVN1.IDNews == 0)
                 {
-                    IdField = newsVN1.IdField,
-                    Title = newsVN1.Title,
-                    Slug = Utils.ReplaceSpecialChars(newsVN1.Title),
-                    Details = newsVN1.Details,
-                    Image = newsVN1.Image,
-                    IDState = 1,
-                    Author = newsVN1.Author,
-                    CreatedByDate = DateTime.Now
-                };
-                db.NewsVNs.Add(newsVN);
-                db.SaveChanges();
+                    NewsVN newsVN = new NewsVN
+                    {
+                        IdField = newsVN1.IdField,
+                        Title = newsVN1.Title,
+                        Slug = Utils.ReplaceSpecialChars(newsVN1.Title),
+                        Details = newsVN1.Details,
+                        Image = newsVN1.Image,
+                        IDState = 1,
+                        Author = newsVN1.Author,
+                        CreatedByDate = DateTime.Now
+                    };
+                    db.NewsVNs.Add(newsVN);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
+                else
+                {
+                    var obj = db.NewsVNs.Where(x => x.IDNews == newsVN1.IDNews).ToList().FirstOrDefault();
+                    if (obj.IDNews > 0)
+                    {
+                        obj.IdField = newsVN1.IdField;
+                        obj.Title = newsVN1.Title;
+                        obj.Slug = Utils.ReplaceSpecialChars(newsVN1.Title);
+                        obj.Details = newsVN1.Details;
+                        obj.Image = newsVN1.Image;
+                        obj.IDState = newsVN1.IDState;
+                        obj.Author = newsVN1.Author;
+                        obj.UpdatedByDate = DateTime.Now;
+                        db.SaveChanges();
+                        return new Response
+                        {
+                            Status = "Updated",
+                            Message = "Updated Successfully"
+                        };
+                    }
+                }
                 return new Response
                 {
-                    Status = "Success",
-                    Message = "Data Success"
+                    Status = "Error",
+                    Message = "Data not insert"
                 };
             }
             else
             {
-                var obj = db.NewsVNs.Where(x => x.IDNews == newsVN1.IDNews).ToList().FirstOrDefault();
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
+        }
+
+        [Route("EditStateNewsVN")]
+        [HttpPost]
+        public object EditStateNewsVN(NewsVN1 new1)
+        {
+            if (data == "OK")
+            {
+                var obj = db.NewsVNs.Where(x => x.IDNews == new1.IDNews).FirstOrDefault();
                 if (obj.IDNews > 0)
                 {
-                    obj.IdField = newsVN1.IdField;
-                    obj.Title = newsVN1.Title;
-                    obj.Slug = Utils.ReplaceSpecialChars(newsVN1.Title);
-                    obj.Details = newsVN1.Details;
-                    obj.Image = newsVN1.Image;
-                    obj.IDState = newsVN1.IDState;
-                    obj.Author = newsVN1.Author;
+                    obj.IDState = new1.IDState;
                     obj.UpdatedByDate = DateTime.Now;
                     db.SaveChanges();
                     return new Response
@@ -529,35 +688,21 @@ namespace SCSE_BACKEND.Controllers
                         Message = "Updated Successfully"
                     };
                 }
-            }
-            return new Response
-            {
-                Status = "Error",
-                Message = "Data not insert"
-            };
-        }
-
-        [Route("EditStateNewsVN")]
-        [HttpPost]
-        public object EditStateNewsVN(NewsVN1 new1)
-        {
-            var obj = db.NewsVNs.Where(x => x.IDNews == new1.IDNews).FirstOrDefault();
-            if (obj.IDNews > 0)
-            {
-                obj.IDState = new1.IDState;
-                obj.UpdatedByDate = DateTime.Now;
-                db.SaveChanges();
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Fail",
+                    Message = "Updated Fail"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Fail",
-                Message = "Updated Fail"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // Xem danh sách tin tức
         [Route("ShowAllNewsVN")]
@@ -588,14 +733,26 @@ namespace SCSE_BACKEND.Controllers
         [HttpDelete]
         public object DeleteNewsVN(int ID)
         {
-            var obj = db.NewsVNs.Where(x => x.IDNews == ID).FirstOrDefault();
-            db.NewsVNs.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var obj = db.NewsVNs.Where(x => x.IDNews == ID).FirstOrDefault();
+                db.NewsVNs.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
 
         [Route("GetByStateNewsVN")]
@@ -639,65 +796,89 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddNewsEN(NewsEN1 newsEN1)
         {
-            try
+            if (data == "OK")
             {
-                NewsEN newsEN = new NewsEN
+                try
                 {
-                    IDNewsEN = newsEN1.IDNewsEN,
-                    IdField = newsEN1.IdField,
-                    Title = newsEN1.Title,
-                    SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title),
-                    Details = newsEN1.Details,
-                    Image = newsEN1.Image,
-                    IDState = 1,
-                    Author = newsEN1.Author,
-                    CreatedByDate = DateTime.Now,
+                    NewsEN newsEN = new NewsEN
+                    {
+                        IDNewsEN = newsEN1.IDNewsEN,
+                        IdField = newsEN1.IdField,
+                        Title = newsEN1.Title,
+                        SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title),
+                        Details = newsEN1.Details,
+                        Image = newsEN1.Image,
+                        IDState = 1,
+                        Author = newsEN1.Author,
+                        CreatedByDate = DateTime.Now,
 
-                };
-                db.NewsENs.Add(newsEN);
-                db.SaveChanges();
-                return new Response
+                    };
+                    db.NewsENs.Add(newsEN);
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Success",
+                        Message = "Data Success"
+                    };
+                }
+                catch
                 {
-                    Status = "Success",
-                    Message = "Data Success"
-                };
+                    return new Response
+                    {
+                        Status = "Fail",
+                        Message = "Data Fail"
+                    };
+                }
             }
-            catch
+            else
             {
                 return new Response
                 {
-                    Status = "Fail",
-                    Message = "Data Fail"
+                    Status = "Error",
+                    Message = "Token Fail"
                 };
             }
+
         }
         [Route("EditNewsEN")]
         [HttpPost]
         public object EditNewsEN(NewsEN1 newsEN1)
         {
-            var obj = db.NewsENs.Where(x => x.IDNewsEN == newsEN1.IDNewsEN).FirstOrDefault();
-            if (obj.IDNewsEN > 0)
+            if (data == "OK")
             {
-                obj.IdField = newsEN1.IdField;
-                obj.Title = newsEN1.Title;
-                obj.SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title);
-                obj.Details = newsEN1.Details;
-                obj.Image = newsEN1.Image;
-                obj.IDState = newsEN1.IDState;
-                obj.Author = newsEN1.Author;
-                obj.UpdatedByDate = DateTime.Now;
-                db.SaveChanges();
+                var obj = db.NewsENs.Where(x => x.IDNewsEN == newsEN1.IDNewsEN).FirstOrDefault();
+                if (obj.IDNewsEN > 0)
+                {
+                    obj.IdField = newsEN1.IdField;
+                    obj.Title = newsEN1.Title;
+                    obj.SlugEN = Utils.ReplaceSpecialChars(newsEN1.Title);
+                    obj.Details = newsEN1.Details;
+                    obj.Image = newsEN1.Image;
+                    obj.IDState = newsEN1.IDState;
+                    obj.Author = newsEN1.Author;
+                    obj.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Fail",
+                    Message = "Updated Fail"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Fail",
-                Message = "Updated Fail"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // Xem danh sách tin tức tiếng anh
         [Route("ShowAllNewsEN")]
@@ -727,37 +908,61 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object EditStateNewsEN(NewsEN1 newsEN1)
         {
-            var obj = db.NewsENs.Where(x => x.IDNewsEN == newsEN1.IDNewsEN).FirstOrDefault();
-            if (obj.IDNewsEN > 0)
+            if (data == "OK")
             {
-                obj.IDState = newsEN1.IDState;
-                obj.UpdatedByDate = DateTime.Now;
-                db.SaveChanges();
+                var obj = db.NewsENs.Where(x => x.IDNewsEN == newsEN1.IDNewsEN).FirstOrDefault();
+                if (obj.IDNewsEN > 0)
+                {
+                    obj.IDState = newsEN1.IDState;
+                    obj.UpdatedByDate = DateTime.Now;
+                    db.SaveChanges();
+                    return new Response
+                    {
+                        Status = "Updated",
+                        Message = "Updated Successfully"
+                    };
+                }
                 return new Response
                 {
-                    Status = "Updated",
-                    Message = "Updated Successfully"
+                    Status = "Fail",
+                    Message = "Updated Fail"
                 };
             }
-            return new Response
+            else
             {
-                Status = "Fail",
-                Message = "Updated Fail"
-            };
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
         // Xóa tin tức
         [Route("DeleteNewsEN")]
         [HttpDelete]
         public object DeleteNewsEN(int ID)
         {
-            var obj = db.NewsENs.Where(x => x.IDNewsEN == ID).FirstOrDefault();
-            db.NewsENs.Remove(obj);
-            db.SaveChanges();
-            return new Response
+            if (data == "OK")
             {
-                Status = "Delete",
-                Message = "Delete Successfuly"
-            };
+                var obj = db.NewsENs.Where(x => x.IDNewsEN == ID).FirstOrDefault();
+                db.NewsENs.Remove(obj);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+
         }
 
         [Route("GetByStateNewsEN")]
