@@ -21,7 +21,7 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddOrEditPost(Posts1 Posts1)
         {
-            if (data == "OK")
+            if (data == "OK" || data == "Mod")
             {
                 if (Posts1.IDPost == 0)
                 {
@@ -609,7 +609,7 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddOrEditNewsVN(NewsVN1 newsVN1)
         {
-            if (data == "OK")
+            if (data == "OK" || data == "Mod")
             {
                 if (newsVN1.IDNews == 0)
                 {
@@ -1032,6 +1032,65 @@ namespace SCSE_BACKEND.Controllers
 
             }
             return listImageTitle;
+        }
+        [Route("GetCountForHomeCMS")]
+        [HttpGet]
+        public object GetCountForHomeCMS()
+        {
+            var NewsAll = db.NewsVNs.Where(x => x.IDState == 2).ToList().Count;
+            var NewsPending = db.NewsVNs.Where(x => x.IDState == 1).ToList().Count;
+            var DuAnAll = db.Posts.Where(x => x.IDCat == 1 && x.IDState == 2).ToList().Count;
+            var DuAnPending = db.Posts.Where(x => x.IDCat == 1 && x.IDState == 1).ToList().Count;
+            var HDTNAll = db.Posts.Where(x => x.IDCat == 3 && x.IDState == 2).ToList().Count;
+            var HDTNPending = db.Posts.Where(x => x.IDCat == 3 && x.IDState == 1).ToList().Count;
+            var HTNCAll = db.Posts.Where(x => x.IDCat == 2 && x.IDState == 2).ToList().Count;
+            var HTNCPending = db.Posts.Where(x => x.IDCat == 2 && x.IDState == 1).ToList().Count;
+            var AccountPending = db.Accounts.Where(x => x.IDState == 1).ToList().Count;
+            var VolunteerPending = db.Volunteers.Where(x => x.IDState == 1).ToList().Count;
+            var CountData = (from p in db.Posts
+                             select new
+                             {
+                                 CountNewsVnAll = NewsAll,
+                                 CountNewsPending = NewsPending,
+                                 CountDuAn = DuAnAll,
+                                 CountDuAnPending = DuAnPending,
+                                 CountHDTNAll = HDTNAll,
+                                 CountHDTNPending = HDTNPending,
+                                 CountHTNCAll = HTNCAll,
+                                 CountHTNCPending = HTNCPending,
+                                 CountAccountPending = AccountPending,
+                                 CountVolunteerPending = VolunteerPending
+                             }
+                     ).FirstOrDefault();
+            return CountData;
+        }
+
+        [Route("GetCountForHomeCMSEN")]
+        [HttpGet]
+        public object GetCountForHomeCMSEN()
+        {
+            var NewsAll = db.NewsENs.Where(x => x.IDState == 2).ToList().Count;
+            var NewsPending = db.NewsENs.Where(x => x.IDState == 1).ToList().Count;
+            var DuAnAll = db.PostsENs.Where(x => x.IDCat == 1 && x.IDState == 2).ToList().Count;
+            var DuAnPending = db.PostsENs.Where(x => x.IDCat == 1 && x.IDState == 1).ToList().Count;
+            var HDTNAll = db.PostsENs.Where(x => x.IDCat == 3 && x.IDState == 2).ToList().Count;
+            var HDTNPending = db.PostsENs.Where(x => x.IDCat == 3 && x.IDState == 1).ToList().Count;
+            var HTNCAll = db.PostsENs.Where(x => x.IDCat == 2 && x.IDState == 2).ToList().Count;
+            var HTNCPending = db.PostsENs.Where(x => x.IDCat == 2 && x.IDState == 1).ToList().Count;
+            var CountData = (from p in db.Posts
+                             select new
+                             {
+                                 CountNewsEnAll = NewsAll,
+                                 CountNewsPending = NewsPending,
+                                 CountDuAn = DuAnAll,
+                                 CountDuAnPending = DuAnPending,
+                                 CountHDTNAll = HDTNAll,
+                                 CountHDTNPending = HDTNPending,
+                                 CountHTNCAll = HTNCAll,
+                                 CountHTNCPending = HTNCPending
+                             }
+                     ).FirstOrDefault();
+            return CountData;
         }
     }
 }

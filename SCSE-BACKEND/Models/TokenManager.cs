@@ -53,10 +53,15 @@ namespace SCSE_BACKEND.Models
                 //string accountID = claims[6].Value;
                 //var checkDatabase = db.Accounts.Where(x => x.IDUser == Convert.ToInt32(accountID)).FirstOrDefault();
                 string getData = claims[2].Value;
-                if(getData != "Admin")
-                    return "Access Denied";
+                if(getData == "Mod" || getData == "Admin" || getData == "Supporter")
+                {
+                    if (getData == "Mod")
+                        return "Mod";
+                    else
+                        return "OK";
+                }
                 else
-                    return "OK";
+                    return "Access Denied";
             }   
             else
             {

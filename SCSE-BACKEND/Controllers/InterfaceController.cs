@@ -824,6 +824,31 @@ namespace SCSE_BACKEND.Controllers
             var category = db.PhotoGalleries.Where(x => x.Slug == slug).ToList();
             return category;
         }
+        [Route("DeletePhoto")]
+        [HttpDelete]
+        public object DeletePhoto(int id)
+        {
+            if (data == "OK")
+            {
+
+                var result = db.PhotoGalleries.Where(x => x.ID == id).ToList().FirstOrDefault();
+                db.PhotoGalleries.Remove(result);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete Successfuly"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+        }
         [Route("DeletePhotosByTitle")]
         [HttpDelete]
         public object DeletePhotosByTitle(string title)

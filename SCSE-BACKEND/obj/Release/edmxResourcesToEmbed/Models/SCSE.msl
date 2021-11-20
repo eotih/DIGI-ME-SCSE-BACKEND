@@ -95,15 +95,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ImgPortfolios">
-      <EntityTypeMapping TypeName="SCSE_DBModel.ImgPortfolio">
-        <MappingFragment StoreEntitySet="ImgPortfolio">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="ImagePortfolio" ColumnName="ImagePortfolio" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="NewsENs">
       <EntityTypeMapping TypeName="SCSE_DBModel.NewsEN">
         <MappingFragment StoreEntitySet="NewsEN">
@@ -163,6 +154,7 @@
           <ScalarProperty Name="Link" ColumnName="Link" />
           <ScalarProperty Name="Purpose" ColumnName="Purpose" />
           <ScalarProperty Name="LinkFile" ColumnName="LinkFile" />
+          <ScalarProperty Name="IDState" ColumnName="IDState" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -175,6 +167,9 @@
           <ScalarProperty Name="Position" ColumnName="Position" />
           <ScalarProperty Name="DetailsEN" ColumnName="DetailsEN" />
           <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -286,15 +281,6 @@
           <ScalarProperty Name="Details" ColumnName="Details" />
           <ScalarProperty Name="CreatedByDate" ColumnName="CreatedByDate" />
           <ScalarProperty Name="UpdatedByDate" ColumnName="UpdatedByDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ImageForPortfolios">
-      <EntityTypeMapping TypeName="SCSE_DBModel.ImageForPortfolio">
-        <MappingFragment StoreEntitySet="ImageForPortfolio">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="ImagePortfolio" ColumnName="ImagePortfolio" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
