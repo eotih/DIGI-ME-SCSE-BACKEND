@@ -796,7 +796,7 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddNewsEN(NewsEN1 newsEN1)
         {
-            if (data == "OK")
+            if (data == "OK" || data == "Mod")
             {
                 try
                 {
