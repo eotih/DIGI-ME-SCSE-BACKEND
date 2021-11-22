@@ -870,7 +870,7 @@ namespace SCSE_BACKEND.Controllers
             {
 
                 var result = db.PhotoGalleries.Where(x => x.ID == id).FirstOrDefault();
-                var root = HttpContext.Current.Server.MapPath("~/assets/albums");
+                var root = HttpContext.Current.Server.MapPath("~/");
                 var pathString = Path.Combine(root, result.Image);
                 File.Delete(pathString);
                 db.PhotoGalleries.Remove(result);
@@ -918,7 +918,13 @@ namespace SCSE_BACKEND.Controllers
             var category = db.PhotoGalleries.Where(x => x.Slug == slug).ToList();
             return category;
         }
-        
+        [Route("GetPostBySlugToAdd")]
+        [HttpGet]
+        public object GetPostBySlugToAdd(string slug)
+        {
+            var category = db.PhotoGalleries.Where(x => x.Slug == slug).FirstOrDefault();
+            return category;
+        }
         [Route("DeletePhotosByTitle")]
         [HttpDelete]
         public object DeletePhotosByTitle(string title)
