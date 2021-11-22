@@ -407,7 +407,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\" />
+    <Folder Include="assets\albums\" />
     <Folder Include="System\Web\HttpContext\Current\" />
     <Folder Include="Views\Interface\" />
     <Folder Include="Views\Management\" />

@@ -125,19 +125,19 @@ namespace SCSE_BACKEND.Controllers
             var a = (from Posts in db.Posts
                      from cat in db.Categories
                      where cat.IDCat == Posts.IDCat
-
                      select new
                      {
                          Posts.IDPost,
                          Posts.IDCat,
                          Posts.Title,
+                         Posts.IDField,
                          Posts.Slug,
                          Posts.Details,
                          Posts.Image,
                          Posts.CreatedByDate,
                          Posts.Author,
                          Posts.IDState,
-                         cat.CategoryName
+                         cat.CategoryName,
                      }).ToList();
             return a;
         }
@@ -287,12 +287,12 @@ namespace SCSE_BACKEND.Controllers
             var a = (from PostsEN in db.PostsENs
                      from cat in db.Categories
                      where cat.IDCat == PostsEN.IDCat
-
                      select new
                      {
                          PostsEN.IDPostEN,
                          PostsEN.IDCat,
                          PostsEN.Title,
+                         PostsEN.IDField,
                          PostsEN.SlugEN,
                          PostsEN.Details,
                          PostsEN.Image,

@@ -795,7 +795,106 @@ namespace SCSE_BACKEND.Controllers
             }
 
         }
+        [Route("UploadAlbum")]
+        [HttpPost]
+        public async Task<string> UploadAlbum()
+        {
+            var ctx = HttpContext.Current;
+            var root = ctx.Server.MapPath("~/assets/albums");
+            var provider = new MultipartFormDataStreamProvider(root);
+            try
+            {
+                await Request.Content.ReadAsMultipartAsync(provider);
+                PhotoGallery1 photo = new PhotoGallery1
+                {
+                    IDCat = Int32.Parse(provider.FormData["IDCat"]),
+                    IDField = Int32.Parse(provider.FormData["IDField"]),
+                    Title = provider.FormData["Title"],
+                    TitleEN = provider.FormData["TitleEN"],
+                };
+                var pathName = provider.FormData["Title"];
+                var folderUpload = Utils.ReplaceSpecialChars(pathName);
+                var pathString = Path.Combine(root, folderUpload);
+                if (!Directory.Exists(pathString))
+                {
+                    Directory.CreateDirectory(pathString);
+                    for (var i = 0; i < provider.FileData.Count; i++)
+                    {
+                        var file = provider.FileData[i];
+                        var name = file.Headers.ContentDisposition.FileName;
+                        name = name.Trim('"');
+                        var localFileName = file.LocalFileName;
+                        var filePath = Path.Combine(pathString, name);
+                        if (File.Exists(filePath))
+                        {
+                            File.Delete(file.LocalFileName);
+                            return $"Error: File Exists";
+                        }
+                        else
+                        {
+                            photo.Image = "assets/albums/" + folderUpload + "/" + name;
+                            AddOrEditPhotoGallery(photo);
+                            File.Move(localFileName, filePath);
+                        }
+                    }
+                }
+                else
+                {
+                    for (var i = 0; i < provider.FileData.Count; i++)
+                    {
+                        var file = provider.FileData[i];
+                        var name = file.Headers.ContentDisposition.FileName;
+                        name = name.Trim('"');
+                        var localFileName = file.LocalFileName;
+                        var filePath = Path.Combine(pathString, name);
+                        if (File.Exists(filePath))
+                        {
+                            File.Delete(file.LocalFileName);
+                            return $"Error: File Exists";
+                        }
+                        else
+                        {
+                            photo.Image = "assets/albums/" + folderUpload + "/" + name;
+                            AddOrEditPhotoGallery(photo);
+                            File.Move(localFileName, filePath);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return $"Error: {e.Message}";
+            }
+            return "File uploaded!";
+        }
+        [Route("DeletePhoto")]
+        [HttpDelete]
+        public object DeletePhoto(int id)
+        {
+            if (data == "OK")
+            {
 
+                var result = db.PhotoGalleries.Where(x => x.ID == id).FirstOrDefault();
+                var root = HttpContext.Current.Server.MapPath("~/assets/albums");
+                var pathString = Path.Combine(root, result.Image);
+                File.Delete(pathString);
+                db.PhotoGalleries.Remove(result);
+                db.SaveChanges();
+                return new Response
+                {
+                    Status = "Delete",
+                    Message = "Delete successfully"
+                };
+            }
+            else
+            {
+                return new Response
+                {
+                    Status = "Error",
+                    Message = "Token Fail"
+                };
+            }
+        }
         [Route("ListPhoto")]
         [HttpGet]
         public object ListPhoto()
@@ -824,31 +923,7 @@ namespace SCSE_BACKEND.Controllers
             var category = db.PhotoGalleries.Where(x => x.Slug == slug).ToList();
             return category;
         }
-        [Route("DeletePhoto")]
-        [HttpDelete]
-        public object DeletePhoto(int id)
-        {
-            if (data == "OK")
-            {
-
-                var result = db.PhotoGalleries.Where(x => x.ID == id).ToList().FirstOrDefault();
-                db.PhotoGalleries.Remove(result);
-                db.SaveChanges();
-                return new Response
-                {
-                    Status = "Delete",
-                    Message = "Delete Successfuly"
-                };
-            }
-            else
-            {
-                return new Response
-                {
-                    Status = "Error",
-                    Message = "Token Fail"
-                };
-            }
-        }
+        
         [Route("DeletePhotosByTitle")]
         [HttpDelete]
         public object DeletePhotosByTitle(string title)
@@ -856,15 +931,18 @@ namespace SCSE_BACKEND.Controllers
             if (data == "OK")
             {
                 var result = db.PhotoGalleries.Where(x => x.Title == title).ToList();
+                var root = HttpContext.Current.Server.MapPath("~/");
                 for (var i = 0; i < result.Count; i++)
                 {
                     db.PhotoGalleries.Remove(result[i]);
+                    var pathString = Path.Combine(root, result[i].Image);
+                    File.Delete(pathString);
                 }
                 db.SaveChanges();
                 return new Response
                 {
                     Status = "Delete",
-                    Message = "Delete Successfuly"
+                    Message = "Delete successfully"
                 };
             }
             else
