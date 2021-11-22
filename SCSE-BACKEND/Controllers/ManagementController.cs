@@ -427,13 +427,10 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object RegisterVolunteer(Volunteer1 vol1)
         {
-            if (data == "OK")
-            {
                 if (vol1.ID == 0)
                 {
                     Volunteer vol = new Volunteer
                     {
-                        ID = vol1.ID,
                         FirstName = vol1.FirstName,
                         LastName = vol1.LastName,
                         DOB = vol1.DOB,
@@ -452,21 +449,14 @@ namespace SCSE_BACKEND.Controllers
                         Message = "Data Success"
                     };
                 }
-                return new Response
+                else
                 {
-                    Status = "Error",
-                    Message = "Data not insert"
-                };
-            }
-            else
-            {
-                return new Response
-                {
-                    Status = "Error",
-                    Message = "Token Fail"
-                };
-            }
-
+                    return new Response
+                    {
+                        Status = "Error",
+                        Message = "Data not insert"
+                    };
+                }
         }
         [Route("EditState")]
         [HttpPost]

@@ -242,6 +242,13 @@ namespace SCSE_BACKEND.Controllers
             var result = db.Portfolios.ToList();
             return result;
         }
+        [Route("GetByNamePortfolios")]
+        [HttpGet]
+        public object GetByNamePortfolios(string name)
+        {
+            var obj = db.Portfolios.Where(x => x.FullName == name).FirstOrDefault();
+            return obj;
+        }
         [Route("GetByIdPortfolios")]
         [HttpGet]
         public object GetByIdPortfolios(int id)
