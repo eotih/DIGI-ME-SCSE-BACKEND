@@ -604,8 +604,6 @@ namespace SCSE_BACKEND.Controllers
         [HttpPost]
         public object AddOrEditContact(Contact1 ct1)
         {
-            if (data == "OK")
-            {
                 if (ct1.ID == 0)
                 {
                     Contact ct = new Contact
@@ -651,16 +649,6 @@ namespace SCSE_BACKEND.Controllers
                     Status = "Error",
                     Message = "Data not insert"
                 };
-            }
-            else
-            {
-                return new Response
-                {
-                    Status = "Error",
-                    Message = "Token Fail"
-                };
-            }
-
         }
         [Route("AddOrEditCategory")]
         [HttpPost]
